@@ -20,3 +20,6 @@ if [ $? -eq 0 ]; then
 else
     echo "Python script execution failed."
 fi
+
+#Scrape retrived data
+python3 scrape.py
