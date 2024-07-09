@@ -1,0 +1,13 @@
+langchain-pinecone
+langchain
+langchain_community
+pinecone-client[grpc]
+sentence_transformers
+langchain-google-genai
+langchain_core
+streamlit
+python-dotenv
+h5py
+wrapt
+termcolor
+flatbuffers
