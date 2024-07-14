@@ -1,8 +1,4 @@
-Scraping search results from: cve_pages/google_3.0.0.html
-Name: CVE-2023-34180
-Description: Unauth. Reflected Cross-Site Scripting (XSS) vulnerability in KAPlugins Google Fonts For WordPress plugin <= 3.0.0 versions.
-
-Scraping search results from: cve_pages/changefinder_0.03.html
+Scraping search results from: cve_pages\changefinder_0.03.html
 Name: CVE-2023-51073
 Description: An issue in Buffalo LS210D v.1.78-0.03 allows a remote attacker to execute arbitrary code via the Firmware Update Script at /etc/init.d/update_notifications.sh.
 
@@ -36,353 +32,364 @@ Description: Off-by-one error in the getfattr function in File::ExtAttr before 0
 Name: CVE-2004-2245
 Description: Cross-site scripting (XSS) vulnerability in Goollery 0.03 allows remote attackers to inject arbitrary HTML or web script via the (1) page parameter to viewalbum.php or (2) btopage parameter to viewpic.php.
 
-Scraping search results from: cve_pages/shap_0.46.0.html
-Name: CVE-2023-47108
-Description: OpenTelemetry-Go Contrib is a collection of third-party packages for OpenTelemetry-Go. Prior to version 0.46.0, the grpc Unary Server Interceptor out of the box adds labels `net.peer.sock.addr` and `net.peer.sock.port` that have unbound cardinality. It leads to the server's potential memory exhaustion when many malicious requests are sent. An attacker can easily flood the peer address and port for requests. Version 0.46.0 contains a fix for this issue. As a workaround to stop being affected, a view removing the attributes can be used. The other possibility is to disable grpc metrics instrumentation by passing `otelgrpc.WithMeterProvider` option with `noop.NewMeterProvider`.
+Scraping search results from: cve_pages\google_3.0.0.html
+Name: CVE-2023-34180
+Description: Unauth. Reflected Cross-Site Scripting (XSS) vulnerability in KAPlugins Google Fonts For WordPress plugin <= 3.0.0 versions.
 
-Name: CVE-2008-3560
-Description: Cross-site scripting (XSS) vulnerability in kshop_search.php in the Kshop module 2.22 for Xoops allows remote attackers to inject arbitrary web script or HTML via the search parameter.
+Scraping search results from: cve_pages\IPython_8.26.0.html
+Name: CVE-2023-29169
+Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
 
-Scraping search results from: cve_pages/tabulate_0.9.0.html
-Name: CVE-2024-37054
-Description: Deserialization of untrusted data can occur in versions of the MLflow platform running version 0.9.0 or newer, enabling a maliciously uploaded PyFunc model to run arbitrary code on an end user&#8217;s system when interacted with.
+Name: CVE-2023-29150
+Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
 
-Name: CVE-2024-31860
-Description: Improper Input Validation vulnerability in Apache Zeppelin. By adding relative path indicators(E.g ..), attackers can see the contents for any files in the filesystem that the server account can access. This issue affects Apache Zeppelin: from 0.9.0 before 0.11.0. Users are recommended to upgrade to version 0.11.0, which fixes the issue.
+Name: CVE-2023-28716
+Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
 
-Name: CVE-2024-31218
-Description: Webhood is a self-hosted URL scanner used analyzing phishing and malicious sites. Webhood's backend container images in versions 0.9.0 and earlier are subject to Missing Authentication for Critical Function vulnerability. This vulnerability allows an unauthenticated attacker to send a HTTP request to the database (Pocketbase) admin API to create an admin account. The Pocketbase admin API does not check for authentication/authorization when creating an admin account when no admin accounts have been added. In its default deployment, Webhood does not create a database admin account. Therefore, unless users have manually created an admin account in the database, an admin account will not exist in the deployment and the deployment is vulnerable. Versions starting from 0.9.1 are patched. The patch creates a randomly generated admin account if admin accounts have not already been created i.e. the vulnerability is exploitable in the deployment. As a workaround, users can disable access to URL path starting with `/api/admins` entirely. With this workaround, the vulnerability is not exploitable via network.
+Name: CVE-2023-28400
+Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
 
-Name: CVE-2023-48712
-Description: Warpgate is an open source SSH, HTTPS and MySQL bastion host for Linux. In affected versions there is a privilege escalation vulnerability through a non-admin user's account. Limited users can impersonate another user's account if only single-factor authentication is configured. If a user knows an admin username, opens the login screen and attempts to authenticate with an incorrect password they can subsequently enter a valid non-admin username and password they will be logged in as the admin user. All installations prior to version 0.9.0 are affected. All users are advised to upgrade. There are no known workarounds for this vulnerability.
+Name: CVE-2023-28384
+Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
 
-Name: CVE-2023-48299
-Description: TorchServe is a tool for serving and scaling PyTorch models in production. Starting in version 0.1.0 and prior to version 0.9.0, using the model/workflow management API, there is a chance of uploading potentially harmful archives that contain files that are extracted to any location on the filesystem that is within the process permissions. Leveraging this issue could aid third-party actors in hiding harmful code in open-source/public models, which can be downloaded from the internet, and take advantage of machines running Torchserve. The ZipSlip issue in TorchServe has been fixed by validating the paths of files contained within a zip archive before extracting them. TorchServe release 0.9.0 includes fixes to address the ZipSlip vulnerability.
+Name: CVE-2023-24816
+Description: IPython (Interactive Python) is a command shell for interactive computing in multiple programming languages, originally developed for the Python programming language. Versions prior to 8.1.0 are subject to a command injection vulnerability with very specific prerequisites. This vulnerability requires that the function `IPython.utils.terminal.set_term_title` be called on Windows in a Python environment where ctypes is not available. The dependency on `ctypes` in `IPython.utils._process_win32` prevents the vulnerable code from ever being reached in the ipython binary. However, as a library that could be used by another tool `set_term_title` could be called and hence introduce a vulnerability. Should an attacker get untrusted input to an instance of this function they would be able to inject shell commands as current process and limited to the scope of the current process. Users of ipython as a library are advised to upgrade. Users unable to upgrade should ensure that any calls to the `IPython.utils.terminal.set_term_title` function are done with trusted or filtered input.
 
-Name: CVE-2023-4457
-Description: Grafana is an open-source platform for monitoring and observability. The Google Sheets data source plugin for Grafana, versions 0.9.0 to 1.2.2 are vulnerable to an information disclosure vulnerability. The plugin did not properly sanitize error messages, making it potentially expose the Google Sheet API-key that is configured for the data source. This vulnerability was fixed in version 1.2.2.
+Name: CVE-2022-2234
+Description: An authenticated mySCADA myPRO 8.26.0 user may be able to modify parameters to run commands directly in the operating system.
 
-Name: CVE-2023-44378
-Description: gnark is a zk-SNARK library that offers a high-level API to design circuits. Prior to version 0.9.0, for some in-circuit values, it is possible to construct two valid decomposition to bits. In addition to the canonical decomposition of `a`, for small values there exists a second decomposition for `a+r` (where `r` is the modulus the values are being reduced by). The second decomposition was possible due to overflowing the field where the values are defined. Upgrading to version 0.9.0 should fix the issue without needing to change the calls to value comparison methods.
+Name: CVE-2022-21699
+Description: IPython (Interactive Python) is a command shell for interactive computing in multiple programming languages, originally developed for the Python programming language. Affected versions are subject to an arbitrary code execution vulnerability achieved by not properly managing cross user temporary files. This vulnerability allows one user to run code as another on the same machine. All users are advised to upgrade.
 
-Name: CVE-2023-39916
-Description: NLnet Labs&#8217; Routinator 0.9.0 up to and including 0.12.1 contains a possible path traversal vulnerability in the optional, off-by-default keep-rrdp-responses feature that allows users to store the content of responses received for RRDP requests. The location of these stored responses is constructed from the URL of the request. Due to insufficient sanitation of the URL, it is possible for an attacker to craft a URL that results in the response being stored outside of the directory specified for it.
+Name: CVE-2017-0923
+Description: Gitlab Community Edition version 9.1 is vulnerable to lack of input validation in the IPython notebooks component resulting in persistent cross site scripting.
 
-Name: CVE-2023-31038
-Description: SQL injection in Log4cxx when using the ODBC appender to send log messages to a database. No fields sent to the database were properly escaped for SQL injection. This has been the case since at least version 0.9.0(released 2003-08-06) Note that Log4cxx is a C++ framework, so only C++ applications are affected. Before version 1.1.0, the ODBC appender was automatically part of Log4cxx if the library was found when compiling the library. As of version 1.1.0, this must be both explicitly enabled in order to be compiled in. Three preconditions must be met for this vulnerability to be possible: 1. Log4cxx compiled with ODBC support(before version 1.1.0, this was auto-detected at compile time) 2. ODBCAppender enabled for logging messages to, generally done via a config file 3. User input is logged at some point. If your application does not have user input, it is unlikely to be affected. Users are recommended to upgrade to version 1.1.0 which properly binds the parameters to the SQL statement, or migrate to the new DBAppender class which supports an ODBC connection in addition to other databases. Note that this fix does require a configuration file update, as the old configuration files will not configure properly. An example is shown below, and more information may be found in the Log4cxx documentation on the ODBCAppender. Example of old configuration snippet: <appender name="SqlODBCAppender" class="ODBCAppender"> <param name="sql" value="INSERT INTO logs (message) VALUES ('%m')" /> ... other params here ... </appender> The migrated configuration snippet with new ColumnMapping parameters: <appender name="SqlODBCAppender" class="ODBCAppender"> <param name="sql" value="INSERT INTO logs (message) VALUES (?)" /> <param name="ColumnMapping" value="message"/> ... other params here ... </appender>
+Name: CVE-2015-7337
+Description: The editor in IPython Notebook before 3.2.2 and Jupyter Notebook 4.0.x before 4.0.5 allows remote attackers to execute arbitrary JavaScript code via a crafted file, which triggers a redirect to files/, related to MIME types.
 
-Name: CVE-2023-26483
-Description: gosaml2 is a Pure Go implementation of SAML 2.0. SAML Service Providers using this library for SAML authentication support are likely susceptible to Denial of Service attacks. A bug in this library enables attackers to craft a `deflate`-compressed request which will consume significantly more memory during processing than the size of the original request. This may eventually lead to memory exhaustion and the process being killed. The maximum compression ratio achievable with `deflate` is 1032:1, so by limiting the size of bodies passed to gosaml2, limiting the rate and concurrency of calls, and ensuring that lots of memory is available to the process it _may_ be possible to help Go's garbage collector "keep up". Implementors are encouraged not to rely on this. This issue is fixed in version 0.9.0.
+Name: CVE-2015-6938
+Description: Cross-site scripting (XSS) vulnerability in the file browser in notebook/notebookapp.py in IPython Notebook before 3.2.2 and Jupyter Notebook 4.0.x before 4.0.5 allows remote attackers to inject arbitrary web script or HTML via a folder name.  NOTE: this was originally reported as a cross-site request forgery (CSRF) vulnerability, but this may be inaccurate.
 
-Name: CVE-2023-25824
-Description: Mod_gnutls is a TLS module for Apache HTTPD based on GnuTLS. Versions from 0.9.0 to 0.12.0 (including) did not properly fail blocking read operations on TLS connections when the transport hit timeouts. Instead it entered an endless loop retrying the read operation, consuming CPU resources. This could be exploited for denial of service attacks. If trace level logging was enabled, it would also produce an excessive amount of log output during the loop, consuming disk space. The problem has been fixed in commit d7eec4e598158ab6a98bf505354e84352f9715ec, please update to version 0.12.1. There are no workarounds, users who cannot update should apply the errno fix detailed in the security advisory.
+Name: CVE-2015-5607
+Description: Cross-site request forgery in the REST API in IPython 2 and 3.
 
-Name: CVE-2023-22959
-Description: WebChess through 0.9.0 and 1.0.0.rc2 allows SQL injection: mainmenu.php, chess.php, and opponentspassword.php (txtFirstName, txtLastName).
+Name: CVE-2015-4707
+Description: Cross-site scripting (XSS) vulnerability in IPython before 3.2 allows remote attackers to inject arbitrary web script or HTML via vectors involving JSON error messages and the /api/notebooks path.
 
-Name: CVE-2023-1000
-Description: A vulnerability was found in cyanomiko dcnnt-py up to 0.9.0. It has been classified as critical. Affected is the function main of the file dcnnt/plugins/notifications.py of the component Notification Handler. The manipulation leads to command injection. It is possible to launch the attack remotely. Upgrading to version 0.9.1 is able to address this issue. The patch is identified as b4021d784a97e25151a5353aa763a741e9a148f5. It is recommended to upgrade the affected component. VDB-262230 is the identifier assigned to this vulnerability.
+Name: CVE-2015-4706
+Description: Cross-site scripting (XSS) vulnerability in IPython 3.x before 3.2 allows remote attackers to inject arbitrary web script or HTML via vectors involving JSON error messages and the /api/contents path.
 
-Name: CVE-2022-4942
-Description: A vulnerability was found in mportuga eslint-detailed-reporter up to 0.9.0 and classified as problematic. Affected by this issue is the function renderIssue in the library lib/template-generator.js. The manipulation of the argument message leads to cross site scripting. The attack may be launched remotely. The patch is identified as 505c190efd4905990db6207863bdcbd9b1d7e1bd. It is recommended to apply a patch to fix this issue. VDB-226310 is the identifier assigned to this vulnerability.
+Name: CVE-2014-3429
+Description: IPython Notebook 0.12 through 1.x before 1.2 does not validate the origin of websocket requests, which allows remote attackers to execute arbitrary code by leveraging knowledge of the kernel id and a crafted page.
 
-Name: CVE-2022-4695
-Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
+Scraping search results from: cve_pages\matplotlib_3.9.1.html
+Name: CVE-2024-4043
+Description: The WP Ultimate Post Grid plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'wpupg-text' shortcode in all versions up to, and including, 3.9.1 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
 
-Name: CVE-2022-4694
-Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2024-32638
+Description: Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerability in Apache APISIX when using `forward-auth` plugin.This issue affects Apache APISIX: from 3.8.0, 3.9.0. Users are recommended to upgrade to version 3.8.1, 3.9.1 or higher, which fixes the issue.
 
-Name: CVE-2022-4692
-Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2024-30165
+Description: Amazon AWS Client VPN before 3.9.1 on macOS has a buffer overflow that could potentially allow a local actor to execute arbitrary commands with elevated permissions, a different vulnerability than CVE-2024-30164.
 
-Name: CVE-2022-4691
-Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2024-30164
+Description: Amazon AWS Client VPN has a buffer overflow that could potentially allow a local actor to execute arbitrary commands with elevated permissions. This is resolved in 3.11.1 on Windows, 3.9.1 on macOS, and 3.12.1 on Linux. NOTE: although the macOS resolution is the same as for CVE-2024-30165, this vulnerability on macOS is not the same as CVE-2024-30165.
 
-Name: CVE-2022-4690
-Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2023-49797
+Description: PyInstaller bundles a Python application and all its dependencies into a single package. A PyInstaller built application, elevated as a privileged process, may be tricked by an unprivileged attacker into deleting files the unprivileged user does not otherwise have access to. A user is affected if **all** the following are satisfied: 1. The user runs an application containing either `matplotlib` or `win32com`. 2. The application is ran as administrator (or at least a user with higher privileges than the attacker). 3. The user's temporary directory is not locked to that specific user (most likely due to `TMP`/`TEMP` environment variables pointing to an unprotected, arbitrary, non default location). Either: A. The attacker is able to very carefully time the replacement of a temporary file with a symlink. This switch must occur exactly between `shutil.rmtree()`'s builtin symlink check and the deletion itself B: The application was built with Python 3.7.x or earlier which has no protection against Directory Junctions links. The vulnerability has been addressed in PR #7827 which corresponds to `pyinstaller >= 5.13.1`. Users are advised to upgrade. There are no known workarounds for this vulnerability.
 
-Name: CVE-2022-4689
-Description: Improper Access Control in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2023-44981
+Description: Authorization Bypass Through User-Controlled Key vulnerability in Apache ZooKeeper. If SASL Quorum Peer authentication is enabled in ZooKeeper (quorum.auth.enableSasl=true), the authorization is done by verifying that the instance part in SASL authentication ID is listed in zoo.cfg server list. The instance part in SASL auth ID is optional and if it's missing, like 'eve@EXAMPLE.COM', the authorization check will be skipped. As a result an arbitrary endpoint could join the cluster and begin propagating counterfeit changes to the leader, essentially giving it complete read-write access to the data tree. Quorum Peer authentication is not enabled by default. Users are recommended to upgrade to version 3.9.1, 3.8.3, 3.7.2, which fixes the issue. Alternately ensure the ensemble election/quorum communication is protected by a firewall as this will mitigate the issue. See the documentation for more details on correct cluster administration.
 
-Name: CVE-2022-4688
-Description: Improper Authorization in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2023-36660
+Description: The OCB feature in libnettle in Nettle 3.9 before 3.9.1 allows memory corruption.
 
-Name: CVE-2022-4687
-Description: Incorrect Use of Privileged APIs in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2023-2734
+Description: The MStore API plugin for WordPress is vulnerable to authentication bypass in versions up to, and including, 3.9.1. This is due to insufficient verification on the user being supplied during the cart sync from mobile REST API request through the plugin. This makes it possible for unauthenticated attackers to log in as any existing user on the site, such as an administrator, if they have access to the user id.
 
-Name: CVE-2022-4686
-Description: Authorization Bypass Through User-Controlled Key in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2023-27178
+Description: An arbitrary file upload vulnerability in the upload function of GDidees CMS 3.9.1 allows attackers to execute arbitrary code via a crafted file.
 
-Name: CVE-2022-4684
-Description: Improper Access Control in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2023-2407
+Description: The Event Registration Calendar By vcita plugin, versions up to and including 3.9.1, and Online Payments &#8211; Get Paid with PayPal, Square & Stripe plugin, for WordPress are vulnerable to Cross-Site Request Forgery. This is due to missing nonce validation in the ls_parse_vcita_callback() function. This makes it possible for unauthenticated attackers to modify the plugin's settings and inject malicious JavaScript via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
 
-Name: CVE-2022-4683
-Description: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2023-2406
+Description: The Event Registration Calendar By vcita plugin, versions up to and including 3.9.1, and Online Payments &#8211; Get Paid with PayPal, Square & Stripe plugin, for WordPress are vulnerable to Stored Cross-Site Scripting via the 'email' parameter in versions up to, and including, 1.3.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with the edit_posts capability, such as contributors and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
 
-Name: CVE-2022-4609
-Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
+Name: CVE-2023-23764
+Description: An incorrect comparison vulnerability was identified in GitHub Enterprise Server that allowed commit smuggling by displaying an incorrect diff within the GitHub pull request UI. To do so, an attacker would need write access to the repository. This vulnerability affected GitHub Enterprise Server versions 3.7.0 and above and was fixed in versions 3.7.9, 3.8.2, and 3.9.1. This vulnerability was reported via the GitHub Bug Bounty program.
 
-Name: CVE-2022-39353
-Description: xmldom is a pure JavaScript W3C standard-based (XML DOM Level 2 Core) `DOMParser` and `XMLSerializer` module. xmldom parses XML that is not well-formed because it contains multiple top level elements, and adds all root nodes to the `childNodes` collection of the `Document`, without reporting any error or throwing. This breaks the assumption that there is only a single root node in the tree, which led to issuance of CVE-2022-39299 as it is a potential issue for dependents. Update to @xmldom/xmldom@~0.7.7, @xmldom/xmldom@~0.8.4 (dist-tag latest) or @xmldom/xmldom@>=0.9.0-beta.4 (dist-tag next). As a workaround, please one of the following approaches depending on your use case: instead of searching for elements in the whole DOM, only search in the `documentElement`or reject a document with a document that has more then 1 `childNode`.
+Name: CVE-2022-48566
+Description: An issue was discovered in compare_digest in Lib/hmac.py in Python through 3.9.1. Constant-time-defeating optimisations were possible in the accumulator variable in hmac.compare_digest.
 
-Name: CVE-2022-38790
-Description: Weave GitOps Enterprise before 0.9.0-rc.5 has a cross-site scripting (XSS) bug allowing a malicious user to inject a javascript: link in the UI. When clicked by a victim user, the script will execute with the victim's permission. The exposure appears in Weave GitOps Enterprise UI via a GitopsCluster dashboard link. An annotation can be added to a GitopsCluster custom resource.
+Name: CVE-2022-48565
+Description: An XML External Entity (XXE) issue was discovered in Python through 3.9.1. The plistlib module no longer accepts entity declarations in XML plist files to avoid XML vulnerabilities.
 
-Name: CVE-2022-3029
-Description: In NLnet Labs Routinator 0.9.0 up to and including 0.11.2, due to a mistake in error handling, data in RRDP snapshot and delta files that isn&#8217;t correctly base 64 encoded is treated as a fatal error and causes Routinator to exit. Worst case impact of this vulnerability is denial of service for the RPKI data that Routinator provides to routers. This may stop your network from validating route origins based on RPKI data. This vulnerability does not allow an attacker to manipulate RPKI data.
+Name: CVE-2022-48564
+Description: read_ints in plistlib.py in Python through 3.9.1 is vulnerable to a potential DoS attack via CPU and RAM exhaustion when processing malformed Apple Property List files in binary format.
 
-Name: CVE-2022-25203
-Description: Jenkins Team Views Plugin 0.9.0 and earlier does not escape team names, resulting in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Overall/Read permission.
+Name: CVE-2022-46848
+Description: Auth. (contributor+) Stored Cross-Site Scripting (XSS) vulnerability in Themeisle Visualizer: Tables and Charts Manager for WordPress plugin <= 3.9.1 versions.
 
-Name: CVE-2022-24684
-Description: HashiCorp Nomad and Nomad Enterprise 0.9.0 through 1.0.16, 1.1.11, and 1.2.5 allow operators with job-submit capabilities to use the spread stanza to panic server agents. Fixed in 1.0.18, 1.1.12, and 1.2.6.
+Name: CVE-2022-38972
+Description: Cross-site scripting vulnerability in Movable Type plugin A-Form versions prior to 4.1.1 (for Movable Type 7 Series) and versions prior to 3.9.1 (for Movable Type 6 Series) allows a remote unauthenticated attacker to inject an arbitrary script.
 
-Name: CVE-2021-45890
-Description: basic/BasicAuthProvider.java in AuthGuard before 0.9.0 allows authentication via an inactive identifier.
+Name: CVE-2022-38372
+Description: A hidden functionality vulnerability [CWE-1242] in FortiTester CLI 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow a local, privileged user to obtain a root shell on the device via an undocumented command.
 
-Name: CVE-2021-43174
-Description: NLnet Labs Routinator versions 0.9.0 up to and including 0.10.1, support the gzip transfer encoding when querying RRDP repositories. This encoding can be used by an RRDP repository to cause an out-of-memory crash in these versions of Routinator. RRDP uses XML which allows arbitrary amounts of white space in the encoded data. The gzip scheme compresses such white space extremely well, leading to very small compressed files that become huge when being decompressed for further processing, big enough that Routinator runs out of memory when parsing input data waiting for the next XML element.
+Name: CVE-2022-35846
+Description: An improper restriction of excessive authentication attempts vulnerability [CWE-307] in FortiTester Telnet port 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an unauthenticated attacker to guess the credentials of an admin user via a brute force attack.
 
-Name: CVE-2021-43083
-Description: Apache PLC4X - PLC4C (Only the C language implementation was effected) was vulnerable to an unsigned integer underflow flaw inside the tcp transport. Users should update to 0.9.1, which addresses this issue. However, in order to exploit this vulnerability, a user would have to actively connect to a mallicious device which could send a response with invalid content. Currently we consider the probability of this being exploited as quite minimal, however this could change in the future, especially with the industrial networks growing more and more together.
+Name: CVE-2022-35845
+Description: Multiple improper neutralization of special elements used in an OS Command ('OS Command Injection') vulnerabilities [CWE-78] in FortiTester 7.1.0, 7.0 all versions, 4.0.0 through 4.2.0, 2.3.0 through 3.9.1 may allow an authenticated attacker to execute arbitrary commands in the underlying shell.
 
-Name: CVE-2021-28656
-Description: Cross-Site Request Forgery (CSRF) vulnerability in Credential page of Apache Zeppelin allows an attacker to submit malicious request. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+Name: CVE-2022-35844
+Description: An improper neutralization of special elements used in an OS command vulnerability [CWE-78] in the management interface of FortiTester 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an authenticated attacker to execute unauthorized commands via specifically crafted arguments to commands of the certificate import feature.
 
-Name: CVE-2021-28655
-Description: The improper Input Validation vulnerability in "&#8221;Move folder to Trash&#8221; feature of Apache Zeppelin allows an attacker to delete the arbitrary files. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+Name: CVE-2022-33874
+Description: An improper neutralization of special elements used in an OS Command ('OS Command Injection') vulnerabilities [CWE-78] in SSH login components of FortiTester 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an unauthenticated remote attacker to execute arbitrary command in the underlying shell.
 
-Name: CVE-2021-27578
-Description: Cross Site Scripting vulnerability in markdown interpreter of Apache Zeppelin allows an attacker to inject malicious scripts. This issue affects Apache Zeppelin Apache Zeppelin versions prior to 0.9.0.
+Name: CVE-2022-33873
+Description: An improper neutralization of special elements used in an OS Command ('OS Command Injection') vulnerabilities [CWE-78] in Console login components of FortiTester 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an unauthenticated attacker to execute arbitrary command in the underlying shell.
 
-Name: CVE-2021-23393
-Description: This affects the package Flask-Unchained before 0.9.0. When using the the _validate_redirect_url function, it is possible to bypass URL validation and redirect a user to an arbitrary URL by providing multiple back slashes such as \\\evil.com/path. This vulnerability is only exploitable if an alternative WSGI server other than Werkzeug is used, or the default behaviour of Werkzeug is modified using 'autocorrect_location_header=False.
+Name: CVE-2022-33872
+Description: An improper neutralization of special elements used in an OS Command ('OS Command Injection') vulnerabilities [CWE-78] in Telnet login components of FortiTester 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an unauthenticated remote attacker to execute arbitrary command in the underlying shell.
 
-Name: CVE-2021-21272
-Description: ORAS is open source software which enables a way to push OCI Artifacts to OCI Conformant registries. ORAS is both a CLI for initial testing and a Go Module. In ORAS from version 0.4.0 and before version 0.9.0, there is a "zip-slip" vulnerability. The directory support feature allows the downloaded gzipped tarballs to be automatically extracted to the user-specified directory where the tarball can have symbolic links and hard links. A well-crafted tarball or tarballs allow malicious artifact providers linking, writing, or overwriting specific files on the host filesystem outside of the user-specified directory unexpectedly with the same permissions as the user who runs `oras pull`. Users of the affected versions are impacted if they are `oras` CLI users who runs `oras pull`, or if they are Go programs, which invoke `github.com/deislabs/oras/pkg/content.FileStore`. The problem has been fixed in version 0.9.0. For `oras` CLI users, there is no workarounds other than pulling from a trusted artifact provider. For `oras` package users, the workaround is to not use `github.com/deislabs/oras/pkg/content.FileStore`, and use other content stores instead, or pull from a trusted artifact provider.
+Name: CVE-2022-33870
+Description: An improper neutralization of special elements used in an OS command vulnerability [CWE-78] in the command line interpreter of FortiTester 3.0.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an authenticated attacker to execute unauthorized commands via specifically crafted arguments to existing commands.
 
-Name: CVE-2020-5227
-Description: Feedgen (python feedgen) before 0.9.0 is susceptible to XML Denial of Service attacks. The *feedgen* library allows supplying XML as content for some of the available fields. This XML will be parsed and integrated into the existing XML tree. During this process, feedgen is vulnerable to XML Denial of Service Attacks (e.g. XML Bomb). This becomes a concern in particular if feedgen is used to include content from untrused sources and if XML (including XHTML) is directly included instead of providing plain tex content only. This problem has been fixed in feedgen 0.9.0 which disallows XML entity expansion and external resources.
+Name: CVE-2022-2542
+Description: The uContext for Clickbank plugin for WordPress is vulnerable to Cross-Site Request Forgery to Cross-Site Scripting in versions up to, and including 3.9.1. This is due to missing nonce validation in the ~/app/sites/ajax/actions/keyword_save.php file that is called via the doAjax() function. This makes it possible for unauthenticated attackers to modify the plugin's settings and inject malicious web scripts via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
 
-Name: CVE-2020-28348
-Description: HashiCorp Nomad and Nomad Enterprise 0.9.0 up to 0.12.7 client Docker file sandbox feature may be subverted when not explicitly disabled or when using a volume mount type. Fixed in 0.12.8, 0.11.7, and 0.10.8.
+Name: CVE-2022-2541
+Description: The uContext for Amazon plugin for WordPress is vulnerable to Cross-Site Request Forgery to Cross-Site Scripting in versions up to, and including 3.9.1. This is due to missing nonce validation in the ~/app/sites/ajax/actions/keyword_save.php file that is called via the doAjax() function. This makes it possible for unauthenticated attackers to modify the plugin's settings and inject malicious web scripts via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
 
-Name: CVE-2020-27195
-Description: HashiCorp Nomad and Nomad Enterprise version 0.9.0 up to 0.12.5 client file sandbox feature can be subverted using either the template or artifact stanzas. Fixed in 0.12.6, 0.11.5, and 0.10.6
+Name: CVE-2021-45812
+Description: NUUO Network Video Recorder NVRsolo 3.9.1 is affected by a Cross Site Scripting (XSS) vulnerability. An attacker can steal the user's session by injecting malicious JavaScript codes which leads to session hijacking.
 
-Name: CVE-2020-26302
-Description: is.js is a general-purpose check library. Versions 0.9.0 and prior contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). is.js uses a regex copy-pasted from a gist to validate URLs. Trying to validate a malicious string can cause the regex to loop &#8220;forever." This vulnerability was found using a CodeQL query which identifies inefficient regular expressions. is.js has no patch for this issue.
+Name: CVE-2021-32000
+Description: A UNIX Symbolic Link (Symlink) Following vulnerability in the clone-master-clean-up.sh script of clone-master-clean-up in SUSE Linux Enterprise Server 12 SP3, SUSE Linux Enterprise Server 15 SP1; openSUSE Factory allows local attackers to delete arbitrary files. This issue affects: SUSE Linux Enterprise Server 12 SP3 clone-master-clean-up version 1.6-4.6.1 and prior versions. SUSE Linux Enterprise Server 15 SP1 clone-master-clean-up version 1.6-3.9.1 and prior versions. openSUSE Factory clone-master-clean-up version 1.6-1.4 and prior versions.
 
-Name: CVE-2020-13929
-Description: Authentication bypass vulnerability in Apache Zeppelin allows an attacker to bypass Zeppelin authentication mechanism to act as another user. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+Name: CVE-2021-3177
+Description: Python 3.x through 3.9.1 has a buffer overflow in PyCArg_repr in _ctypes/callproc.c, which may lead to remote code execution in certain Python applications that accept floating-point numbers as untrusted input, as demonstrated by a 1e300 argument to c_double.from_param. This occurs because sprintf is used unsafely.
 
-Name: CVE-2020-10660
-Description: HashiCorp Vault and Vault Enterprise versions 0.9.0 through 1.3.3 may, under certain circumstances, have an Entity's Group membership inadvertently include Groups the Entity no longer has permissions to. Fixed in 1.3.4.
+Name: CVE-2021-28914
+Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 allow the user to set a weak password because the strength is shown in configuration tool, but finally not enforced. This is usable and part of an attack chain to gain SSH root access.
 
-Name: CVE-2019-20171
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There are memory leaks in metx_New in isomedia/box_code_base.c and abst_Read in isomedia/box_code_adobe.c.
+Name: CVE-2021-28913
+Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 allow unauthenticated attackers access to /webif/SecurityModule to validate the so called and hard coded unique 'eibPort String' which acts as the root SSH key passphrase. This is usable and part of an attack chain to gain SSH root access.
 
-Name: CVE-2019-20170
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is an invalid pointer dereference in the function GF_IPMPX_AUTH_Delete() in odf/ipmpx_code.c.
+Name: CVE-2021-28911
+Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 allow unauthenticated attackers access to /tmp path which contains some sensitive data (e.g. device serial number). Having those info, a possible loginId can be self-calculated in a brute force attack against BMX interface. This is usable and part of an attack chain to gain SSH root access.
 
-Name: CVE-2019-20169
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a use-after-free in the function trak_Read() in isomedia/box_code_base.c.
+Name: CVE-2021-28910
+Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 contains basic SSRF vulnerability. It allow unauthenticated attackers to request to any internal and external server.
 
-Name: CVE-2019-20168
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a use-after-free in the function gf_isom_box_dump_ex() in isomedia/box_funcs.c.
+Name: CVE-2021-28909
+Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 allow unauthenticated attackers to access uncontrolled the login service at /webif/SecurityModule in a brute force attack. The password could be weak and default username is known as 'admin'. This is usable and part of an attack chain to gain SSH root access.
 
-Name: CVE-2019-20167
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function senc_Parse() in isomedia/box_code_drm.c.
+Name: CVE-2020-8127
+Description: Insufficient validation in cross-origin communication (postMessage) in reveal.js version 3.9.1 and earlier allow attackers to perform cross-site scripting attacks.
 
-Name: CVE-2019-20166
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function gf_isom_dump() in isomedia/box_dump.c.
+Name: CVE-2020-5281
+Description: In Perun before version 3.9.1, VO or group manager can modify configuration of the LDAP extSource to retrieve all from Perun LDAP. Issue is fixed in version 3.9.1 by sanitisation of the input.
 
-Name: CVE-2019-20165
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function ilst_item_Read() in isomedia/box_code_apple.c.
+Name: CVE-2020-29594
+Description: Rocket.Chat before 0.74.4, 1.x before 1.3.4, 2.x before 2.4.13, 3.x before 3.7.3, 3.8.x before 3.8.3, and 3.9.x before 3.9.1 mishandles SAML login.
 
-Name: CVE-2019-20164
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function gf_isom_box_del() in isomedia/box_funcs.c.
+Name: CVE-2020-28208
+Description: An email address enumeration vulnerability exists in the password reset function of Rocket.Chat through 3.9.1.
 
-Name: CVE-2019-20163
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function gf_odf_avc_cfg_write_bs() in odf/descriptors.c.
+Name: CVE-2020-25631
+Description: A vulnerability was found in Moodle 3.9 to 3.9.1, 3.8 to 3.8.4 and 3.7 to 3.7.7 where it was possible to include JavaScript in a book's chapter title, which was not escaped on the "Add new chapter" page. This is fixed in 3.9.2, 3.8.5 and 3.7.8.
 
-Name: CVE-2019-20162
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is heap-based buffer overflow in the function gf_isom_box_parse_ex() in isomedia/box_funcs.c.
+Name: CVE-2020-25630
+Description: A vulnerability was found in Moodle where the decompressed size of zip files was not checked against available user quota before unzipping them, which could lead to a denial of service risk. This affects versions 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. Fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.
 
-Name: CVE-2019-20161
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is heap-based buffer overflow in the function ReadGF_IPMPX_WatermarkingInit() in odf/ipmpx_code.c.
+Name: CVE-2020-25629
+Description: A vulnerability was found in Moodle where users with "Log in as" capability in a course context (typically, course managers) may gain access to some site administration capabilities by "logging in as" a System manager. This affects 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. This is fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.
 
-Name: CVE-2019-20160
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a stack-based buffer overflow in the function av1_parse_tile_group() in media_tools/av_parsers.c.
+Name: CVE-2020-25628
+Description: The filter in the tag manager required extra sanitizing to prevent a reflected XSS risk. This affects 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. Fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.
 
-Name: CVE-2019-20159
-Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a memory leak in dinf_New() in isomedia/box_code_base.c.
+Name: CVE-2020-25627
+Description: The moodlenetprofile user profile field required extra sanitizing to prevent a stored XSS risk. This affects versions 3.9 to 3.9.1. Fixed in 3.9.2.
 
-Name: CVE-2019-18609
-Description: An issue was discovered in amqp_handle_input in amqp_connection.c in rabbitmq-c 0.9.0. There is an integer overflow that leads to heap memory corruption in the handling of CONNECTION_STATE_HEADER. A rogue server could return a malicious frame header that leads to a smaller target_size value than needed. This condition is then carried on to a memcpy function that copies too much data into a heap buffer.
+Name: CVE-2020-14322
+Description: In Moodle before 3.9.1, 3.8.4, 3.7.7 and 3.5.13, yui_combo needed to limit the amount of files it can load to help mitigate the risk of denial of service.
 
-Name: CVE-2019-12618
-Description: HashiCorp Nomad 0.9.0 through 0.9.1 has Incorrect Access Control via the exec driver.
+Name: CVE-2020-14321
+Description: In Moodle before 3.9.1, 3.8.4, 3.7.7 and 3.5.13, teachers of a course were able to assign themselves the manager role within that course.
 
-Name: CVE-2019-11404
-Description: arrow-kt Arrow before 0.9.0 resolved Gradle build artifacts (for compiling and building the published JARs) over HTTP instead of HTTPS. Any of these dependent artifacts could have been maliciously compromised by an MITM attack.
+Name: CVE-2020-14320
+Description: In Moodle before 3.9.1, 3.8.4 and 3.7.7, the filter in the admin task log required extra sanitizing to prevent a reflected XSS risk.
 
-Name: CVE-2019-10095
-Description: bash command injection vulnerability in Apache Zeppelin allows an attacker to inject system commands into Spark interpreter settings. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+Name: CVE-2020-13129
+Description: An issue was discovered in the stashcat app through 3.9.1 for macOS, Windows, Android, iOS, and possibly other platforms. The GET method is used with client_key and device_id data in the query string, which allows attackers to obtain sensitive information by reading web-server logs.
 
-Name: CVE-2018-3733
-Description: crud-file-server node module before 0.9.0 suffers from a Path Traversal vulnerability due to incorrect validation of url, which allows a malicious user to read content of any file with known path.
+Name: CVE-2019-18905
+Description: A Insufficient Verification of Data Authenticity vulnerability in autoyast2 of SUSE Linux Enterprise Server 12, SUSE Linux Enterprise Server 15 allows remote attackers to MITM connections when deprecated and unused functionality of autoyast is used to create images. This issue affects: SUSE Linux Enterprise Server 12 autoyast2 version 4.1.9-3.9.1 and prior versions. SUSE Linux Enterprise Server 15 autoyast2 version 4.0.70-3.20.1 and prior versions.
 
-Name: CVE-2018-19200
-Description: An issue was discovered in uriparser before 0.9.0. UriCommon.c allows attempted operations on NULL input via a uriResetUri* function.
+Name: CVE-2019-18904
+Description: A Uncontrolled Resource Consumption vulnerability in rmt of SUSE Linux Enterprise High Performance Computing 15-ESPOS, SUSE Linux Enterprise High Performance Computing 15-LTSS, SUSE Linux Enterprise Module for Public Cloud 15-SP1, SUSE Linux Enterprise Module for Server Applications 15, SUSE Linux Enterprise Module for Server Applications 15-SP1, SUSE Linux Enterprise Server 15-LTSS, SUSE Linux Enterprise Server for SAP 15; openSUSE Leap 15.1 allows remote attackers to cause DoS against rmt by requesting migrations. This issue affects: SUSE Linux Enterprise High Performance Computing 15-ESPOS rmt-server versions prior to 2.5.2-3.26.1. SUSE Linux Enterprise High Performance Computing 15-LTSS rmt-server versions prior to 2.5.2-3.26.1. SUSE Linux Enterprise Module for Public Cloud 15-SP1 rmt-server versions prior to 2.5.2-3.9.1. SUSE Linux Enterprise Module for Server Applications 15 rmt-server versions prior to 2.5.2-3.26.1. SUSE Linux Enterprise Module for Server Applications 15-SP1 rmt-server versions prior to 2.5.2-3.9.1. SUSE Linux Enterprise Server 15-LTSS rmt-server versions prior to 2.5.2-3.26.1. SUSE Linux Enterprise Server for SAP 15 rmt-server versions prior to 2.5.2-3.26.1. openSUSE Leap 15.1 rmt-server versions prior to 2.5.2-lp151.2.9.1.
 
-Name: CVE-2018-19199
-Description: An issue was discovered in uriparser before 0.9.0. UriQuery.c allows an integer overflow via a uriComposeQuery* or uriComposeQueryEx* function because of an unchecked multiplication.
+Name: CVE-2019-12742
+Description: Bludit prior to 3.9.1 allows a non-privileged user to change the password of any account, including admin. This occurs because of bl-kernel/admin/controllers/user-password.php Insecure Direct Object Reference (a modified username POST parameter).
 
-Name: CVE-2018-19198
-Description: An issue was discovered in uriparser before 0.9.0. UriQuery.c allows an out-of-bounds write via a uriComposeQuery* or uriComposeQueryEx* function because the '&' character is mishandled in certain contexts.
+Name: CVE-2019-12386
+Description: An issue was discovered in Ampache through 3.9.1. A stored XSS exists in the localplay.php LocalPlay "add instance" functionality. The injected code is reflected in the instances menu. This vulnerability can be abused to force an admin to create a new privileged user whose credentials are known by the attacker.
 
-Name: CVE-2018-18434
-Description: An issue was discovered in litemall 0.9.0. Arbitrary file download is possible via ../ directory traversal in linlinjava/litemall/wx/web/WxStorageController.java in the litemall-wx-api component.
+Name: CVE-2019-12385
+Description: An issue was discovered in Ampache through 3.9.1. The search engine is affected by a SQL Injection, so any user able to perform lib/class/search.class.php searches (even guest users) can dump any data contained in the database (sessions, hashed passwords, etc.). This may lead to a full compromise of admin accounts, when combined with the weak password generator algorithm used in the lostpassword functionality.
 
-Name: CVE-2017-18367
-Description: libseccomp-golang 0.9.0 and earlier incorrectly generates BPFs that OR multiple arguments rather than ANDing them. A process running under a restrictive seccomp filter that specified multiple syscall arguments could bypass intended access restrictions by specifying a single matching argument.
+Name: CVE-2019-10689
+Description: VVX products using UCS software version 5.9.2 and earlier with Better Together over Ethernet Connector (BToE) application version 3.9.1 and earlier provides insufficient authentication between the BToE application and the BToE component, resulting in leakage of sensitive information.
 
-Name: CVE-2017-1000198
-Description: tcmu-runner daemon version 0.9.0 to 1.2.0 is vulnerable to invalid memory references in the handler_glfs.so handler resulting in denial of service
+Name: CVE-2019-10688
+Description: VVX products with software versions including and prior to, UCS 5.9.2 with Better Together over Ethernet Connector (BToE) application 3.9.1, use hard-coded credentials to establish connections between the host application and the device.
 
-Name: CVE-2016-15017
-Description: A vulnerability has been found in fabarea media_upload on TYPO3 and classified as critical. This vulnerability affects the function getUploadedFileList of the file Classes/Service/UploadFileService.php. The manipulation leads to pathname traversal. Upgrading to version 0.9.0 is able to address this issue. The patch is identified as b25d42a4981072321c1a363311d8ea2a4ac8763a. It is recommended to upgrade the affected component. VDB-217786 is the identifier assigned to this vulnerability.
+Name: CVE-2019-1003010
+Description: A cross-site request forgery vulnerability exists in Jenkins Git Plugin 3.9.1 and earlier in src/main/java/hudson/plugins/git/GitTagAction.java that allows attackers to create a Git tag in a workspace and attach corresponding metadata to a build record.
 
-Name: CVE-2016-10931
-Description: An issue was discovered in the openssl crate before 0.9.0 for Rust. There is an SSL/TLS man-in-the-middle vulnerability because certificate verification is off by default and there is no API for hostname verification.
+Name: CVE-2018-25045
+Description: Django REST framework (aka django-rest-framework) before 3.9.1 allows XSS because the default DRF Browsable API view templates disable autoescaping.
 
-Name: CVE-2015-2831
-Description: Buffer overflow in das_watchdog 0.9.0 allows local users to execute arbitrary code with root privileges via a large string in the XAUTHORITY environment variable.
+Name: CVE-2018-19864
+Description: NUUO NVRmini2 Network Video Recorder firmware through 3.9.1 allows remote attackers to execute arbitrary code or cause a denial of service (buffer overflow), resulting in ability to read camera feeds or reconfigure the device.
 
-Name: CVE-2015-10119
-Description: A vulnerability, which was classified as problematic, has been found in View All Posts Page Plugin up to 0.9.0 on WordPress. This issue affects the function action_admin_notices_activation of the file view-all-posts-pages.php. The manipulation leads to cross site scripting. The attack may be initiated remotely. Upgrading to version 0.9.1 is able to address this issue. The patch is named bf914f3a59063fa4df8fd4925ae18a5d852396d7. It is recommended to upgrade the affected component. The associated identifier of this vulnerability is VDB-233363.
+Name: CVE-2018-15716
+Description: NUUO NVRMini2 version 3.9.1 is vulnerable to authenticated remote command injection. An attacker can send crafted requests to upgrade_handle.php to execute OS commands as root.
 
-Name: CVE-2013-7416
-Description: canto_curses/guibase.py in Canto Curses before 0.9.0 allows remote feed servers to execute arbitrary commands via shell metacharacters in a URL in a feed.
+Name: CVE-2017-6099
+Description: Cross-site scripting (XSS) vulnerability in GetAuthDetails.html.php in PayPal PHP Merchant SDK (aka merchant-sdk-php) 3.9.1 allows remote attackers to inject arbitrary web script or HTML via the token parameter.
 
-Name: CVE-2013-6494
-Description: fedup 0.9.0 in Fedora 19, 20, and 21 uses a temporary directory with a static name for its download cache, which allows local users to cause a denial of service (prevention of system updates).
+Name: CVE-2015-9310
+Description: The all-in-one-wp-security-and-firewall plugin before 3.9.1 for WordPress has multiple SQL injection issues.
 
-Name: CVE-2013-2191
-Description: python-bugzilla before 0.9.0 does not validate X.509 certificates, which allows man-in-the-middle attackers to spoof Bugzilla servers via a crafted certificate.
+Name: CVE-2015-5208
+Description: Apache Cordova iOS before 4.0.0 allows remote attackers to execute arbitrary plugins via a link.
 
-Name: CVE-2013-1853
-Description: Almanah Diary 0.9.0 and 0.10.0 does not encrypt the database when closed, which allows local users to obtain sensitive information by reading the database.
+Name: CVE-2015-5207
+Description: Apache Cordova iOS before 4.0.0 might allow attackers to bypass a URL whitelist protection mechanism in an app and load arbitrary resources by leveraging unspecified methods.
 
-Name: CVE-2013-1801
-Description: The httparty gem 0.9.0 and earlier for Ruby does not properly restrict casts of string values, which might allow remote attackers to conduct object-injection attacks and execute arbitrary code, or cause a denial of service (memory and CPU consumption) by leveraging Action Pack support for YAML type conversion, a similar vulnerability to CVE-2013-0156.
+Name: CVE-2015-1204
+Description: Cross-site scripting (XSS) vulnerability in the Save Filters functionality in the WP Slimstat plugin before 3.9.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the fs[resource] parameter in the wp-slim-view-2 page to wp-admin/admin.php.
 
-Name: CVE-2012-1410
-Description: Multiple cross-site scripting (XSS) vulnerabilities in the History Window implementation in Kadu 0.9.0 through 0.11.0 allow remote attackers to inject arbitrary web script or HTML via a crafted (1) SMS message, (2) presence message, or (3) status description.
+Name: CVE-2014-6859
+Description: The Daum Maps - Subway (aka net.daum.android.map) application 3.9.1 for Android does not verify X.509 certificates from SSL servers, which allows man-in-the-middle attackers to spoof servers and obtain sensitive information via a crafted certificate.
 
-Name: CVE-2012-1245
-Description: Cross-site scripting (XSS) vulnerability in the cleanup_urls function in forum/utils/html.py in OSQA before 1234, and 0.9.0 Beta 3 and earlier, allows remote attackers to inject arbitrary web script or HTML via vectors related to a crafted URI.
+Name: CVE-2014-0193
+Description: WebSocket08FrameDecoder in Netty 3.6.x before 3.6.9, 3.7.x before 3.7.1, 3.8.x before 3.8.2, 3.9.x before 3.9.1, and 4.0.x before 4.0.19 allows remote attackers to cause a denial of service (memory consumption) via a TextWebSocketFrame followed by a long stream of ContinuationWebSocketFrames.
 
-Name: CVE-2012-0023
-Description: Double free vulnerability in the get_chunk_header function in modules/demux/ty.c in VideoLAN VLC media player 0.9.0 through 1.1.12 allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via a crafted TiVo (TY) file.
+Name: CVE-2013-4942
+Description: Cross-site scripting (XSS) vulnerability in flashuploader.swf in the Uploader component in Yahoo! YUI 3.5.0 through 3.9.1, as used in Moodle through 2.1.10, 2.2.x before 2.2.11, 2.3.x before 2.3.8, 2.4.x before 2.4.5, 2.5.x before 2.5.1, and other products, allows remote attackers to inject arbitrary web script or HTML via a crafted string in a URL.
 
-Name: CVE-2011-3364
-Description: Incomplete blacklist vulnerability in the svEscape function in settings/plugins/ifcfg-rh/shvar.c in the ifcfg-rh plug-in for GNOME NetworkManager 0.9.1, 0.9.0, 0.8.1, and possibly other versions, when PolicyKit is configured to allow users to create new connections, allows local users to execute arbitrary commands via a newline character in the name for a new network connection, which is not properly handled when writing to the ifcfg file.
+Name: CVE-2013-4941
+Description: Cross-site scripting (XSS) vulnerability in uploader.swf in the Uploader component in Yahoo! YUI 3.2.0 through 3.9.1, as used in Moodle through 2.1.10, 2.2.x before 2.2.11, 2.3.x before 2.3.8, 2.4.x before 2.4.5, 2.5.x before 2.5.1, and other products, allows remote attackers to inject arbitrary web script or HTML via a crafted string in a URL.
 
-Name: CVE-2011-1486
-Description: libvirtd in libvirt before 0.9.0 does not use thread-safe error reporting, which allows remote attackers to cause a denial of service (crash) by causing multiple threads to report errors at the same time.
+Name: CVE-2013-4939
+Description: Cross-site scripting (XSS) vulnerability in io.swf in the IO Utility component in Yahoo! YUI 3.0.0 through 3.9.1, as used in Moodle through 2.1.10, 2.2.x before 2.2.11, 2.3.x before 2.3.8, 2.4.x before 2.4.5, 2.5.x before 2.5.1, and other products, allows remote attackers to inject arbitrary web script or HTML via a crafted string in a URL.
 
-Name: CVE-2010-5142
-Description: chef-server-api/app/controllers/users.rb in the API in Chef before 0.9.0 does not require administrative privileges for the create, destroy, and update methods, which allows remote authenticated users to manage user accounts via requests to the /users URI.
+Name: CVE-2013-4668
+Description: Directory traversal vulnerability in File Roller 3.6.x before 3.6.4, 3.8.x before 3.8.3, and 3.9.x before 3.9.3, when libarchive is used, allows remote attackers to create arbitrary files via a crafted archive that is not properly handled in a "Keep directory structure" action, related to fr-archive-libarchive.c and fr-window.c.
 
-Name: CVE-2010-4960
-Description: Cross-site scripting (XSS) vulnerability in the Branchenbuch (aka Yellow Pages or mh_branchenbuch) extension before 0.9.1 for TYPO3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
+Name: CVE-2011-3283
+Description: Cisco Carrier Routing System 3.9.1 allows remote attackers to cause a denial of service (Metro subsystem crash) via a fragmented GRE packet, aka Bug ID CSCts14887.
 
-Name: CVE-2010-2937
-Description: The ReadMetaFromId3v2 function in taglib.cpp in the TagLib plugin in VideoLAN VLC media player 0.9.0 through 1.1.2 does not properly process ID3v2 tags, which allows remote attackers to cause a denial of service (application crash) via a crafted media file.
+Name: CVE-2011-0949
+Description: Cisco IOS XR 3.6.x, 3.8.x before 3.8.3, and 3.9.x before 3.9.1 does not properly remove sshd_lock files from /tmp/, which allows remote attackers to cause a denial of service (disk consumption) by making many SSHv1 connections, aka Bug ID CSCtd64417.
 
-Name: CVE-2010-10008
-Description: ** UNSUPPORTED WHEN ASSIGNED ** A vulnerability was found in simplesamlphp simplesamlphp-module-openidprovider up to 0.8.x. It has been declared as problematic. Affected by this vulnerability is an unknown functionality of the file templates/trust.tpl.php. The manipulation of the argument StateID leads to cross site scripting. The attack can be launched remotely. Upgrading to version 0.9.0 is able to address this issue. The identifier of the patch is 8365d48c863cf06ccf1465cc0a161cefae29d69d. It is recommended to upgrade the affected component. The identifier VDB-218473 was assigned to this vulnerability. NOTE: This vulnerability only affects products that are no longer supported by the maintainer.
+Name: CVE-2011-0943
+Description: Cisco IOS XR 3.8.3, 3.8.4, and 3.9.1 allows remote attackers to cause a denial of service (NetIO process restart or device reload) via a crafted IPv4 packet, aka Bug ID CSCth44147.
 
-Name: CVE-2009-4377
-Description: The (1) SMB and (2) SMB2 dissectors in Wireshark 0.9.0 through 1.2.4 allow remote attackers to cause a denial of service (crash) via a crafted packet that triggers a NULL pointer dereference, as demonstrated by fuzz-2009-12-07-11141.pcap.
+Name: CVE-2010-3035
+Description: Cisco IOS XR 3.4.0 through 3.9.1, when BGP is enabled, does not properly handle unrecognized transitive attributes, which allows remote attackers to cause a denial of service (peering reset) via a crafted prefix announcement, as demonstrated in the wild in August 2010 with attribute type code 99, aka Bug ID CSCti62211.
 
-Name: CVE-2008-5276
-Description: Integer overflow in the ReadRealIndex function in real.c in the Real demuxer plugin in VideoLAN VLC media player 0.9.0 through 0.9.7 allows remote attackers to execute arbitrary code via a malformed RealMedia (.rm) file that triggers a heap-based buffer overflow.
+Name: CVE-2006-4745
+Description: ScaryBear PocketExpense Pro 3.9.1 uses an internally recorded key to protect a data file whose contents are stored in plaintext, which allows local users to disable authentication and access the file by modifying a certain value in the file header.
 
-Name: CVE-2008-4957
-Description: find_flags in Kitware GCC-XML (gccxml) 0.9.0 allows local users to overwrite arbitrary files via a symlink attack on a /tmp/*.cxx temporary file.
+Name: CVE-2005-1280
+Description: The rsvp_print function in tcpdump 3.9.1 and earlier allows remote attackers to cause a denial of service (infinite loop) via a crafted RSVP packet of length 4.
 
-Name: CVE-2008-4712
-Description: Directory traversal vulnerability in pages/showblog.php in LnBlog 0.9.0 and earlier, when magic_quotes_gpc is disabled, allows remote attackers to include and execute arbitrary local files via a .. (dot dot) in the plugin parameter.
+Name: CVE-2005-1278
+Description: The isis_print function, as called by isoclns_print, in tcpdump 3.9.1 and earlier allows remote attackers to cause a denial of service (infinite loop) via a zero length, as demonstrated using a GRE packet.
 
-Name: CVE-2008-4654
-Description: Stack-based buffer overflow in the parse_master function in the Ty demux plugin (modules/demux/ty.c) in VLC Media Player 0.9.0 through 0.9.4 allows remote attackers to execute arbitrary code via a TiVo TY media file with a header containing a crafted size value.
+Scraping search results from: cve_pages\numpy_1.26.4.html
+Name: CVE-2024-4400
+Description: The Post and Page Builder by BoldGrid &#8211; Visual Drag and Drop Editor plguin for WordPress is vulnerable to Stored Cross-Site Scripting via an unknown parameter in versions up to, and including, 1.26.4 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level permissions and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
 
-Name: CVE-2008-2147
-Description: Untrusted search path vulnerability in VideoLAN VLC before 0.9.0 allows local users to execute arbitrary code via a malicious library under the modules/ or plugins/ subdirectories of the current working directory.
+Name: CVE-2024-34072
+Description: sagemaker-python-sdk is a library for training and deploying machine learning models on Amazon SageMaker. The sagemaker.base_deserializers.NumpyDeserializer module before v2.218.0 allows potentially unsafe deserialization when untrusted data is passed as pickled object arrays. This consequently may allow an unprivileged third party to cause remote code execution, denial of service, affecting both confidentiality and integrity. Users are advised to upgrade to version 2.218.0. Users unable to upgrade should not pass pickled numpy object arrays which originated from an untrusted source, or that could have been tampered with. Only pass pickled numpy object arrays from trusted sources.
 
-Name: CVE-2008-1945
-Description: QEMU 0.9.0 does not properly handle changes to removable media, which allows guest OS users to read arbitrary files on the host OS by using the diskformat: parameter in the -usbdevice option to modify the disk-image header to identify a different format, a related issue to CVE-2008-2004.
+Name: CVE-2023-35944
+Description: Envoy is an open source edge and service proxy designed for cloud-native applications. Envoy allows mixed-case schemes in HTTP/2, however, some internal scheme checks are case-sensitive. Prior to versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, this can lead to the rejection of requests with mixed-case schemes such as `htTp` or `htTps`, or the bypassing of some requests such as `https` in unencrypted connections. With a fix in versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, Envoy will now lowercase scheme values by default, and change the internal scheme checks that were case-sensitive to be case-insensitive. There are no known workarounds for this issue.
 
-Name: CVE-2008-1686
-Description: Array index vulnerability in Speex 1.1.12 and earlier, as used in libfishsound 0.9.0 and earlier, including Illiminable DirectShow Filters and Annodex Plugins for Firefox, xine-lib before 1.1.12, and many other products, allows remote attackers to execute arbitrary code via a header structure containing a negative offset, which is used to dereference a function pointer.
+Name: CVE-2023-35943
+Description: Envoy is an open source edge and service proxy designed for cloud-native applications. Prior to versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, the CORS filter will segfault and crash Envoy when the `origin` header is removed and deleted between `decodeHeaders`and `encodeHeaders`. Versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12 have a fix for this issue. As a workaround, do not remove the `origin` header in the Envoy configuration.
 
-Name: CVE-2007-6227
-Description: QEMU 0.9.0 allows local users of a Windows XP SP2 guest operating system to overwrite the TranslationBlock (code_gen_buffer) buffer, and probably have unspecified other impacts related to an "overflow," via certain Windows executable programs, as demonstrated by qemu-dos.com.
+Name: CVE-2023-35942
+Description: Envoy is an open source edge and service proxy designed for cloud-native applications. Prior to versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, gRPC access loggers using listener's global scope can cause a `use-after-free` crash when the listener is drained. Versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12 have a fix for this issue. As a workaround, disable gRPC access log or stop listener update.
 
-Name: CVE-2007-5953
-Description: Unspecified vulnerability in Really Simple CalDAV Store (RSCDS) before 0.9.0 allows attackers to obtain sensitive information via unspecified vectors.
+Name: CVE-2023-35941
+Description: Envoy is an open source edge and service proxy designed for cloud-native applications. Prior to versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, a malicious client is able to construct credentials with permanent validity in some specific scenarios. This is caused by the some rare scenarios in which HMAC payload can be always valid in OAuth2 filter's check. Versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12 have a fix for this issue. As a workaround, avoid wildcards/prefix domain wildcards in the host's domain configuration.
 
-Name: CVE-2007-5315
-Description: PHP remote file inclusion vulnerability in common.php in LiveAlbum 0.9.0, when register_globals is enabled, allows remote attackers to execute arbitrary PHP code via a URL in the livealbum_dir parameter.
+Name: CVE-2022-41884
+Description: TensorFlow is an open source platform for machine learning. If a numpy array is created with a shape such that one element is zero and the others sum to a large number, an error will be raised. We have patched the issue in GitHub commit 2b56169c16e375c521a3bc8ea658811cc0793784. The fix will be included in TensorFlow 2.11. We will also cherrypick this commit on TensorFlow 2.10.1, 2.9.3, and TensorFlow 2.8.4, as these are also affected and still in supported range.
 
-Name: CVE-2007-0487
-Description: ** DISPUTED **
+Name: CVE-2022-29216
+Description: TensorFlow is an open source platform for machine learning. Prior to versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4, TensorFlow's `saved_model_cli` tool is vulnerable to a code injection. This can be used to open a reverse shell. This code path was maintained for compatibility reasons as the maintainers had several test cases where numpy expressions were used as arguments. However, given that the tool is always run manually, the impact of this is still not severe. The maintainers have now removed the `safe=False` argument, so all parsing is done without calling `eval`. The patch is available in versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4.
 
-PHP remote file inclusion vulnerability in index.php in FreeForum 0.9.0 allows remote attackers to execute arbitrary PHP code via a URL in the fpath parameter. NOTE: this issue has been disputed by third party researchers, stating that fpath variable is initialized before being used.
+Name: CVE-2021-41496
+Description: ** DISPUTED ** Buffer overflow in the array_from_pyobj function of fortranobject.c in NumPy < 1.19, which allows attackers to conduct a Denial of Service attacks by carefully constructing an array with negative values. NOTE: The vendor does not agree this is a vulnerability; the negative dimensions can only be created by an already privileged user (or internally).
 
-Name: CVE-2007-0469
-Description: The extract_files function in installer.rb in RubyGems before 0.9.1 does not check whether files exist before overwriting them, which allows user-assisted remote attackers to overwrite arbitrary files, cause a denial of service, or execute arbitrary code via crafted GEM packages.
+Name: CVE-2021-41495
+Description: ** DISPUTED ** Null Pointer Dereference vulnerability exists in numpy.sort in NumPy &lt and 1.19 in the PyArray_DescrNew function due to missing return-value validation, which allows attackers to conduct DoS attacks by repetitively creating sort arrays. NOTE: While correct that validation is missing, an error can only occur due to an exhaustion of memory. If the user can exhaust memory, they are already privileged. Further, it should be practically impossible to construct an attack which can target the memory exhaustion to occur at exactly this place.
 
-Name: CVE-2006-5427
-Description: PHP remote file inclusion vulnerability in plugins/main.php in Php AMX 0.9.0, when register_globals is enabled or magic_quotes_gpc is disabled, allows remote attackers to execute arbitrary PHP code via a URL in the plug_path parameter.
+Name: CVE-2021-34141
+Description: An incomplete string comparison in the numpy.core component in NumPy before 1.22.0 allows attackers to trigger slightly incorrect copying by constructing specific string objects. NOTE: the vendor states that this reported code behavior is "completely harmless."
 
-Name: CVE-2006-0751
-Description: Multiple unspecified vulnerabilities in the (1) Filesystem in USErspace (FUSE) client and (2) NOOFS daemon in in Network Object Oriented File System (NOOFS) before 0.9.0 have unspecified impact and attack vectors.
+Name: CVE-2021-33430
+Description: ** DISPUTED ** A Buffer Overflow vulnerability exists in NumPy 1.9.x in the PyArray_NewFromDescr_int function of ctors.c when specifying arrays of large dimensions (over 32) from Python code, which could let a malicious user cause a Denial of Service. NOTE: The vendor does not agree this is a vulneraility; In (very limited) circumstances a user may be able provoke the buffer overflow, the user is most likely already privileged to at least provoke denial of service by exhausting memory. Triggering this further requires the use of uncommon API (complicated structured dtypes), which is very unlikely to be available to an unprivileged user.
 
-Name: CVE-2005-2365
-Description: Unknown vulnerability in the SMB dissector in Ethereal 0.9.0 through 0.10.11 allows remote attackers to cause a buffer overflow or a denial of service (memory consumption) via unknown attack vectors.
+Name: CVE-2021-28363
+Description: The urllib3 library 1.26.x before 1.26.4 for Python omits SSL certificate validation in some cases involving HTTPS to HTTPS proxies. The initial connection to the HTTPS proxy (if an SSLContext isn't given via proxy_config) doesn't verify the hostname of the certificate. This means certificates for different servers that still validate properly with the default urllib3 SSLContext will be silently accepted.
 
-Name: CVE-2005-2362
-Description: Unknown vulnerability several dissectors in Ethereal 0.9.0 through 0.10.11 allows remote attackers to cause a denial of service (application crash) by reassembling certain packets.
+Name: CVE-2019-6446
+Description: ** DISPUTED ** 
 
-Name: CVE-2004-1708
-Description: Webbsyte Chat 0.9.0 allows remote attackers to cause a denial of service (crash) via a large number of connections.
+An issue was discovered in NumPy 1.16.0 and earlier. It uses the pickle Python module unsafely, which allows remote attackers to execute arbitrary code via a crafted serialized object, as demonstrated by a numpy.load call. NOTE: third parties dispute this issue because it is  a behavior that might have legitimate applications in (for example)  loading serialized Python object arrays from trusted and authenticated  sources.
 
-Name: CVE-2004-1378
-Description: The expat XML parser code, as used in the open source Jabber (jabberd) 1.4.3 and earlier, jadc2s 0.9.0 and earlier, and possibly other packages, allows remote attackers to cause a denial of service (application crash) via a malformed packet to a socket that accepts XML connections.
+Name: CVE-2017-12852
+Description: The numpy.pad function in Numpy 1.13.1 and older versions is missing input validation. An empty list or ndarray will stick into an infinite loop, which can allow attackers to cause a DoS attack.
 
-Name: CVE-2004-1301
-Description: Buffer overflow in the book_format_sql function in format.c for xlreader 0.9.0 allows remote attackers to execute arbitrary code via a crafted Excel (XLS) file.
+Name: CVE-2016-6337
+Description: MediaWiki 1.27.x before 1.27.1 might allow remote attackers to bypass intended session access restrictions by leveraging a call to the UserGetRights function after Session::getAllowedUserRights.
 
-Name: CVE-2004-1142
-Description: Ethereal 0.9.0 through 0.10.7 allows remote attackers to cause a denial of service (CPU consumption) via a certain malformed SMB packet.
+Name: CVE-2016-6336
+Description: MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 allows remote authenticated users with undelete permissions to bypass intended suppressrevision and deleterevision restrictions and remove the revision deletion status of arbitrary file revisions by using Special:Undelete.
 
-Name: CVE-2004-1140
-Description: Ethereal 0.9.0 through 0.10.7 allows remote attackers to cause a denial of service (application hang) and possibly fill available disk space via an invalid RTP timestamp.
+Name: CVE-2016-6335
+Description: MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 does not generate head items in the context of a given title, which allows remote attackers to obtain sensitive information via a parse action to api.php.
 
-Name: CVE-2001-1516
-Description: Cross-site scripting (XSS) vulnerability in phpReview 0.9.0 rc2 and earlier allows remote attackers to inject arbitrary web script or HTML via user-submitted reviews.
+Name: CVE-2016-6334
+Description: Cross-site scripting (XSS) vulnerability in the Parser::replaceInternalLinks2 method in MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 allows remote attackers to inject arbitrary web script or HTML via vectors involving replacement of percent encoding in unclosed internal links.
 
-Name: CVE-2001-1089
-Description: libnss-pgsql in nss-pgsql 0.9.0 and earlier allows remote attackers to execute arbitrary SQL queries by inserting SQL code into an HTTP request.
+Name: CVE-2016-6333
+Description: Cross-site scripting (XSS) vulnerability in the CSS user subpage preview feature in MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 allows remote attackers to inject arbitrary web script or HTML via the edit box in Special:MyPage/common.css.
 
-Name: CVE-1999-1351
-Description: Directory traversal vulnerability in KVIrc IRC client 0.9.0 with the "Listen to !nick <soundname> requests" option enabled allows remote attackers to read arbitrary files via a .. (dot dot) in a DCC GET request.
+Name: CVE-2016-6332
+Description: MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1, when $wgBlockDisablesLogin is true, might allow remote attackers to obtain sensitive information by leveraging failure to terminate sessions when a user account is blocked.
 
-Scraping search results from: cve_pages/pandas_1.5.3.html
+Name: CVE-2016-6331
+Description: ApiParse in MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 allows remote attackers to bypass intended per-title read restrictions via a parse action to api.php.
+
+Name: CVE-2014-1859
+Description: (1) core/tests/test_memmap.py, (2) core/tests/test_multiarray.py, (3) f2py/f2py2e.py, and (4) lib/tests/test_io.py in NumPy before 1.8.1 allow local users to write to arbitrary files via a symlink attack on a temporary file.
+
+Name: CVE-2014-1858
+Description: __init__.py in f2py in NumPy before 1.8.1 allows local users to write to arbitrary files via a symlink attack on a temporary file.
+
+Scraping search results from: cve_pages\pandas_1.5.3.html
 Name: CVE-2024-5724
 Description: The Photo Video Gallery Master plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 1.5.3 via deserialization of untrusted input 'PVGM_all_photos_details' parameter. This makes it possible for authenticated attackers, with Contributor-level access and above, to inject a PHP Object. No known POP chain is present in the vulnerable software. If a POP chain is present via an additional plugin or theme installed on the target system, it could allow the attacker to delete arbitrary files, retrieve sensitive data, or execute code.
 
@@ -981,285 +988,7 @@ Description: Snapgear Lite+ firewall 1.5.4 and 1.5.3 allows remote attackers to 
 Name: CVE-1999-0402
 Description: wget 1.5.3 follows symlinks to change permissions of the target file instead of the symlink itself.
 
-Scraping search results from: cve_pages/seaborn_0.13.2.html
-Name: CVE-2024-3674
-Description: The Inline Google Spreadsheet Viewer plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'gdoc' shortcode in all versions up to, and including, 0.13.2 due to insufficient input sanitization and output escaping on user supplied attributes such as 'chart_resolution'. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
-
-Name: CVE-2024-34569
-Description: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Katie Seaborn Zotpress allows Stored XSS.This issue affects Zotpress: from n/a through 7.3.9.
-
-Name: CVE-2024-32874
-Description: Frigate is a network video recorder (NVR) with realtime local object detection for IP cameras. Below 0.13.2 Release, when uploading a file or retrieving the filename, a user may intentionally use a large Unicode filename which would lead to a application-level denial of service. This is due to no limitation set on the length of the filename and the costy use of the Unicode normalization with the form NFKD under the hood of `secure_filename()`.
-
-Name: CVE-2024-30488
-Description: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Katie Seaborn Zotpress.This issue affects Zotpress: from n/a through 7.3.7.
-
-Name: CVE-2024-29030
-Description: memos is a privacy-first, lightweight note-taking service. In memos 0.13.2, an SSRF vulnerability exists at the /api/resource that allows authenticated users to enumerate the internal network.
-
-Name: CVE-2024-29029
-Description: memos is a privacy-first, lightweight note-taking service. In memos 0.13.2, an SSRF vulnerability exists at the /o/get/image that allows unauthenticated users to enumerate the internal network and retrieve images. The response from the image request is then copied into the response of the current server request, causing a reflected XSS vulnerability.
-
-Name: CVE-2024-29028
-Description: memos is a privacy-first, lightweight note-taking service. In memos 0.13.2, an SSRF vulnerability exists at the /o/get/httpmeta that allows unauthenticated users to enumerate the internal network and receive limited html values in json form. This vulnerability is fixed in 0.16.1.
-
-Name: CVE-2023-4698
-Description: Improper Input Validation in GitHub repository usememos/memos prior to 0.13.2.
-
-Name: CVE-2023-4697
-Description: Improper Privilege Management in GitHub repository usememos/memos prior to 0.13.2.
-
-Name: CVE-2023-4696
-Description: Improper Access Control in GitHub repository usememos/memos prior to 0.13.2.
-
-Name: CVE-2023-46313
-Description: Unauth. Reflected Cross-Site Scripting (XSS) vulnerability in Katie Seaborn Zotpress plugin <= 7.3.4 versions.
-
-Name: CVE-2023-32961
-Description: Unauth. Reflected Cross-Site Scripting (XSS) vulnerability in Katie Seaborn Zotpress plugin <= 7.3.3 versions.
-
-Name: CVE-2023-28114
-Description: `cilium-cli` is the command line interface to install, manage, and troubleshoot Kubernetes clusters running Cilium. Prior to version 0.13.2,`cilium-cli`, when used to configure cluster mesh functionality, can remove the enforcement of user permissions on the `etcd` store used to mirror local cluster information to remote clusters. Users who have set up cluster meshes using the Cilium Helm chart are not affected by this issue. Due to an incorrect mount point specification, the settings specified by the `initContainer` that configures `etcd` users and their permissions are overwritten when using `cilium-cli` to configure a cluster mesh. An attacker who has already gained access to a valid key and certificate for an `etcd` cluster compromised in this manner could then modify state in that `etcd` cluster. This issue is patched in `cilium-cli` 0.13.2. As a workaround, one may use Cilium's Helm charts to create their cluster.
-
-Name: CVE-2022-43766
-Description: Apache IoTDB version 0.12.2 to 0.12.6, 0.13.0 to 0.13.2 are vulnerable to a Denial of Service attack when accepting untrusted patterns for REGEXP queries with Java 8. Users should upgrade to 0.13.3 which addresses this issue or use a later version of Java to avoid it.
-
-Name: CVE-2013-6480
-Description: Libcloud 0.12.3 through 0.13.2 does not set the scrub_data parameter for the destroy DigitalOcean API, which allows local users to obtain sensitive information by leveraging a new VM.
-
-Scraping search results from: cve_pages/matplotlib_3.9.1.html
-Name: CVE-2024-4043
-Description: The WP Ultimate Post Grid plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'wpupg-text' shortcode in all versions up to, and including, 3.9.1 due to insufficient input sanitization and output escaping on user supplied attributes. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
-
-Name: CVE-2024-32638
-Description: Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerability in Apache APISIX when using `forward-auth` plugin.This issue affects Apache APISIX: from 3.8.0, 3.9.0. Users are recommended to upgrade to version 3.8.1, 3.9.1 or higher, which fixes the issue.
-
-Name: CVE-2024-30165
-Description: Amazon AWS Client VPN before 3.9.1 on macOS has a buffer overflow that could potentially allow a local actor to execute arbitrary commands with elevated permissions, a different vulnerability than CVE-2024-30164.
-
-Name: CVE-2024-30164
-Description: Amazon AWS Client VPN has a buffer overflow that could potentially allow a local actor to execute arbitrary commands with elevated permissions. This is resolved in 3.11.1 on Windows, 3.9.1 on macOS, and 3.12.1 on Linux. NOTE: although the macOS resolution is the same as for CVE-2024-30165, this vulnerability on macOS is not the same as CVE-2024-30165.
-
-Name: CVE-2023-49797
-Description: PyInstaller bundles a Python application and all its dependencies into a single package. A PyInstaller built application, elevated as a privileged process, may be tricked by an unprivileged attacker into deleting files the unprivileged user does not otherwise have access to. A user is affected if **all** the following are satisfied: 1. The user runs an application containing either `matplotlib` or `win32com`. 2. The application is ran as administrator (or at least a user with higher privileges than the attacker). 3. The user's temporary directory is not locked to that specific user (most likely due to `TMP`/`TEMP` environment variables pointing to an unprotected, arbitrary, non default location). Either: A. The attacker is able to very carefully time the replacement of a temporary file with a symlink. This switch must occur exactly between `shutil.rmtree()`'s builtin symlink check and the deletion itself B: The application was built with Python 3.7.x or earlier which has no protection against Directory Junctions links. The vulnerability has been addressed in PR #7827 which corresponds to `pyinstaller >= 5.13.1`. Users are advised to upgrade. There are no known workarounds for this vulnerability.
-
-Name: CVE-2023-44981
-Description: Authorization Bypass Through User-Controlled Key vulnerability in Apache ZooKeeper. If SASL Quorum Peer authentication is enabled in ZooKeeper (quorum.auth.enableSasl=true), the authorization is done by verifying that the instance part in SASL authentication ID is listed in zoo.cfg server list. The instance part in SASL auth ID is optional and if it's missing, like 'eve@EXAMPLE.COM', the authorization check will be skipped. As a result an arbitrary endpoint could join the cluster and begin propagating counterfeit changes to the leader, essentially giving it complete read-write access to the data tree. Quorum Peer authentication is not enabled by default. Users are recommended to upgrade to version 3.9.1, 3.8.3, 3.7.2, which fixes the issue. Alternately ensure the ensemble election/quorum communication is protected by a firewall as this will mitigate the issue. See the documentation for more details on correct cluster administration.
-
-Name: CVE-2023-36660
-Description: The OCB feature in libnettle in Nettle 3.9 before 3.9.1 allows memory corruption.
-
-Name: CVE-2023-2734
-Description: The MStore API plugin for WordPress is vulnerable to authentication bypass in versions up to, and including, 3.9.1. This is due to insufficient verification on the user being supplied during the cart sync from mobile REST API request through the plugin. This makes it possible for unauthenticated attackers to log in as any existing user on the site, such as an administrator, if they have access to the user id.
-
-Name: CVE-2023-27178
-Description: An arbitrary file upload vulnerability in the upload function of GDidees CMS 3.9.1 allows attackers to execute arbitrary code via a crafted file.
-
-Name: CVE-2023-2407
-Description: The Event Registration Calendar By vcita plugin, versions up to and including 3.9.1, and Online Payments &#8211; Get Paid with PayPal, Square & Stripe plugin, for WordPress are vulnerable to Cross-Site Request Forgery. This is due to missing nonce validation in the ls_parse_vcita_callback() function. This makes it possible for unauthenticated attackers to modify the plugin's settings and inject malicious JavaScript via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
-
-Name: CVE-2023-2406
-Description: The Event Registration Calendar By vcita plugin, versions up to and including 3.9.1, and Online Payments &#8211; Get Paid with PayPal, Square & Stripe plugin, for WordPress are vulnerable to Stored Cross-Site Scripting via the 'email' parameter in versions up to, and including, 1.3.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with the edit_posts capability, such as contributors and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
-
-Name: CVE-2023-23764
-Description: An incorrect comparison vulnerability was identified in GitHub Enterprise Server that allowed commit smuggling by displaying an incorrect diff within the GitHub pull request UI. To do so, an attacker would need write access to the repository. This vulnerability affected GitHub Enterprise Server versions 3.7.0 and above and was fixed in versions 3.7.9, 3.8.2, and 3.9.1. This vulnerability was reported via the GitHub Bug Bounty program.
-
-Name: CVE-2022-48566
-Description: An issue was discovered in compare_digest in Lib/hmac.py in Python through 3.9.1. Constant-time-defeating optimisations were possible in the accumulator variable in hmac.compare_digest.
-
-Name: CVE-2022-48565
-Description: An XML External Entity (XXE) issue was discovered in Python through 3.9.1. The plistlib module no longer accepts entity declarations in XML plist files to avoid XML vulnerabilities.
-
-Name: CVE-2022-48564
-Description: read_ints in plistlib.py in Python through 3.9.1 is vulnerable to a potential DoS attack via CPU and RAM exhaustion when processing malformed Apple Property List files in binary format.
-
-Name: CVE-2022-46848
-Description: Auth. (contributor+) Stored Cross-Site Scripting (XSS) vulnerability in Themeisle Visualizer: Tables and Charts Manager for WordPress plugin <= 3.9.1 versions.
-
-Name: CVE-2022-38972
-Description: Cross-site scripting vulnerability in Movable Type plugin A-Form versions prior to 4.1.1 (for Movable Type 7 Series) and versions prior to 3.9.1 (for Movable Type 6 Series) allows a remote unauthenticated attacker to inject an arbitrary script.
-
-Name: CVE-2022-38372
-Description: A hidden functionality vulnerability [CWE-1242] in FortiTester CLI 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow a local, privileged user to obtain a root shell on the device via an undocumented command.
-
-Name: CVE-2022-35846
-Description: An improper restriction of excessive authentication attempts vulnerability [CWE-307] in FortiTester Telnet port 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an unauthenticated attacker to guess the credentials of an admin user via a brute force attack.
-
-Name: CVE-2022-35845
-Description: Multiple improper neutralization of special elements used in an OS Command ('OS Command Injection') vulnerabilities [CWE-78] in FortiTester 7.1.0, 7.0 all versions, 4.0.0 through 4.2.0, 2.3.0 through 3.9.1 may allow an authenticated attacker to execute arbitrary commands in the underlying shell.
-
-Name: CVE-2022-35844
-Description: An improper neutralization of special elements used in an OS command vulnerability [CWE-78] in the management interface of FortiTester 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an authenticated attacker to execute unauthorized commands via specifically crafted arguments to commands of the certificate import feature.
-
-Name: CVE-2022-33874
-Description: An improper neutralization of special elements used in an OS Command ('OS Command Injection') vulnerabilities [CWE-78] in SSH login components of FortiTester 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an unauthenticated remote attacker to execute arbitrary command in the underlying shell.
-
-Name: CVE-2022-33873
-Description: An improper neutralization of special elements used in an OS Command ('OS Command Injection') vulnerabilities [CWE-78] in Console login components of FortiTester 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an unauthenticated attacker to execute arbitrary command in the underlying shell.
-
-Name: CVE-2022-33872
-Description: An improper neutralization of special elements used in an OS Command ('OS Command Injection') vulnerabilities [CWE-78] in Telnet login components of FortiTester 2.3.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an unauthenticated remote attacker to execute arbitrary command in the underlying shell.
-
-Name: CVE-2022-33870
-Description: An improper neutralization of special elements used in an OS command vulnerability [CWE-78] in the command line interpreter of FortiTester 3.0.0 through 3.9.1, 4.0.0 through 4.2.0, 7.0.0 through 7.1.0 may allow an authenticated attacker to execute unauthorized commands via specifically crafted arguments to existing commands.
-
-Name: CVE-2022-2542
-Description: The uContext for Clickbank plugin for WordPress is vulnerable to Cross-Site Request Forgery to Cross-Site Scripting in versions up to, and including 3.9.1. This is due to missing nonce validation in the ~/app/sites/ajax/actions/keyword_save.php file that is called via the doAjax() function. This makes it possible for unauthenticated attackers to modify the plugin's settings and inject malicious web scripts via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
-
-Name: CVE-2022-2541
-Description: The uContext for Amazon plugin for WordPress is vulnerable to Cross-Site Request Forgery to Cross-Site Scripting in versions up to, and including 3.9.1. This is due to missing nonce validation in the ~/app/sites/ajax/actions/keyword_save.php file that is called via the doAjax() function. This makes it possible for unauthenticated attackers to modify the plugin's settings and inject malicious web scripts via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
-
-Name: CVE-2021-45812
-Description: NUUO Network Video Recorder NVRsolo 3.9.1 is affected by a Cross Site Scripting (XSS) vulnerability. An attacker can steal the user's session by injecting malicious JavaScript codes which leads to session hijacking.
-
-Name: CVE-2021-32000
-Description: A UNIX Symbolic Link (Symlink) Following vulnerability in the clone-master-clean-up.sh script of clone-master-clean-up in SUSE Linux Enterprise Server 12 SP3, SUSE Linux Enterprise Server 15 SP1; openSUSE Factory allows local attackers to delete arbitrary files. This issue affects: SUSE Linux Enterprise Server 12 SP3 clone-master-clean-up version 1.6-4.6.1 and prior versions. SUSE Linux Enterprise Server 15 SP1 clone-master-clean-up version 1.6-3.9.1 and prior versions. openSUSE Factory clone-master-clean-up version 1.6-1.4 and prior versions.
-
-Name: CVE-2021-3177
-Description: Python 3.x through 3.9.1 has a buffer overflow in PyCArg_repr in _ctypes/callproc.c, which may lead to remote code execution in certain Python applications that accept floating-point numbers as untrusted input, as demonstrated by a 1e300 argument to c_double.from_param. This occurs because sprintf is used unsafely.
-
-Name: CVE-2021-28914
-Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 allow the user to set a weak password because the strength is shown in configuration tool, but finally not enforced. This is usable and part of an attack chain to gain SSH root access.
-
-Name: CVE-2021-28913
-Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 allow unauthenticated attackers access to /webif/SecurityModule to validate the so called and hard coded unique 'eibPort String' which acts as the root SSH key passphrase. This is usable and part of an attack chain to gain SSH root access.
-
-Name: CVE-2021-28911
-Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 allow unauthenticated attackers access to /tmp path which contains some sensitive data (e.g. device serial number). Having those info, a possible loginId can be self-calculated in a brute force attack against BMX interface. This is usable and part of an attack chain to gain SSH root access.
-
-Name: CVE-2021-28910
-Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 contains basic SSRF vulnerability. It allow unauthenticated attackers to request to any internal and external server.
-
-Name: CVE-2021-28909
-Description: BAB TECHNOLOGIE GmbH eibPort V3 prior version 3.9.1 allow unauthenticated attackers to access uncontrolled the login service at /webif/SecurityModule in a brute force attack. The password could be weak and default username is known as 'admin'. This is usable and part of an attack chain to gain SSH root access.
-
-Name: CVE-2020-8127
-Description: Insufficient validation in cross-origin communication (postMessage) in reveal.js version 3.9.1 and earlier allow attackers to perform cross-site scripting attacks.
-
-Name: CVE-2020-5281
-Description: In Perun before version 3.9.1, VO or group manager can modify configuration of the LDAP extSource to retrieve all from Perun LDAP. Issue is fixed in version 3.9.1 by sanitisation of the input.
-
-Name: CVE-2020-29594
-Description: Rocket.Chat before 0.74.4, 1.x before 1.3.4, 2.x before 2.4.13, 3.x before 3.7.3, 3.8.x before 3.8.3, and 3.9.x before 3.9.1 mishandles SAML login.
-
-Name: CVE-2020-28208
-Description: An email address enumeration vulnerability exists in the password reset function of Rocket.Chat through 3.9.1.
-
-Name: CVE-2020-25631
-Description: A vulnerability was found in Moodle 3.9 to 3.9.1, 3.8 to 3.8.4 and 3.7 to 3.7.7 where it was possible to include JavaScript in a book's chapter title, which was not escaped on the "Add new chapter" page. This is fixed in 3.9.2, 3.8.5 and 3.7.8.
-
-Name: CVE-2020-25630
-Description: A vulnerability was found in Moodle where the decompressed size of zip files was not checked against available user quota before unzipping them, which could lead to a denial of service risk. This affects versions 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. Fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.
-
-Name: CVE-2020-25629
-Description: A vulnerability was found in Moodle where users with "Log in as" capability in a course context (typically, course managers) may gain access to some site administration capabilities by "logging in as" a System manager. This affects 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. This is fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.
-
-Name: CVE-2020-25628
-Description: The filter in the tag manager required extra sanitizing to prevent a reflected XSS risk. This affects 3.9 to 3.9.1, 3.8 to 3.8.4, 3.7 to 3.7.7, 3.5 to 3.5.13 and earlier unsupported versions. Fixed in 3.9.2, 3.8.5, 3.7.8 and 3.5.14.
-
-Name: CVE-2020-25627
-Description: The moodlenetprofile user profile field required extra sanitizing to prevent a stored XSS risk. This affects versions 3.9 to 3.9.1. Fixed in 3.9.2.
-
-Name: CVE-2020-14322
-Description: In Moodle before 3.9.1, 3.8.4, 3.7.7 and 3.5.13, yui_combo needed to limit the amount of files it can load to help mitigate the risk of denial of service.
-
-Name: CVE-2020-14321
-Description: In Moodle before 3.9.1, 3.8.4, 3.7.7 and 3.5.13, teachers of a course were able to assign themselves the manager role within that course.
-
-Name: CVE-2020-14320
-Description: In Moodle before 3.9.1, 3.8.4 and 3.7.7, the filter in the admin task log required extra sanitizing to prevent a reflected XSS risk.
-
-Name: CVE-2020-13129
-Description: An issue was discovered in the stashcat app through 3.9.1 for macOS, Windows, Android, iOS, and possibly other platforms. The GET method is used with client_key and device_id data in the query string, which allows attackers to obtain sensitive information by reading web-server logs.
-
-Name: CVE-2019-18905
-Description: A Insufficient Verification of Data Authenticity vulnerability in autoyast2 of SUSE Linux Enterprise Server 12, SUSE Linux Enterprise Server 15 allows remote attackers to MITM connections when deprecated and unused functionality of autoyast is used to create images. This issue affects: SUSE Linux Enterprise Server 12 autoyast2 version 4.1.9-3.9.1 and prior versions. SUSE Linux Enterprise Server 15 autoyast2 version 4.0.70-3.20.1 and prior versions.
-
-Name: CVE-2019-18904
-Description: A Uncontrolled Resource Consumption vulnerability in rmt of SUSE Linux Enterprise High Performance Computing 15-ESPOS, SUSE Linux Enterprise High Performance Computing 15-LTSS, SUSE Linux Enterprise Module for Public Cloud 15-SP1, SUSE Linux Enterprise Module for Server Applications 15, SUSE Linux Enterprise Module for Server Applications 15-SP1, SUSE Linux Enterprise Server 15-LTSS, SUSE Linux Enterprise Server for SAP 15; openSUSE Leap 15.1 allows remote attackers to cause DoS against rmt by requesting migrations. This issue affects: SUSE Linux Enterprise High Performance Computing 15-ESPOS rmt-server versions prior to 2.5.2-3.26.1. SUSE Linux Enterprise High Performance Computing 15-LTSS rmt-server versions prior to 2.5.2-3.26.1. SUSE Linux Enterprise Module for Public Cloud 15-SP1 rmt-server versions prior to 2.5.2-3.9.1. SUSE Linux Enterprise Module for Server Applications 15 rmt-server versions prior to 2.5.2-3.26.1. SUSE Linux Enterprise Module for Server Applications 15-SP1 rmt-server versions prior to 2.5.2-3.9.1. SUSE Linux Enterprise Server 15-LTSS rmt-server versions prior to 2.5.2-3.26.1. SUSE Linux Enterprise Server for SAP 15 rmt-server versions prior to 2.5.2-3.26.1. openSUSE Leap 15.1 rmt-server versions prior to 2.5.2-lp151.2.9.1.
-
-Name: CVE-2019-12742
-Description: Bludit prior to 3.9.1 allows a non-privileged user to change the password of any account, including admin. This occurs because of bl-kernel/admin/controllers/user-password.php Insecure Direct Object Reference (a modified username POST parameter).
-
-Name: CVE-2019-12386
-Description: An issue was discovered in Ampache through 3.9.1. A stored XSS exists in the localplay.php LocalPlay "add instance" functionality. The injected code is reflected in the instances menu. This vulnerability can be abused to force an admin to create a new privileged user whose credentials are known by the attacker.
-
-Name: CVE-2019-12385
-Description: An issue was discovered in Ampache through 3.9.1. The search engine is affected by a SQL Injection, so any user able to perform lib/class/search.class.php searches (even guest users) can dump any data contained in the database (sessions, hashed passwords, etc.). This may lead to a full compromise of admin accounts, when combined with the weak password generator algorithm used in the lostpassword functionality.
-
-Name: CVE-2019-10689
-Description: VVX products using UCS software version 5.9.2 and earlier with Better Together over Ethernet Connector (BToE) application version 3.9.1 and earlier provides insufficient authentication between the BToE application and the BToE component, resulting in leakage of sensitive information.
-
-Name: CVE-2019-10688
-Description: VVX products with software versions including and prior to, UCS 5.9.2 with Better Together over Ethernet Connector (BToE) application 3.9.1, use hard-coded credentials to establish connections between the host application and the device.
-
-Name: CVE-2019-1003010
-Description: A cross-site request forgery vulnerability exists in Jenkins Git Plugin 3.9.1 and earlier in src/main/java/hudson/plugins/git/GitTagAction.java that allows attackers to create a Git tag in a workspace and attach corresponding metadata to a build record.
-
-Name: CVE-2018-25045
-Description: Django REST framework (aka django-rest-framework) before 3.9.1 allows XSS because the default DRF Browsable API view templates disable autoescaping.
-
-Name: CVE-2018-19864
-Description: NUUO NVRmini2 Network Video Recorder firmware through 3.9.1 allows remote attackers to execute arbitrary code or cause a denial of service (buffer overflow), resulting in ability to read camera feeds or reconfigure the device.
-
-Name: CVE-2018-15716
-Description: NUUO NVRMini2 version 3.9.1 is vulnerable to authenticated remote command injection. An attacker can send crafted requests to upgrade_handle.php to execute OS commands as root.
-
-Name: CVE-2017-6099
-Description: Cross-site scripting (XSS) vulnerability in GetAuthDetails.html.php in PayPal PHP Merchant SDK (aka merchant-sdk-php) 3.9.1 allows remote attackers to inject arbitrary web script or HTML via the token parameter.
-
-Name: CVE-2015-9310
-Description: The all-in-one-wp-security-and-firewall plugin before 3.9.1 for WordPress has multiple SQL injection issues.
-
-Name: CVE-2015-5208
-Description: Apache Cordova iOS before 4.0.0 allows remote attackers to execute arbitrary plugins via a link.
-
-Name: CVE-2015-5207
-Description: Apache Cordova iOS before 4.0.0 might allow attackers to bypass a URL whitelist protection mechanism in an app and load arbitrary resources by leveraging unspecified methods.
-
-Name: CVE-2015-1204
-Description: Cross-site scripting (XSS) vulnerability in the Save Filters functionality in the WP Slimstat plugin before 3.9.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the fs[resource] parameter in the wp-slim-view-2 page to wp-admin/admin.php.
-
-Name: CVE-2014-6859
-Description: The Daum Maps - Subway (aka net.daum.android.map) application 3.9.1 for Android does not verify X.509 certificates from SSL servers, which allows man-in-the-middle attackers to spoof servers and obtain sensitive information via a crafted certificate.
-
-Name: CVE-2014-0193
-Description: WebSocket08FrameDecoder in Netty 3.6.x before 3.6.9, 3.7.x before 3.7.1, 3.8.x before 3.8.2, 3.9.x before 3.9.1, and 4.0.x before 4.0.19 allows remote attackers to cause a denial of service (memory consumption) via a TextWebSocketFrame followed by a long stream of ContinuationWebSocketFrames.
-
-Name: CVE-2013-4942
-Description: Cross-site scripting (XSS) vulnerability in flashuploader.swf in the Uploader component in Yahoo! YUI 3.5.0 through 3.9.1, as used in Moodle through 2.1.10, 2.2.x before 2.2.11, 2.3.x before 2.3.8, 2.4.x before 2.4.5, 2.5.x before 2.5.1, and other products, allows remote attackers to inject arbitrary web script or HTML via a crafted string in a URL.
-
-Name: CVE-2013-4941
-Description: Cross-site scripting (XSS) vulnerability in uploader.swf in the Uploader component in Yahoo! YUI 3.2.0 through 3.9.1, as used in Moodle through 2.1.10, 2.2.x before 2.2.11, 2.3.x before 2.3.8, 2.4.x before 2.4.5, 2.5.x before 2.5.1, and other products, allows remote attackers to inject arbitrary web script or HTML via a crafted string in a URL.
-
-Name: CVE-2013-4939
-Description: Cross-site scripting (XSS) vulnerability in io.swf in the IO Utility component in Yahoo! YUI 3.0.0 through 3.9.1, as used in Moodle through 2.1.10, 2.2.x before 2.2.11, 2.3.x before 2.3.8, 2.4.x before 2.4.5, 2.5.x before 2.5.1, and other products, allows remote attackers to inject arbitrary web script or HTML via a crafted string in a URL.
-
-Name: CVE-2013-4668
-Description: Directory traversal vulnerability in File Roller 3.6.x before 3.6.4, 3.8.x before 3.8.3, and 3.9.x before 3.9.3, when libarchive is used, allows remote attackers to create arbitrary files via a crafted archive that is not properly handled in a "Keep directory structure" action, related to fr-archive-libarchive.c and fr-window.c.
-
-Name: CVE-2011-3283
-Description: Cisco Carrier Routing System 3.9.1 allows remote attackers to cause a denial of service (Metro subsystem crash) via a fragmented GRE packet, aka Bug ID CSCts14887.
-
-Name: CVE-2011-0949
-Description: Cisco IOS XR 3.6.x, 3.8.x before 3.8.3, and 3.9.x before 3.9.1 does not properly remove sshd_lock files from /tmp/, which allows remote attackers to cause a denial of service (disk consumption) by making many SSHv1 connections, aka Bug ID CSCtd64417.
-
-Name: CVE-2011-0943
-Description: Cisco IOS XR 3.8.3, 3.8.4, and 3.9.1 allows remote attackers to cause a denial of service (NetIO process restart or device reload) via a crafted IPv4 packet, aka Bug ID CSCth44147.
-
-Name: CVE-2010-3035
-Description: Cisco IOS XR 3.4.0 through 3.9.1, when BGP is enabled, does not properly handle unrecognized transitive attributes, which allows remote attackers to cause a denial of service (peering reset) via a crafted prefix announcement, as demonstrated in the wild in August 2010 with attribute type code 99, aka Bug ID CSCti62211.
-
-Name: CVE-2006-4745
-Description: ScaryBear PocketExpense Pro 3.9.1 uses an internally recorded key to protect a data file whose contents are stored in plaintext, which allows local users to disable authentication and access the file by modifying a certain value in the file header.
-
-Name: CVE-2005-1280
-Description: The rsvp_print function in tcpdump 3.9.1 and earlier allows remote attackers to cause a denial of service (infinite loop) via a crafted RSVP packet of length 4.
-
-Name: CVE-2005-1278
-Description: The isis_print function, as called by isoclns_print, in tcpdump 3.9.1 and earlier allows remote attackers to cause a denial of service (infinite loop) via a zero length, as demonstrated using a GRE packet.
-
-Scraping search results from: cve_pages/scipy_1.14.0.html
+Scraping search results from: cve_pages\scipy_1.14.0.html
 Name: CVE-2024-36028
 Description: In the Linux kernel, the following vulnerability has been resolved: mm/hugetlb: fix DEBUG_LOCKS_WARN_ON(1) when dissolve_free_hugetlb_folio() When I did memory failure tests recently, below warning occurs: DEBUG_LOCKS_WARN_ON(1) WARNING: CPU: 8 PID: 1011 at kernel/locking/lockdep.c:232 __lock_acquire+0xccb/0x1ca0 Modules linked in: mce_inject hwpoison_inject CPU: 8 PID: 1011 Comm: bash Kdump: loaded Not tainted 6.9.0-rc3-next-20240410-00012-gdb69f219f4be #3 Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014 RIP: 0010:__lock_acquire+0xccb/0x1ca0 RSP: 0018:ffffa7a1c7fe3bd0 EFLAGS: 00000082 RAX: 0000000000000000 RBX: eb851eb853975fcf RCX: ffffa1ce5fc1c9c8 RDX: 00000000ffffffd8 RSI: 0000000000000027 RDI: ffffa1ce5fc1c9c0 RBP: ffffa1c6865d3280 R08: ffffffffb0f570a8 R09: 0000000000009ffb R10: 0000000000000286 R11: ffffffffb0f2ad50 R12: ffffa1c6865d3d10 R13: ffffa1c6865d3c70 R14: 0000000000000000 R15: 0000000000000004 FS: 00007ff9f32aa740(0000) GS:ffffa1ce5fc00000(0000) knlGS:0000000000000000 CS: 0010 DS: 0000 ES: 0000 CR0: 0000000080050033 CR2: 00007ff9f3134ba0 CR3: 00000008484e4000 CR4: 00000000000006f0 Call Trace: <TASK> lock_acquire+0xbe/0x2d0 _raw_spin_lock_irqsave+0x3a/0x60 hugepage_subpool_put_pages.part.0+0xe/0xc0 free_huge_folio+0x253/0x3f0 dissolve_free_huge_page+0x147/0x210 __page_handle_poison+0x9/0x70 memory_failure+0x4e6/0x8c0 hard_offline_page_store+0x55/0xa0 kernfs_fop_write_iter+0x12c/0x1d0 vfs_write+0x380/0x540 ksys_write+0x64/0xe0 do_syscall_64+0xbc/0x1d0 entry_SYSCALL_64_after_hwframe+0x77/0x7f RIP: 0033:0x7ff9f3114887 RSP: 002b:00007ffecbacb458 EFLAGS: 00000246 ORIG_RAX: 0000000000000001 RAX: ffffffffffffffda RBX: 000000000000000c RCX: 00007ff9f3114887 RDX: 000000000000000c RSI: 0000564494164e10 RDI: 0000000000000001 RBP: 0000564494164e10 R08: 00007ff9f31d1460 R09: 000000007fffffff R10: 0000000000000000 R11: 0000000000000246 R12: 000000000000000c R13: 00007ff9f321b780 R14: 00007ff9f3217600 R15: 00007ff9f3216a00 </TASK> Kernel panic - not syncing: kernel: panic_on_warn set ... CPU: 8 PID: 1011 Comm: bash Kdump: loaded Not tainted 6.9.0-rc3-next-20240410-00012-gdb69f219f4be #3 Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014 Call Trace: <TASK> panic+0x326/0x350 check_panic_on_warn+0x4f/0x50 __warn+0x98/0x190 report_bug+0x18e/0x1a0 handle_bug+0x3d/0x70 exc_invalid_op+0x18/0x70 asm_exc_invalid_op+0x1a/0x20 RIP: 0010:__lock_acquire+0xccb/0x1ca0 RSP: 0018:ffffa7a1c7fe3bd0 EFLAGS: 00000082 RAX: 0000000000000000 RBX: eb851eb853975fcf RCX: ffffa1ce5fc1c9c8 RDX: 00000000ffffffd8 RSI: 0000000000000027 RDI: ffffa1ce5fc1c9c0 RBP: ffffa1c6865d3280 R08: ffffffffb0f570a8 R09: 0000000000009ffb R10: 0000000000000286 R11: ffffffffb0f2ad50 R12: ffffa1c6865d3d10 R13: ffffa1c6865d3c70 R14: 0000000000000000 R15: 0000000000000004 lock_acquire+0xbe/0x2d0 _raw_spin_lock_irqsave+0x3a/0x60 hugepage_subpool_put_pages.part.0+0xe/0xc0 free_huge_folio+0x253/0x3f0 dissolve_free_huge_page+0x147/0x210 __page_handle_poison+0x9/0x70 memory_failure+0x4e6/0x8c0 hard_offline_page_store+0x55/0xa0 kernfs_fop_write_iter+0x12c/0x1d0 vfs_write+0x380/0x540 ksys_write+0x64/0xe0 do_syscall_64+0xbc/0x1d0 entry_SYSCALL_64_after_hwframe+0x77/0x7f RIP: 0033:0x7ff9f3114887 RSP: 002b:00007ffecbacb458 EFLAGS: 00000246 ORIG_RAX: 0000000000000001 RAX: ffffffffffffffda RBX: 000000000000000c RCX: 00007ff9f3114887 RDX: 000000000000000c RSI: 0000564494164e10 RDI: 0000000000000001 RBP: 0000564494164e10 R08: 00007ff9f31d1460 R09: 000000007fffffff R10: 0000000000000000 R11: 0000000000000246 R12: 000000000000000c R13: 00007ff9f321b780 R14: 00007ff9f3217600 R15: 00007ff9f3216a00 </TASK> After git bisecting and digging into the code, I believe the root cause is that _deferred_list field of folio is unioned with _hugetlb_subpool field. In __update_and_free_hugetlb_folio(), folio->_deferred_ ---truncated---
 
@@ -1470,53 +1199,64 @@ Description: Heap-based buffer overflow in the ole_info_read_metabat function in
 Name: CVE-2003-0440
 Description: The (1) semi MIME library 1.14.5 and earlier, and (2) wemi 1.14.0 and possibly other versions, allows local users to overwrite arbitrary files via a symlink attack on temporary files.
 
-Scraping search results from: cve_pages/IPython_8.26.0.html
-Name: CVE-2023-29169
-Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
+Scraping search results from: cve_pages\seaborn_0.13.2.html
+Name: CVE-2024-3674
+Description: The Inline Google Spreadsheet Viewer plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's 'gdoc' shortcode in all versions up to, and including, 0.13.2 due to insufficient input sanitization and output escaping on user supplied attributes such as 'chart_resolution'. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
 
-Name: CVE-2023-29150
-Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
+Name: CVE-2024-34569
+Description: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Katie Seaborn Zotpress allows Stored XSS.This issue affects Zotpress: from n/a through 7.3.9.
 
-Name: CVE-2023-28716
-Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
+Name: CVE-2024-32874
+Description: Frigate is a network video recorder (NVR) with realtime local object detection for IP cameras. Below 0.13.2 Release, when uploading a file or retrieving the filename, a user may intentionally use a large Unicode filename which would lead to a application-level denial of service. This is due to no limitation set on the length of the filename and the costy use of the Unicode normalization with the form NFKD under the hood of `secure_filename()`.
 
-Name: CVE-2023-28400
-Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
+Name: CVE-2024-30488
+Description: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Katie Seaborn Zotpress.This issue affects Zotpress: from n/a through 7.3.7.
 
-Name: CVE-2023-28384
-Description: mySCADA myPRO versions 8.26.0 and prior has parameters which an authenticated user could exploit to inject arbitrary operating system commands.
+Name: CVE-2024-29030
+Description: memos is a privacy-first, lightweight note-taking service. In memos 0.13.2, an SSRF vulnerability exists at the /api/resource that allows authenticated users to enumerate the internal network.
 
-Name: CVE-2023-24816
-Description: IPython (Interactive Python) is a command shell for interactive computing in multiple programming languages, originally developed for the Python programming language. Versions prior to 8.1.0 are subject to a command injection vulnerability with very specific prerequisites. This vulnerability requires that the function `IPython.utils.terminal.set_term_title` be called on Windows in a Python environment where ctypes is not available. The dependency on `ctypes` in `IPython.utils._process_win32` prevents the vulnerable code from ever being reached in the ipython binary. However, as a library that could be used by another tool `set_term_title` could be called and hence introduce a vulnerability. Should an attacker get untrusted input to an instance of this function they would be able to inject shell commands as current process and limited to the scope of the current process. Users of ipython as a library are advised to upgrade. Users unable to upgrade should ensure that any calls to the `IPython.utils.terminal.set_term_title` function are done with trusted or filtered input.
+Name: CVE-2024-29029
+Description: memos is a privacy-first, lightweight note-taking service. In memos 0.13.2, an SSRF vulnerability exists at the /o/get/image that allows unauthenticated users to enumerate the internal network and retrieve images. The response from the image request is then copied into the response of the current server request, causing a reflected XSS vulnerability.
 
-Name: CVE-2022-2234
-Description: An authenticated mySCADA myPRO 8.26.0 user may be able to modify parameters to run commands directly in the operating system.
+Name: CVE-2024-29028
+Description: memos is a privacy-first, lightweight note-taking service. In memos 0.13.2, an SSRF vulnerability exists at the /o/get/httpmeta that allows unauthenticated users to enumerate the internal network and receive limited html values in json form. This vulnerability is fixed in 0.16.1.
 
-Name: CVE-2022-21699
-Description: IPython (Interactive Python) is a command shell for interactive computing in multiple programming languages, originally developed for the Python programming language. Affected versions are subject to an arbitrary code execution vulnerability achieved by not properly managing cross user temporary files. This vulnerability allows one user to run code as another on the same machine. All users are advised to upgrade.
+Name: CVE-2023-4698
+Description: Improper Input Validation in GitHub repository usememos/memos prior to 0.13.2.
 
-Name: CVE-2017-0923
-Description: Gitlab Community Edition version 9.1 is vulnerable to lack of input validation in the IPython notebooks component resulting in persistent cross site scripting.
+Name: CVE-2023-4697
+Description: Improper Privilege Management in GitHub repository usememos/memos prior to 0.13.2.
 
-Name: CVE-2015-7337
-Description: The editor in IPython Notebook before 3.2.2 and Jupyter Notebook 4.0.x before 4.0.5 allows remote attackers to execute arbitrary JavaScript code via a crafted file, which triggers a redirect to files/, related to MIME types.
+Name: CVE-2023-4696
+Description: Improper Access Control in GitHub repository usememos/memos prior to 0.13.2.
 
-Name: CVE-2015-6938
-Description: Cross-site scripting (XSS) vulnerability in the file browser in notebook/notebookapp.py in IPython Notebook before 3.2.2 and Jupyter Notebook 4.0.x before 4.0.5 allows remote attackers to inject arbitrary web script or HTML via a folder name.  NOTE: this was originally reported as a cross-site request forgery (CSRF) vulnerability, but this may be inaccurate.
+Name: CVE-2023-46313
+Description: Unauth. Reflected Cross-Site Scripting (XSS) vulnerability in Katie Seaborn Zotpress plugin <= 7.3.4 versions.
 
-Name: CVE-2015-5607
-Description: Cross-site request forgery in the REST API in IPython 2 and 3.
+Name: CVE-2023-32961
+Description: Unauth. Reflected Cross-Site Scripting (XSS) vulnerability in Katie Seaborn Zotpress plugin <= 7.3.3 versions.
 
-Name: CVE-2015-4707
-Description: Cross-site scripting (XSS) vulnerability in IPython before 3.2 allows remote attackers to inject arbitrary web script or HTML via vectors involving JSON error messages and the /api/notebooks path.
+Name: CVE-2023-28114
+Description: `cilium-cli` is the command line interface to install, manage, and troubleshoot Kubernetes clusters running Cilium. Prior to version 0.13.2,`cilium-cli`, when used to configure cluster mesh functionality, can remove the enforcement of user permissions on the `etcd` store used to mirror local cluster information to remote clusters. Users who have set up cluster meshes using the Cilium Helm chart are not affected by this issue. Due to an incorrect mount point specification, the settings specified by the `initContainer` that configures `etcd` users and their permissions are overwritten when using `cilium-cli` to configure a cluster mesh. An attacker who has already gained access to a valid key and certificate for an `etcd` cluster compromised in this manner could then modify state in that `etcd` cluster. This issue is patched in `cilium-cli` 0.13.2. As a workaround, one may use Cilium's Helm charts to create their cluster.
 
-Name: CVE-2015-4706
-Description: Cross-site scripting (XSS) vulnerability in IPython 3.x before 3.2 allows remote attackers to inject arbitrary web script or HTML via vectors involving JSON error messages and the /api/contents path.
+Name: CVE-2022-43766
+Description: Apache IoTDB version 0.12.2 to 0.12.6, 0.13.0 to 0.13.2 are vulnerable to a Denial of Service attack when accepting untrusted patterns for REGEXP queries with Java 8. Users should upgrade to 0.13.3 which addresses this issue or use a later version of Java to avoid it.
 
-Name: CVE-2014-3429
-Description: IPython Notebook 0.12 through 1.x before 1.2 does not validate the origin of websocket requests, which allows remote attackers to execute arbitrary code by leveraging knowledge of the kernel id and a crafted page.
+Name: CVE-2013-6480
+Description: Libcloud 0.12.3 through 0.13.2 does not set the scrub_data parameter for the destroy DigitalOcean API, which allows local users to obtain sensitive information by leveraging a new VM.
 
-Scraping search results from: cve_pages/statsmodels_0.14.2.html
+Scraping search results from: cve_pages\shap_0.46.0.html
+Name: CVE-2023-47108
+Description: OpenTelemetry-Go Contrib is a collection of third-party packages for OpenTelemetry-Go. Prior to version 0.46.0, the grpc Unary Server Interceptor out of the box adds labels `net.peer.sock.addr` and `net.peer.sock.port` that have unbound cardinality. It leads to the server's potential memory exhaustion when many malicious requests are sent. An attacker can easily flood the peer address and port for requests. Version 0.46.0 contains a fix for this issue. As a workaround to stop being affected, a view removing the attributes can be used. The other possibility is to disable grpc metrics instrumentation by passing `otelgrpc.WithMeterProvider` option with `noop.NewMeterProvider`.
+
+Name: CVE-2008-3560
+Description: Cross-site scripting (XSS) vulnerability in kshop_search.php in the Kshop module 2.22 for Xoops allows remote attackers to inject arbitrary web script or HTML via the search parameter.
+
+Scraping search results from: cve_pages\sklearn_0.0.post12.html
+Name: CVE-2020-13092
+Description: ** DISPUTED ** scikit-learn (aka sklearn) through 0.23.0 can unserialize and execute commands from an untrusted file that is passed to the joblib.load() function, if __reduce__ makes an os.system call. NOTE: third parties dispute this issue because the joblib.load() function is documented as unsafe and it is the user's responsibility to use the function in a secure manner.
+
+Scraping search results from: cve_pages\statsmodels_0.14.2.html
 Name: CVE-2022-2932
 Description: Cross-site Scripting (XSS) - Reflected in GitHub repository bustle/mobiledoc-kit prior to 0.14.2.
 
@@ -1535,82 +1275,342 @@ Description: FatFreeCRM version <=0.14.1, >=0.15.0 <=0.15.1, >=0.16.0 <=0.16.3, 
 Name: CVE-2011-1923
 Description: The Diffie-Hellman key-exchange implementation in dhm.c in PolarSSL before 0.14.2 does not properly validate a public parameter, which makes it easier for man-in-the-middle attackers to obtain the shared secret key by modifying network traffic, a related issue to CVE-2011-5095.
 
-Scraping search results from: cve_pages/sklearn_0.0.post12.html
-Name: CVE-2020-13092
-Description: ** DISPUTED ** scikit-learn (aka sklearn) through 0.23.0 can unserialize and execute commands from an untrusted file that is passed to the joblib.load() function, if __reduce__ makes an os.system call. NOTE: third parties dispute this issue because the joblib.load() function is documented as unsafe and it is the user's responsibility to use the function in a secure manner.
+Scraping search results from: cve_pages\tabulate_0.9.0.html
+Name: CVE-2024-37054
+Description: Deserialization of untrusted data can occur in versions of the MLflow platform running version 0.9.0 or newer, enabling a maliciously uploaded PyFunc model to run arbitrary code on an end user&#8217;s system when interacted with.
 
-Scraping search results from: cve_pages/numpy_1.26.4.html
-Name: CVE-2024-4400
-Description: The Post and Page Builder by BoldGrid &#8211; Visual Drag and Drop Editor plguin for WordPress is vulnerable to Stored Cross-Site Scripting via an unknown parameter in versions up to, and including, 1.26.4 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level permissions and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
+Name: CVE-2024-31860
+Description: Improper Input Validation vulnerability in Apache Zeppelin. By adding relative path indicators(E.g ..), attackers can see the contents for any files in the filesystem that the server account can access. This issue affects Apache Zeppelin: from 0.9.0 before 0.11.0. Users are recommended to upgrade to version 0.11.0, which fixes the issue.
 
-Name: CVE-2024-34072
-Description: sagemaker-python-sdk is a library for training and deploying machine learning models on Amazon SageMaker. The sagemaker.base_deserializers.NumpyDeserializer module before v2.218.0 allows potentially unsafe deserialization when untrusted data is passed as pickled object arrays. This consequently may allow an unprivileged third party to cause remote code execution, denial of service, affecting both confidentiality and integrity. Users are advised to upgrade to version 2.218.0. Users unable to upgrade should not pass pickled numpy object arrays which originated from an untrusted source, or that could have been tampered with. Only pass pickled numpy object arrays from trusted sources.
+Name: CVE-2024-31218
+Description: Webhood is a self-hosted URL scanner used analyzing phishing and malicious sites. Webhood's backend container images in versions 0.9.0 and earlier are subject to Missing Authentication for Critical Function vulnerability. This vulnerability allows an unauthenticated attacker to send a HTTP request to the database (Pocketbase) admin API to create an admin account. The Pocketbase admin API does not check for authentication/authorization when creating an admin account when no admin accounts have been added. In its default deployment, Webhood does not create a database admin account. Therefore, unless users have manually created an admin account in the database, an admin account will not exist in the deployment and the deployment is vulnerable. Versions starting from 0.9.1 are patched. The patch creates a randomly generated admin account if admin accounts have not already been created i.e. the vulnerability is exploitable in the deployment. As a workaround, users can disable access to URL path starting with `/api/admins` entirely. With this workaround, the vulnerability is not exploitable via network.
 
-Name: CVE-2023-35944
-Description: Envoy is an open source edge and service proxy designed for cloud-native applications. Envoy allows mixed-case schemes in HTTP/2, however, some internal scheme checks are case-sensitive. Prior to versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, this can lead to the rejection of requests with mixed-case schemes such as `htTp` or `htTps`, or the bypassing of some requests such as `https` in unencrypted connections. With a fix in versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, Envoy will now lowercase scheme values by default, and change the internal scheme checks that were case-sensitive to be case-insensitive. There are no known workarounds for this issue.
+Name: CVE-2023-48712
+Description: Warpgate is an open source SSH, HTTPS and MySQL bastion host for Linux. In affected versions there is a privilege escalation vulnerability through a non-admin user's account. Limited users can impersonate another user's account if only single-factor authentication is configured. If a user knows an admin username, opens the login screen and attempts to authenticate with an incorrect password they can subsequently enter a valid non-admin username and password they will be logged in as the admin user. All installations prior to version 0.9.0 are affected. All users are advised to upgrade. There are no known workarounds for this vulnerability.
 
-Name: CVE-2023-35943
-Description: Envoy is an open source edge and service proxy designed for cloud-native applications. Prior to versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, the CORS filter will segfault and crash Envoy when the `origin` header is removed and deleted between `decodeHeaders`and `encodeHeaders`. Versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12 have a fix for this issue. As a workaround, do not remove the `origin` header in the Envoy configuration.
+Name: CVE-2023-48299
+Description: TorchServe is a tool for serving and scaling PyTorch models in production. Starting in version 0.1.0 and prior to version 0.9.0, using the model/workflow management API, there is a chance of uploading potentially harmful archives that contain files that are extracted to any location on the filesystem that is within the process permissions. Leveraging this issue could aid third-party actors in hiding harmful code in open-source/public models, which can be downloaded from the internet, and take advantage of machines running Torchserve. The ZipSlip issue in TorchServe has been fixed by validating the paths of files contained within a zip archive before extracting them. TorchServe release 0.9.0 includes fixes to address the ZipSlip vulnerability.
 
-Name: CVE-2023-35942
-Description: Envoy is an open source edge and service proxy designed for cloud-native applications. Prior to versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, gRPC access loggers using listener's global scope can cause a `use-after-free` crash when the listener is drained. Versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12 have a fix for this issue. As a workaround, disable gRPC access log or stop listener update.
+Name: CVE-2023-4457
+Description: Grafana is an open-source platform for monitoring and observability. The Google Sheets data source plugin for Grafana, versions 0.9.0 to 1.2.2 are vulnerable to an information disclosure vulnerability. The plugin did not properly sanitize error messages, making it potentially expose the Google Sheet API-key that is configured for the data source. This vulnerability was fixed in version 1.2.2.
 
-Name: CVE-2023-35941
-Description: Envoy is an open source edge and service proxy designed for cloud-native applications. Prior to versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12, a malicious client is able to construct credentials with permanent validity in some specific scenarios. This is caused by the some rare scenarios in which HMAC payload can be always valid in OAuth2 filter's check. Versions 1.27.0, 1.26.4, 1.25.9, 1.24.10, and 1.23.12 have a fix for this issue. As a workaround, avoid wildcards/prefix domain wildcards in the host's domain configuration.
+Name: CVE-2023-44378
+Description: gnark is a zk-SNARK library that offers a high-level API to design circuits. Prior to version 0.9.0, for some in-circuit values, it is possible to construct two valid decomposition to bits. In addition to the canonical decomposition of `a`, for small values there exists a second decomposition for `a+r` (where `r` is the modulus the values are being reduced by). The second decomposition was possible due to overflowing the field where the values are defined. Upgrading to version 0.9.0 should fix the issue without needing to change the calls to value comparison methods.
 
-Name: CVE-2022-41884
-Description: TensorFlow is an open source platform for machine learning. If a numpy array is created with a shape such that one element is zero and the others sum to a large number, an error will be raised. We have patched the issue in GitHub commit 2b56169c16e375c521a3bc8ea658811cc0793784. The fix will be included in TensorFlow 2.11. We will also cherrypick this commit on TensorFlow 2.10.1, 2.9.3, and TensorFlow 2.8.4, as these are also affected and still in supported range.
+Name: CVE-2023-39916
+Description: NLnet Labs&#8217; Routinator 0.9.0 up to and including 0.12.1 contains a possible path traversal vulnerability in the optional, off-by-default keep-rrdp-responses feature that allows users to store the content of responses received for RRDP requests. The location of these stored responses is constructed from the URL of the request. Due to insufficient sanitation of the URL, it is possible for an attacker to craft a URL that results in the response being stored outside of the directory specified for it.
 
-Name: CVE-2022-29216
-Description: TensorFlow is an open source platform for machine learning. Prior to versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4, TensorFlow's `saved_model_cli` tool is vulnerable to a code injection. This can be used to open a reverse shell. This code path was maintained for compatibility reasons as the maintainers had several test cases where numpy expressions were used as arguments. However, given that the tool is always run manually, the impact of this is still not severe. The maintainers have now removed the `safe=False` argument, so all parsing is done without calling `eval`. The patch is available in versions 2.9.0, 2.8.1, 2.7.2, and 2.6.4.
+Name: CVE-2023-31038
+Description: SQL injection in Log4cxx when using the ODBC appender to send log messages to a database. No fields sent to the database were properly escaped for SQL injection. This has been the case since at least version 0.9.0(released 2003-08-06) Note that Log4cxx is a C++ framework, so only C++ applications are affected. Before version 1.1.0, the ODBC appender was automatically part of Log4cxx if the library was found when compiling the library. As of version 1.1.0, this must be both explicitly enabled in order to be compiled in. Three preconditions must be met for this vulnerability to be possible: 1. Log4cxx compiled with ODBC support(before version 1.1.0, this was auto-detected at compile time) 2. ODBCAppender enabled for logging messages to, generally done via a config file 3. User input is logged at some point. If your application does not have user input, it is unlikely to be affected. Users are recommended to upgrade to version 1.1.0 which properly binds the parameters to the SQL statement, or migrate to the new DBAppender class which supports an ODBC connection in addition to other databases. Note that this fix does require a configuration file update, as the old configuration files will not configure properly. An example is shown below, and more information may be found in the Log4cxx documentation on the ODBCAppender. Example of old configuration snippet: <appender name="SqlODBCAppender" class="ODBCAppender"> <param name="sql" value="INSERT INTO logs (message) VALUES ('%m')" /> ... other params here ... </appender> The migrated configuration snippet with new ColumnMapping parameters: <appender name="SqlODBCAppender" class="ODBCAppender"> <param name="sql" value="INSERT INTO logs (message) VALUES (?)" /> <param name="ColumnMapping" value="message"/> ... other params here ... </appender>
 
-Name: CVE-2021-41496
-Description: ** DISPUTED ** Buffer overflow in the array_from_pyobj function of fortranobject.c in NumPy < 1.19, which allows attackers to conduct a Denial of Service attacks by carefully constructing an array with negative values. NOTE: The vendor does not agree this is a vulnerability; the negative dimensions can only be created by an already privileged user (or internally).
+Name: CVE-2023-26483
+Description: gosaml2 is a Pure Go implementation of SAML 2.0. SAML Service Providers using this library for SAML authentication support are likely susceptible to Denial of Service attacks. A bug in this library enables attackers to craft a `deflate`-compressed request which will consume significantly more memory during processing than the size of the original request. This may eventually lead to memory exhaustion and the process being killed. The maximum compression ratio achievable with `deflate` is 1032:1, so by limiting the size of bodies passed to gosaml2, limiting the rate and concurrency of calls, and ensuring that lots of memory is available to the process it _may_ be possible to help Go's garbage collector "keep up". Implementors are encouraged not to rely on this. This issue is fixed in version 0.9.0.
 
-Name: CVE-2021-41495
-Description: ** DISPUTED ** Null Pointer Dereference vulnerability exists in numpy.sort in NumPy &lt and 1.19 in the PyArray_DescrNew function due to missing return-value validation, which allows attackers to conduct DoS attacks by repetitively creating sort arrays. NOTE: While correct that validation is missing, an error can only occur due to an exhaustion of memory. If the user can exhaust memory, they are already privileged. Further, it should be practically impossible to construct an attack which can target the memory exhaustion to occur at exactly this place.
+Name: CVE-2023-25824
+Description: Mod_gnutls is a TLS module for Apache HTTPD based on GnuTLS. Versions from 0.9.0 to 0.12.0 (including) did not properly fail blocking read operations on TLS connections when the transport hit timeouts. Instead it entered an endless loop retrying the read operation, consuming CPU resources. This could be exploited for denial of service attacks. If trace level logging was enabled, it would also produce an excessive amount of log output during the loop, consuming disk space. The problem has been fixed in commit d7eec4e598158ab6a98bf505354e84352f9715ec, please update to version 0.12.1. There are no workarounds, users who cannot update should apply the errno fix detailed in the security advisory.
 
-Name: CVE-2021-34141
-Description: An incomplete string comparison in the numpy.core component in NumPy before 1.22.0 allows attackers to trigger slightly incorrect copying by constructing specific string objects. NOTE: the vendor states that this reported code behavior is "completely harmless."
+Name: CVE-2023-22959
+Description: WebChess through 0.9.0 and 1.0.0.rc2 allows SQL injection: mainmenu.php, chess.php, and opponentspassword.php (txtFirstName, txtLastName).
 
-Name: CVE-2021-33430
-Description: ** DISPUTED ** A Buffer Overflow vulnerability exists in NumPy 1.9.x in the PyArray_NewFromDescr_int function of ctors.c when specifying arrays of large dimensions (over 32) from Python code, which could let a malicious user cause a Denial of Service. NOTE: The vendor does not agree this is a vulneraility; In (very limited) circumstances a user may be able provoke the buffer overflow, the user is most likely already privileged to at least provoke denial of service by exhausting memory. Triggering this further requires the use of uncommon API (complicated structured dtypes), which is very unlikely to be available to an unprivileged user.
+Name: CVE-2023-1000
+Description: A vulnerability was found in cyanomiko dcnnt-py up to 0.9.0. It has been classified as critical. Affected is the function main of the file dcnnt/plugins/notifications.py of the component Notification Handler. The manipulation leads to command injection. It is possible to launch the attack remotely. Upgrading to version 0.9.1 is able to address this issue. The patch is identified as b4021d784a97e25151a5353aa763a741e9a148f5. It is recommended to upgrade the affected component. VDB-262230 is the identifier assigned to this vulnerability.
 
-Name: CVE-2021-28363
-Description: The urllib3 library 1.26.x before 1.26.4 for Python omits SSL certificate validation in some cases involving HTTPS to HTTPS proxies. The initial connection to the HTTPS proxy (if an SSLContext isn't given via proxy_config) doesn't verify the hostname of the certificate. This means certificates for different servers that still validate properly with the default urllib3 SSLContext will be silently accepted.
+Name: CVE-2022-4942
+Description: A vulnerability was found in mportuga eslint-detailed-reporter up to 0.9.0 and classified as problematic. Affected by this issue is the function renderIssue in the library lib/template-generator.js. The manipulation of the argument message leads to cross site scripting. The attack may be launched remotely. The patch is identified as 505c190efd4905990db6207863bdcbd9b1d7e1bd. It is recommended to apply a patch to fix this issue. VDB-226310 is the identifier assigned to this vulnerability.
 
-Name: CVE-2019-6446
-Description: ** DISPUTED ** 
+Name: CVE-2022-4695
+Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
 
-An issue was discovered in NumPy 1.16.0 and earlier. It uses the pickle Python module unsafely, which allows remote attackers to execute arbitrary code via a crafted serialized object, as demonstrated by a numpy.load call. NOTE: third parties dispute this issue because it is  a behavior that might have legitimate applications in (for example)  loading serialized Python object arrays from trusted and authenticated  sources.
+Name: CVE-2022-4694
+Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2017-12852
-Description: The numpy.pad function in Numpy 1.13.1 and older versions is missing input validation. An empty list or ndarray will stick into an infinite loop, which can allow attackers to cause a DoS attack.
+Name: CVE-2022-4692
+Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2016-6337
-Description: MediaWiki 1.27.x before 1.27.1 might allow remote attackers to bypass intended session access restrictions by leveraging a call to the UserGetRights function after Session::getAllowedUserRights.
+Name: CVE-2022-4691
+Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2016-6336
-Description: MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 allows remote authenticated users with undelete permissions to bypass intended suppressrevision and deleterevision restrictions and remove the revision deletion status of arbitrary file revisions by using Special:Undelete.
+Name: CVE-2022-4690
+Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2016-6335
-Description: MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 does not generate head items in the context of a given title, which allows remote attackers to obtain sensitive information via a parse action to api.php.
+Name: CVE-2022-4689
+Description: Improper Access Control in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2016-6334
-Description: Cross-site scripting (XSS) vulnerability in the Parser::replaceInternalLinks2 method in MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 allows remote attackers to inject arbitrary web script or HTML via vectors involving replacement of percent encoding in unclosed internal links.
+Name: CVE-2022-4688
+Description: Improper Authorization in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2016-6333
-Description: Cross-site scripting (XSS) vulnerability in the CSS user subpage preview feature in MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 allows remote attackers to inject arbitrary web script or HTML via the edit box in Special:MyPage/common.css.
+Name: CVE-2022-4687
+Description: Incorrect Use of Privileged APIs in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2016-6332
-Description: MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1, when $wgBlockDisablesLogin is true, might allow remote attackers to obtain sensitive information by leveraging failure to terminate sessions when a user account is blocked.
+Name: CVE-2022-4686
+Description: Authorization Bypass Through User-Controlled Key in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2016-6331
-Description: ApiParse in MediaWiki before 1.23.15, 1.26.x before 1.26.4, and 1.27.x before 1.27.1 allows remote attackers to bypass intended per-title read restrictions via a parse action to api.php.
+Name: CVE-2022-4684
+Description: Improper Access Control in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2014-1859
-Description: (1) core/tests/test_memmap.py, (2) core/tests/test_multiarray.py, (3) f2py/f2py2e.py, and (4) lib/tests/test_io.py in NumPy before 1.8.1 allow local users to write to arbitrary files via a symlink attack on a temporary file.
+Name: CVE-2022-4683
+Description: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute in GitHub repository usememos/memos prior to 0.9.0.
 
-Name: CVE-2014-1858
-Description: __init__.py in f2py in NumPy before 1.8.1 allows local users to write to arbitrary files via a symlink attack on a temporary file.
+Name: CVE-2022-4609
+Description: Cross-site Scripting (XSS) - Stored in GitHub repository usememos/memos prior to 0.9.0.
+
+Name: CVE-2022-39353
+Description: xmldom is a pure JavaScript W3C standard-based (XML DOM Level 2 Core) `DOMParser` and `XMLSerializer` module. xmldom parses XML that is not well-formed because it contains multiple top level elements, and adds all root nodes to the `childNodes` collection of the `Document`, without reporting any error or throwing. This breaks the assumption that there is only a single root node in the tree, which led to issuance of CVE-2022-39299 as it is a potential issue for dependents. Update to @xmldom/xmldom@~0.7.7, @xmldom/xmldom@~0.8.4 (dist-tag latest) or @xmldom/xmldom@>=0.9.0-beta.4 (dist-tag next). As a workaround, please one of the following approaches depending on your use case: instead of searching for elements in the whole DOM, only search in the `documentElement`or reject a document with a document that has more then 1 `childNode`.
+
+Name: CVE-2022-38790
+Description: Weave GitOps Enterprise before 0.9.0-rc.5 has a cross-site scripting (XSS) bug allowing a malicious user to inject a javascript: link in the UI. When clicked by a victim user, the script will execute with the victim's permission. The exposure appears in Weave GitOps Enterprise UI via a GitopsCluster dashboard link. An annotation can be added to a GitopsCluster custom resource.
+
+Name: CVE-2022-3029
+Description: In NLnet Labs Routinator 0.9.0 up to and including 0.11.2, due to a mistake in error handling, data in RRDP snapshot and delta files that isn&#8217;t correctly base 64 encoded is treated as a fatal error and causes Routinator to exit. Worst case impact of this vulnerability is denial of service for the RPKI data that Routinator provides to routers. This may stop your network from validating route origins based on RPKI data. This vulnerability does not allow an attacker to manipulate RPKI data.
+
+Name: CVE-2022-25203
+Description: Jenkins Team Views Plugin 0.9.0 and earlier does not escape team names, resulting in a stored cross-site scripting (XSS) vulnerability exploitable by attackers with Overall/Read permission.
+
+Name: CVE-2022-24684
+Description: HashiCorp Nomad and Nomad Enterprise 0.9.0 through 1.0.16, 1.1.11, and 1.2.5 allow operators with job-submit capabilities to use the spread stanza to panic server agents. Fixed in 1.0.18, 1.1.12, and 1.2.6.
+
+Name: CVE-2021-45890
+Description: basic/BasicAuthProvider.java in AuthGuard before 0.9.0 allows authentication via an inactive identifier.
+
+Name: CVE-2021-43174
+Description: NLnet Labs Routinator versions 0.9.0 up to and including 0.10.1, support the gzip transfer encoding when querying RRDP repositories. This encoding can be used by an RRDP repository to cause an out-of-memory crash in these versions of Routinator. RRDP uses XML which allows arbitrary amounts of white space in the encoded data. The gzip scheme compresses such white space extremely well, leading to very small compressed files that become huge when being decompressed for further processing, big enough that Routinator runs out of memory when parsing input data waiting for the next XML element.
+
+Name: CVE-2021-43083
+Description: Apache PLC4X - PLC4C (Only the C language implementation was effected) was vulnerable to an unsigned integer underflow flaw inside the tcp transport. Users should update to 0.9.1, which addresses this issue. However, in order to exploit this vulnerability, a user would have to actively connect to a mallicious device which could send a response with invalid content. Currently we consider the probability of this being exploited as quite minimal, however this could change in the future, especially with the industrial networks growing more and more together.
+
+Name: CVE-2021-28656
+Description: Cross-Site Request Forgery (CSRF) vulnerability in Credential page of Apache Zeppelin allows an attacker to submit malicious request. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+
+Name: CVE-2021-28655
+Description: The improper Input Validation vulnerability in "&#8221;Move folder to Trash&#8221; feature of Apache Zeppelin allows an attacker to delete the arbitrary files. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+
+Name: CVE-2021-27578
+Description: Cross Site Scripting vulnerability in markdown interpreter of Apache Zeppelin allows an attacker to inject malicious scripts. This issue affects Apache Zeppelin Apache Zeppelin versions prior to 0.9.0.
+
+Name: CVE-2021-23393
+Description: This affects the package Flask-Unchained before 0.9.0. When using the the _validate_redirect_url function, it is possible to bypass URL validation and redirect a user to an arbitrary URL by providing multiple back slashes such as \\\evil.com/path. This vulnerability is only exploitable if an alternative WSGI server other than Werkzeug is used, or the default behaviour of Werkzeug is modified using 'autocorrect_location_header=False.
+
+Name: CVE-2021-21272
+Description: ORAS is open source software which enables a way to push OCI Artifacts to OCI Conformant registries. ORAS is both a CLI for initial testing and a Go Module. In ORAS from version 0.4.0 and before version 0.9.0, there is a "zip-slip" vulnerability. The directory support feature allows the downloaded gzipped tarballs to be automatically extracted to the user-specified directory where the tarball can have symbolic links and hard links. A well-crafted tarball or tarballs allow malicious artifact providers linking, writing, or overwriting specific files on the host filesystem outside of the user-specified directory unexpectedly with the same permissions as the user who runs `oras pull`. Users of the affected versions are impacted if they are `oras` CLI users who runs `oras pull`, or if they are Go programs, which invoke `github.com/deislabs/oras/pkg/content.FileStore`. The problem has been fixed in version 0.9.0. For `oras` CLI users, there is no workarounds other than pulling from a trusted artifact provider. For `oras` package users, the workaround is to not use `github.com/deislabs/oras/pkg/content.FileStore`, and use other content stores instead, or pull from a trusted artifact provider.
+
+Name: CVE-2020-5227
+Description: Feedgen (python feedgen) before 0.9.0 is susceptible to XML Denial of Service attacks. The *feedgen* library allows supplying XML as content for some of the available fields. This XML will be parsed and integrated into the existing XML tree. During this process, feedgen is vulnerable to XML Denial of Service Attacks (e.g. XML Bomb). This becomes a concern in particular if feedgen is used to include content from untrused sources and if XML (including XHTML) is directly included instead of providing plain tex content only. This problem has been fixed in feedgen 0.9.0 which disallows XML entity expansion and external resources.
+
+Name: CVE-2020-28348
+Description: HashiCorp Nomad and Nomad Enterprise 0.9.0 up to 0.12.7 client Docker file sandbox feature may be subverted when not explicitly disabled or when using a volume mount type. Fixed in 0.12.8, 0.11.7, and 0.10.8.
+
+Name: CVE-2020-27195
+Description: HashiCorp Nomad and Nomad Enterprise version 0.9.0 up to 0.12.5 client file sandbox feature can be subverted using either the template or artifact stanzas. Fixed in 0.12.6, 0.11.5, and 0.10.6
+
+Name: CVE-2020-26302
+Description: is.js is a general-purpose check library. Versions 0.9.0 and prior contain one or more regular expressions that are vulnerable to Regular Expression Denial of Service (ReDoS). is.js uses a regex copy-pasted from a gist to validate URLs. Trying to validate a malicious string can cause the regex to loop &#8220;forever." This vulnerability was found using a CodeQL query which identifies inefficient regular expressions. is.js has no patch for this issue.
+
+Name: CVE-2020-13929
+Description: Authentication bypass vulnerability in Apache Zeppelin allows an attacker to bypass Zeppelin authentication mechanism to act as another user. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+
+Name: CVE-2020-10660
+Description: HashiCorp Vault and Vault Enterprise versions 0.9.0 through 1.3.3 may, under certain circumstances, have an Entity's Group membership inadvertently include Groups the Entity no longer has permissions to. Fixed in 1.3.4.
+
+Name: CVE-2019-20171
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There are memory leaks in metx_New in isomedia/box_code_base.c and abst_Read in isomedia/box_code_adobe.c.
+
+Name: CVE-2019-20170
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is an invalid pointer dereference in the function GF_IPMPX_AUTH_Delete() in odf/ipmpx_code.c.
+
+Name: CVE-2019-20169
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a use-after-free in the function trak_Read() in isomedia/box_code_base.c.
+
+Name: CVE-2019-20168
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a use-after-free in the function gf_isom_box_dump_ex() in isomedia/box_funcs.c.
+
+Name: CVE-2019-20167
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function senc_Parse() in isomedia/box_code_drm.c.
+
+Name: CVE-2019-20166
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function gf_isom_dump() in isomedia/box_dump.c.
+
+Name: CVE-2019-20165
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function ilst_item_Read() in isomedia/box_code_apple.c.
+
+Name: CVE-2019-20164
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function gf_isom_box_del() in isomedia/box_funcs.c.
+
+Name: CVE-2019-20163
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a NULL pointer dereference in the function gf_odf_avc_cfg_write_bs() in odf/descriptors.c.
+
+Name: CVE-2019-20162
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is heap-based buffer overflow in the function gf_isom_box_parse_ex() in isomedia/box_funcs.c.
+
+Name: CVE-2019-20161
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is heap-based buffer overflow in the function ReadGF_IPMPX_WatermarkingInit() in odf/ipmpx_code.c.
+
+Name: CVE-2019-20160
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a stack-based buffer overflow in the function av1_parse_tile_group() in media_tools/av_parsers.c.
+
+Name: CVE-2019-20159
+Description: An issue was discovered in GPAC version 0.8.0 and 0.9.0-development-20191109. There is a memory leak in dinf_New() in isomedia/box_code_base.c.
+
+Name: CVE-2019-18609
+Description: An issue was discovered in amqp_handle_input in amqp_connection.c in rabbitmq-c 0.9.0. There is an integer overflow that leads to heap memory corruption in the handling of CONNECTION_STATE_HEADER. A rogue server could return a malicious frame header that leads to a smaller target_size value than needed. This condition is then carried on to a memcpy function that copies too much data into a heap buffer.
+
+Name: CVE-2019-12618
+Description: HashiCorp Nomad 0.9.0 through 0.9.1 has Incorrect Access Control via the exec driver.
+
+Name: CVE-2019-11404
+Description: arrow-kt Arrow before 0.9.0 resolved Gradle build artifacts (for compiling and building the published JARs) over HTTP instead of HTTPS. Any of these dependent artifacts could have been maliciously compromised by an MITM attack.
+
+Name: CVE-2019-10095
+Description: bash command injection vulnerability in Apache Zeppelin allows an attacker to inject system commands into Spark interpreter settings. This issue affects Apache Zeppelin Apache Zeppelin version 0.9.0 and prior versions.
+
+Name: CVE-2018-3733
+Description: crud-file-server node module before 0.9.0 suffers from a Path Traversal vulnerability due to incorrect validation of url, which allows a malicious user to read content of any file with known path.
+
+Name: CVE-2018-19200
+Description: An issue was discovered in uriparser before 0.9.0. UriCommon.c allows attempted operations on NULL input via a uriResetUri* function.
+
+Name: CVE-2018-19199
+Description: An issue was discovered in uriparser before 0.9.0. UriQuery.c allows an integer overflow via a uriComposeQuery* or uriComposeQueryEx* function because of an unchecked multiplication.
+
+Name: CVE-2018-19198
+Description: An issue was discovered in uriparser before 0.9.0. UriQuery.c allows an out-of-bounds write via a uriComposeQuery* or uriComposeQueryEx* function because the '&' character is mishandled in certain contexts.
+
+Name: CVE-2018-18434
+Description: An issue was discovered in litemall 0.9.0. Arbitrary file download is possible via ../ directory traversal in linlinjava/litemall/wx/web/WxStorageController.java in the litemall-wx-api component.
+
+Name: CVE-2017-18367
+Description: libseccomp-golang 0.9.0 and earlier incorrectly generates BPFs that OR multiple arguments rather than ANDing them. A process running under a restrictive seccomp filter that specified multiple syscall arguments could bypass intended access restrictions by specifying a single matching argument.
+
+Name: CVE-2017-1000198
+Description: tcmu-runner daemon version 0.9.0 to 1.2.0 is vulnerable to invalid memory references in the handler_glfs.so handler resulting in denial of service
+
+Name: CVE-2016-15017
+Description: A vulnerability has been found in fabarea media_upload on TYPO3 and classified as critical. This vulnerability affects the function getUploadedFileList of the file Classes/Service/UploadFileService.php. The manipulation leads to pathname traversal. Upgrading to version 0.9.0 is able to address this issue. The patch is identified as b25d42a4981072321c1a363311d8ea2a4ac8763a. It is recommended to upgrade the affected component. VDB-217786 is the identifier assigned to this vulnerability.
+
+Name: CVE-2016-10931
+Description: An issue was discovered in the openssl crate before 0.9.0 for Rust. There is an SSL/TLS man-in-the-middle vulnerability because certificate verification is off by default and there is no API for hostname verification.
+
+Name: CVE-2015-2831
+Description: Buffer overflow in das_watchdog 0.9.0 allows local users to execute arbitrary code with root privileges via a large string in the XAUTHORITY environment variable.
+
+Name: CVE-2015-10119
+Description: A vulnerability, which was classified as problematic, has been found in View All Posts Page Plugin up to 0.9.0 on WordPress. This issue affects the function action_admin_notices_activation of the file view-all-posts-pages.php. The manipulation leads to cross site scripting. The attack may be initiated remotely. Upgrading to version 0.9.1 is able to address this issue. The patch is named bf914f3a59063fa4df8fd4925ae18a5d852396d7. It is recommended to upgrade the affected component. The associated identifier of this vulnerability is VDB-233363.
+
+Name: CVE-2013-7416
+Description: canto_curses/guibase.py in Canto Curses before 0.9.0 allows remote feed servers to execute arbitrary commands via shell metacharacters in a URL in a feed.
+
+Name: CVE-2013-6494
+Description: fedup 0.9.0 in Fedora 19, 20, and 21 uses a temporary directory with a static name for its download cache, which allows local users to cause a denial of service (prevention of system updates).
+
+Name: CVE-2013-2191
+Description: python-bugzilla before 0.9.0 does not validate X.509 certificates, which allows man-in-the-middle attackers to spoof Bugzilla servers via a crafted certificate.
+
+Name: CVE-2013-1853
+Description: Almanah Diary 0.9.0 and 0.10.0 does not encrypt the database when closed, which allows local users to obtain sensitive information by reading the database.
+
+Name: CVE-2013-1801
+Description: The httparty gem 0.9.0 and earlier for Ruby does not properly restrict casts of string values, which might allow remote attackers to conduct object-injection attacks and execute arbitrary code, or cause a denial of service (memory and CPU consumption) by leveraging Action Pack support for YAML type conversion, a similar vulnerability to CVE-2013-0156.
+
+Name: CVE-2012-1410
+Description: Multiple cross-site scripting (XSS) vulnerabilities in the History Window implementation in Kadu 0.9.0 through 0.11.0 allow remote attackers to inject arbitrary web script or HTML via a crafted (1) SMS message, (2) presence message, or (3) status description.
+
+Name: CVE-2012-1245
+Description: Cross-site scripting (XSS) vulnerability in the cleanup_urls function in forum/utils/html.py in OSQA before 1234, and 0.9.0 Beta 3 and earlier, allows remote attackers to inject arbitrary web script or HTML via vectors related to a crafted URI.
+
+Name: CVE-2012-0023
+Description: Double free vulnerability in the get_chunk_header function in modules/demux/ty.c in VideoLAN VLC media player 0.9.0 through 1.1.12 allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via a crafted TiVo (TY) file.
+
+Name: CVE-2011-3364
+Description: Incomplete blacklist vulnerability in the svEscape function in settings/plugins/ifcfg-rh/shvar.c in the ifcfg-rh plug-in for GNOME NetworkManager 0.9.1, 0.9.0, 0.8.1, and possibly other versions, when PolicyKit is configured to allow users to create new connections, allows local users to execute arbitrary commands via a newline character in the name for a new network connection, which is not properly handled when writing to the ifcfg file.
+
+Name: CVE-2011-1486
+Description: libvirtd in libvirt before 0.9.0 does not use thread-safe error reporting, which allows remote attackers to cause a denial of service (crash) by causing multiple threads to report errors at the same time.
+
+Name: CVE-2010-5142
+Description: chef-server-api/app/controllers/users.rb in the API in Chef before 0.9.0 does not require administrative privileges for the create, destroy, and update methods, which allows remote authenticated users to manage user accounts via requests to the /users URI.
+
+Name: CVE-2010-4960
+Description: Cross-site scripting (XSS) vulnerability in the Branchenbuch (aka Yellow Pages or mh_branchenbuch) extension before 0.9.1 for TYPO3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
+
+Name: CVE-2010-2937
+Description: The ReadMetaFromId3v2 function in taglib.cpp in the TagLib plugin in VideoLAN VLC media player 0.9.0 through 1.1.2 does not properly process ID3v2 tags, which allows remote attackers to cause a denial of service (application crash) via a crafted media file.
+
+Name: CVE-2010-10008
+Description: ** UNSUPPORTED WHEN ASSIGNED ** A vulnerability was found in simplesamlphp simplesamlphp-module-openidprovider up to 0.8.x. It has been declared as problematic. Affected by this vulnerability is an unknown functionality of the file templates/trust.tpl.php. The manipulation of the argument StateID leads to cross site scripting. The attack can be launched remotely. Upgrading to version 0.9.0 is able to address this issue. The identifier of the patch is 8365d48c863cf06ccf1465cc0a161cefae29d69d. It is recommended to upgrade the affected component. The identifier VDB-218473 was assigned to this vulnerability. NOTE: This vulnerability only affects products that are no longer supported by the maintainer.
+
+Name: CVE-2009-4377
+Description: The (1) SMB and (2) SMB2 dissectors in Wireshark 0.9.0 through 1.2.4 allow remote attackers to cause a denial of service (crash) via a crafted packet that triggers a NULL pointer dereference, as demonstrated by fuzz-2009-12-07-11141.pcap.
+
+Name: CVE-2008-5276
+Description: Integer overflow in the ReadRealIndex function in real.c in the Real demuxer plugin in VideoLAN VLC media player 0.9.0 through 0.9.7 allows remote attackers to execute arbitrary code via a malformed RealMedia (.rm) file that triggers a heap-based buffer overflow.
+
+Name: CVE-2008-4957
+Description: find_flags in Kitware GCC-XML (gccxml) 0.9.0 allows local users to overwrite arbitrary files via a symlink attack on a /tmp/*.cxx temporary file.
+
+Name: CVE-2008-4712
+Description: Directory traversal vulnerability in pages/showblog.php in LnBlog 0.9.0 and earlier, when magic_quotes_gpc is disabled, allows remote attackers to include and execute arbitrary local files via a .. (dot dot) in the plugin parameter.
+
+Name: CVE-2008-4654
+Description: Stack-based buffer overflow in the parse_master function in the Ty demux plugin (modules/demux/ty.c) in VLC Media Player 0.9.0 through 0.9.4 allows remote attackers to execute arbitrary code via a TiVo TY media file with a header containing a crafted size value.
+
+Name: CVE-2008-2147
+Description: Untrusted search path vulnerability in VideoLAN VLC before 0.9.0 allows local users to execute arbitrary code via a malicious library under the modules/ or plugins/ subdirectories of the current working directory.
+
+Name: CVE-2008-1945
+Description: QEMU 0.9.0 does not properly handle changes to removable media, which allows guest OS users to read arbitrary files on the host OS by using the diskformat: parameter in the -usbdevice option to modify the disk-image header to identify a different format, a related issue to CVE-2008-2004.
+
+Name: CVE-2008-1686
+Description: Array index vulnerability in Speex 1.1.12 and earlier, as used in libfishsound 0.9.0 and earlier, including Illiminable DirectShow Filters and Annodex Plugins for Firefox, xine-lib before 1.1.12, and many other products, allows remote attackers to execute arbitrary code via a header structure containing a negative offset, which is used to dereference a function pointer.
+
+Name: CVE-2007-6227
+Description: QEMU 0.9.0 allows local users of a Windows XP SP2 guest operating system to overwrite the TranslationBlock (code_gen_buffer) buffer, and probably have unspecified other impacts related to an "overflow," via certain Windows executable programs, as demonstrated by qemu-dos.com.
+
+Name: CVE-2007-5953
+Description: Unspecified vulnerability in Really Simple CalDAV Store (RSCDS) before 0.9.0 allows attackers to obtain sensitive information via unspecified vectors.
+
+Name: CVE-2007-5315
+Description: PHP remote file inclusion vulnerability in common.php in LiveAlbum 0.9.0, when register_globals is enabled, allows remote attackers to execute arbitrary PHP code via a URL in the livealbum_dir parameter.
+
+Name: CVE-2007-0487
+Description: ** DISPUTED **
+
+PHP remote file inclusion vulnerability in index.php in FreeForum 0.9.0 allows remote attackers to execute arbitrary PHP code via a URL in the fpath parameter. NOTE: this issue has been disputed by third party researchers, stating that fpath variable is initialized before being used.
+
+Name: CVE-2007-0469
+Description: The extract_files function in installer.rb in RubyGems before 0.9.1 does not check whether files exist before overwriting them, which allows user-assisted remote attackers to overwrite arbitrary files, cause a denial of service, or execute arbitrary code via crafted GEM packages.
+
+Name: CVE-2006-5427
+Description: PHP remote file inclusion vulnerability in plugins/main.php in Php AMX 0.9.0, when register_globals is enabled or magic_quotes_gpc is disabled, allows remote attackers to execute arbitrary PHP code via a URL in the plug_path parameter.
+
+Name: CVE-2006-0751
+Description: Multiple unspecified vulnerabilities in the (1) Filesystem in USErspace (FUSE) client and (2) NOOFS daemon in in Network Object Oriented File System (NOOFS) before 0.9.0 have unspecified impact and attack vectors.
+
+Name: CVE-2005-2365
+Description: Unknown vulnerability in the SMB dissector in Ethereal 0.9.0 through 0.10.11 allows remote attackers to cause a buffer overflow or a denial of service (memory consumption) via unknown attack vectors.
+
+Name: CVE-2005-2362
+Description: Unknown vulnerability several dissectors in Ethereal 0.9.0 through 0.10.11 allows remote attackers to cause a denial of service (application crash) by reassembling certain packets.
+
+Name: CVE-2004-1708
+Description: Webbsyte Chat 0.9.0 allows remote attackers to cause a denial of service (crash) via a large number of connections.
+
+Name: CVE-2004-1378
+Description: The expat XML parser code, as used in the open source Jabber (jabberd) 1.4.3 and earlier, jadc2s 0.9.0 and earlier, and possibly other packages, allows remote attackers to cause a denial of service (application crash) via a malformed packet to a socket that accepts XML connections.
+
+Name: CVE-2004-1301
+Description: Buffer overflow in the book_format_sql function in format.c for xlreader 0.9.0 allows remote attackers to execute arbitrary code via a crafted Excel (XLS) file.
+
+Name: CVE-2004-1142
+Description: Ethereal 0.9.0 through 0.10.7 allows remote attackers to cause a denial of service (CPU consumption) via a certain malformed SMB packet.
+
+Name: CVE-2004-1140
+Description: Ethereal 0.9.0 through 0.10.7 allows remote attackers to cause a denial of service (application hang) and possibly fill available disk space via an invalid RTP timestamp.
+
+Name: CVE-2001-1516
+Description: Cross-site scripting (XSS) vulnerability in phpReview 0.9.0 rc2 and earlier allows remote attackers to inject arbitrary web script or HTML via user-submitted reviews.
+
+Name: CVE-2001-1089
+Description: libnss-pgsql in nss-pgsql 0.9.0 and earlier allows remote attackers to execute arbitrary SQL queries by inserting SQL code into an HTTP request.
+
+Name: CVE-1999-1351
+Description: Directory traversal vulnerability in KVIrc IRC client 0.9.0 with the "Listen to !nick <soundname> requests" option enabled allows remote attackers to read arbitrary files via a .. (dot dot) in a DCC GET request.
 

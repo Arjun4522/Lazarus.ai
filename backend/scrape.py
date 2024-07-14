@@ -34,10 +34,10 @@ def scrape_cve_search_results_from_files(directory, output_file):
                         outfile.write("No CVE search results table div found.\n\n")
 
 # Directory containing .html files
-directory = 'cve_pages'
+# directory = 'cve_pages'
 
-# Output text file
-output_file = 'results.txt'
+# # Output text file
+# output_file = 'results.txt'
 
-# Call function to scrape search results from files and write to text file
-scrape_cve_search_results_from_files(directory, output_file)
+# # Call function to scrape search results from files and write to text file
+# scrape_cve_search_results_from_files(directory, output_file)

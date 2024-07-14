@@ -5,19 +5,18 @@ import sys
 import requests
 import json
 
-def extract_dependencies_from_notebook(notebook_path):
+def extract_dependencies_from_notebook(notebook_content):
     """
     Extract dependencies from a Jupyter notebook, including versions if specified.
     """
-    with open(notebook_path, 'r', encoding='utf-8') as f:
-        nb = nbformat.read(f, as_version=4)
+    nb = nbformat.reads(notebook_content, as_version=4)
     
     dependencies = {}
     pip_pattern = re.compile(r'!pip install ([a-zA-Z0-9\-_\.\[\]]+)(==[0-9\.]+)?')
     import_pattern = re.compile(r'^\s*(?:import|from)\s+([a-zA-Z0-9_\.]+)')
 
     for cell in nb['cells']:
-        if cell['cell_type'] == 'code':
+        if (cell['cell_type'] == 'code'):
             for line in cell['source'].split('\n'):
                 pip_match = pip_pattern.search(line)
                 import_match = import_pattern.search(line)
@@ -77,14 +76,14 @@ def save_dependencies_to_json(dependencies, output_file):
         json.dump(dependencies, f, indent=4)
 
 # Example usage
-notebook_path = 'test.ipynb'
-dependencies = extract_dependencies_from_notebook(notebook_path)
-dependencies = handle_missing_versions(dependencies)
-print("Final dependencies with versions:", dependencies)
+# notebook_path = 'test.ipynb'
+# dependencies = extract_dependencies_from_notebook(notebook_path)
+# dependencies = handle_missing_versions(dependencies)
+# print("Final dependencies with versions:", dependencies)
 
-# Specify the output file path
-output_file = 'dependencies.json'
+# # Specify the output file path
+# output_file = 'dependencies.json'
 
-# Save dependencies to JSON file
-save_dependencies_to_json(dependencies, output_file)
-print(f"Dependencies saved to {output_file}")
+# # Save dependencies to JSON file
+# save_dependencies_to_json(dependencies, output_file)
+# print(f"Dependencies saved to {output_file}")
