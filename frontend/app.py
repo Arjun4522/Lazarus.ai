@@ -3,8 +3,8 @@ from utilities import *
 
 
 
-st.set_page_config(page_title="CVE Chatbot", page_icon=":robot:")
-st.title("CVE Information Chatbot :robot:")
+st.set_page_config(page_title="Security Assistance Chatbot")
+st.title("Security Assistance Chatbot")
 st.sidebar.title("Actions")
 uploaded_file = st.sidebar.file_uploader("Upload .ipynb file", type=["ipynb"])
 st.sidebar.button("Scan", on_click=scan_notebook, args=(uploaded_file,))

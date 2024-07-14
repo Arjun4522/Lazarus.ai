@@ -4,46 +4,48 @@ import pkg_resources
 import sys
 import requests
 import json
+import streamlit as st
 
 def extract_dependencies_from_notebook(notebook_content):
-    """
-    Extract dependencies from a Jupyter notebook, including versions if specified.
-    """
-    nb = nbformat.reads(notebook_content, as_version=4)
-    
-    dependencies = {}
-    pip_pattern = re.compile(r'!pip install ([a-zA-Z0-9\-_\.\[\]]+)(==[0-9\.]+)?')
-    import_pattern = re.compile(r'^\s*(?:import|from)\s+([a-zA-Z0-9_\.]+)')
+    with st.spinner("extract_dependencies..."):
+        """
+        Extract dependencies from a Jupyter notebook, including versions if specified.
+        """
+        nb = nbformat.reads(notebook_content, as_version=4)
+        
+        dependencies = {}
+        pip_pattern = re.compile(r'!pip install ([a-zA-Z0-9\-_\.\[\]]+)(==[0-9\.]+)?')
+        import_pattern = re.compile(r'^\s*(?:import|from)\s+([a-zA-Z0-9_\.]+)')
 
-    for cell in nb['cells']:
-        if (cell['cell_type'] == 'code'):
-            for line in cell['source'].split('\n'):
-                pip_match = pip_pattern.search(line)
-                import_match = import_pattern.search(line)
-                if pip_match:
-                    package = pip_match.group(1)
-                    version = pip_match.group(2)
-                    if version:
-                        dependencies[package] = version.lstrip('==')
-                    else:
-                        dependencies[package] = None
-                elif import_match:
-                    module_name = import_match.group(1).split('.')[0]
-                    dependencies[module_name] = None
-    
-    # Try to get versions for packages without versions using pkg_resources
-    stdlib_modules = set(sys.builtin_module_names)
-    for package in list(dependencies):
-        if dependencies[package] is None and package not in stdlib_modules:
-            try:
-                version = pkg_resources.get_distribution(package).version
-                dependencies[package] = version
-            except (pkg_resources.DistributionNotFound, pkg_resources.VersionConflict):
-                dependencies[package] = "version not found"
-            except pkg_resources.extern.packaging.requirements.InvalidRequirement:
-                del dependencies[package]
-    
-    return dependencies
+        for cell in nb['cells']:
+            if (cell['cell_type'] == 'code'):
+                for line in cell['source'].split('\n'):
+                    pip_match = pip_pattern.search(line)
+                    import_match = import_pattern.search(line)
+                    if pip_match:
+                        package = pip_match.group(1)
+                        version = pip_match.group(2)
+                        if version:
+                            dependencies[package] = version.lstrip('==')
+                        else:
+                            dependencies[package] = None
+                    elif import_match:
+                        module_name = import_match.group(1).split('.')[0]
+                        dependencies[module_name] = None
+        
+        # Try to get versions for packages without versions using pkg_resources
+        stdlib_modules = set(sys.builtin_module_names)
+        for package in list(dependencies):
+            if dependencies[package] is None and package not in stdlib_modules:
+                try:
+                    version = pkg_resources.get_distribution(package).version
+                    dependencies[package] = version
+                except (pkg_resources.DistributionNotFound, pkg_resources.VersionConflict):
+                    dependencies[package] = "version not found"
+                except pkg_resources.extern.packaging.requirements.InvalidRequirement:
+                    del dependencies[package]
+        
+        return dependencies
 
 def get_latest_version_from_pypi(package_name):
     """
@@ -59,21 +61,23 @@ def get_latest_version_from_pypi(package_name):
         return "version not found"
 
 def handle_missing_versions(dependencies):
-    """
-    Handle dependencies with missing versions by searching PyPI for the latest version.
-    """
-    for package, version in dependencies.items():
-        if version == "version not found":
-            latest_version = get_latest_version_from_pypi(package)
-            dependencies[package] = latest_version
-    return dependencies
+    with st.spinner("Handle Missing Versions"):
+        """
+        Handle dependencies with missing versions by searching PyPI for the latest version.
+        """
+        for package, version in dependencies.items():
+            if version == "version not found":
+                latest_version = get_latest_version_from_pypi(package)
+                dependencies[package] = latest_version
+        return dependencies
 
 def save_dependencies_to_json(dependencies, output_file):
-    """
-    Save dependencies to a JSON file.
-    """
-    with open(output_file, 'w') as f:
-        json.dump(dependencies, f, indent=4)
+    with st.spinner("Save Dependencies to json file"):
+        """
+        Save dependencies to a JSON file.
+        """
+        with open(output_file, 'w') as f:
+            json.dump(dependencies, f, indent=4)
 
 # Example usage
 # notebook_path = 'test.ipynb'

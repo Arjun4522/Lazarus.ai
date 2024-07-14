@@ -83,12 +83,13 @@ def get_chatbot_response(user_question):
 
 
 def fetch_cve_details(dependencies_file, output_dir):
-    go_executable = "../backend/fetch.exe"
-    try:
-        subprocess.run([go_executable, dependencies_file, output_dir], check=True)
-        # st.success("CVE details fetched successfully!")
-    except subprocess.CalledProcessError as e:
-        st.warning(f"Error fetching CVE details: {e}")
+    with st.spinner("Fetching Cve Detatils"):
+        go_executable = "../backend/fetch.exe"
+        try:
+            subprocess.run([go_executable, dependencies_file, output_dir], check=True)
+            # st.success("CVE details fetched successfully!")
+        except subprocess.CalledProcessError as e:
+            st.warning(f"Error fetching CVE details: {e}")
 def create_database():
     pc.create_index(
         name=INDEX_NAME_1,
@@ -101,15 +102,16 @@ def create_database():
     ) 
 
 def updatedata(result_output_file):
-    loader = TextLoader(result_output_file)
-    documents = loader.load()
-    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-    docs = text_splitter.split_documents(documents)
-    if INDEX_NAME_1 not in pc.list_indexes().names():
-        create_database()
-        docsearch = PineconeVectorStore.from_documents(docs, embeddings2, index_name=INDEX_NAME_1)
-    else:
-        docsearch = PineconeVectorStore.from_documents(docs,embedding=embeddings2,index_name = INDEX_NAME_1)
+    with st.spinner("Updateing The database"):
+        loader = TextLoader(result_output_file)
+        documents = loader.load()
+        text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+        docs = text_splitter.split_documents(documents)
+        if INDEX_NAME_1 not in pc.list_indexes().names():
+            create_database()
+            docsearch = PineconeVectorStore.from_documents(docs, embeddings2, index_name=INDEX_NAME_1)
+        else:
+            docsearch = PineconeVectorStore.from_documents(docs,embedding=embeddings2,index_name = INDEX_NAME_1)
 
 def scrape_cve_data(directory, output_file):
     try:
@@ -159,5 +161,7 @@ def scan_notebook(uploaded_file):
         st.warning("Please upload a notebook file first.")
 
 def delete_database():
-    pc.delete_index(INDEX_NAME_1)
-    st.warning("Database deleted!") 
+    with st.spinner("Deleting"):
+        pc.delete_index(INDEX_NAME_1)
+        st.warning("Database deleted!") 
+        

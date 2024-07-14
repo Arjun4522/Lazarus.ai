@@ -1,181 +1,6 @@
-Scraping search results from: cve_pages\BeautifulSoup4_4.12.3.html
-Name: CVE-2021-3308
-Description: An issue was discovered in Xen 4.12.3 through 4.12.4 and 4.13.1 through 4.14.x. An x86 HVM guest with PCI pass through devices can force the allocation of all IDT vectors on the system by rebooting itself with MSI or MSI-X capabilities enabled and entries setup. Such reboots will leak any vectors used by the MSI(-X) entries that the guest might had enabled, and hence will lead to vector exhaustion on the system, not allowing further PCI pass through devices to work properly. HVM guests with PCI pass through devices can mount a Denial of Service (DoS) attack affecting the pass through of PCI devices to other guests or the hardware domain. In the latter case, this would affect the entire host.
-
-Name: CVE-2017-7542
-Description: The ip6_find_1stfragopt function in net/ipv6/output_core.c in the Linux kernel through 4.12.3 allows local users to cause a denial of service (integer overflow and infinite loop) by leveraging the ability to open a raw socket.
-
-Name: CVE-2017-7541
-Description: The brcmf_cfg80211_mgmt_tx function in drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c in the Linux kernel before 4.12.3 allows local users to cause a denial of service (buffer overflow and system crash) or possibly gain privileges via a crafted NL80211_CMD_FRAME Netlink packet.
-
-Name: CVE-2017-11600
-Description: net/xfrm/xfrm_policy.c in the Linux kernel through 4.12.3, when CONFIG_XFRM_MIGRATE is enabled, does not ensure that the dir value of xfrm_userpolicy_id is XFRM_POLICY_MAX or less, which allows local users to cause a denial of service (out-of-bounds access) or possibly have unspecified other impact via an XFRM_MSG_MIGRATE xfrm Netlink message.
-
 Scraping search results from: cve_pages\google_3.0.0.html
 Name: CVE-2023-34180
 Description: Unauth. Reflected Cross-Site Scripting (XSS) vulnerability in KAPlugins Google Fonts For WordPress plugin <= 3.0.0 versions.
-
-Scraping search results from: cve_pages\langchain_0.2.6.html
-Name: CVE-2024-38459
-Description: langchain_experimental (aka LangChain Experimental) before 0.0.61 for LangChain provides Python REPL access without an opt-in step. NOTE; this issue exists because of an incomplete fix for CVE-2024-27444.
-
-Name: CVE-2024-37058
-Description: Deserialization of untrusted data can occur in versions of the MLflow platform running version 2.5.0 or newer, enabling a maliciously uploaded Langchain AgentExecutor model to run arbitrary code on an end user&#8217;s system when interacted with.
-
-Name: CVE-2024-3571
-Description: langchain-ai/langchain is vulnerable to path traversal due to improper limitation of a pathname to a restricted directory ('Path Traversal') in its LocalFileStore functionality. An attacker can leverage this vulnerability to read or write files anywhere on the filesystem, potentially leading to information disclosure or remote code execution. The issue lies in the handling of file paths in the mset and mget methods, where user-supplied input is not adequately sanitized, allowing directory traversal sequences to reach unintended directories.
-
-Name: CVE-2024-3095
-Description: A Server-Side Request Forgery (SSRF) vulnerability exists in the Web Research Retriever component of langchain-ai/langchain version 0.1.5. The vulnerability arises because the Web Research Retriever does not restrict requests to remote internet addresses, allowing it to reach local addresses. This flaw enables attackers to execute port scans, access local services, and in some scenarios, read instance metadata from cloud environments. The vulnerability is particularly concerning as it can be exploited to abuse the Web Explorer server as a proxy for web attacks on third parties and interact with servers in the local network, including reading their response data. This could potentially lead to arbitrary code execution, depending on the nature of the local services. The vulnerability is limited to GET requests, as POST requests are not possible, but the impact on confidentiality, integrity, and availability is significant due to the potential for stolen credentials and state-changing interactions with internal APIs.
-
-Name: CVE-2024-2965
-Description: A Denial-of-Service (DoS) vulnerability exists in the `SitemapLoader` class of the `langchain-community` package, affecting all versions. The `parse_sitemap` method, responsible for parsing sitemaps and extracting URLs, lacks a mechanism to prevent infinite recursion when a sitemap URL refers to the current sitemap itself. This oversight allows for the possibility of an infinite loop, leading to a crash by exceeding the maximum recursion depth in Python. This vulnerability can be exploited to occupy server socket/port resources and crash the Python process, impacting the availability of services relying on this functionality.
-
-Name: CVE-2024-28088
-Description: LangChain through 0.1.10 allows ../ directory traversal by an actor who is able to control the final part of the path parameter in a load_chain call. This bypasses the intended behavior of loading configurations only from the hwchase17/langchain-hub GitHub repository. The outcome can be disclosure of an API key for a large language model online service, or remote code execution. (A patch is available as of release 0.1.29 of langchain-core.)
-
-Name: CVE-2024-27444
-Description: langchain_experimental (aka LangChain Experimental) in LangChain before 0.1.8 allows an attacker to bypass the CVE-2023-44467 fix and execute arbitrary code via the __import__, __subclasses__, __builtins__, __globals__, __getattribute__, __bases__, __mro__, or __base__ attribute in Python code. These are not prohibited by pal_chain/base.py.
-
-Name: CVE-2024-2057
-Description: A vulnerability was found in LangChain langchain_community 0.0.26. It has been classified as critical. Affected is the function load_local in the library libs/community/langchain_community/retrievers/tfidf.py of the component TFIDFRetriever. The manipulation leads to server-side request forgery. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. Upgrading to version 0.0.27 is able to address this issue. It is recommended to upgrade the affected component. The identifier of this vulnerability is VDB-255372.
-
-Name: CVE-2024-1455
-Description: A vulnerability in the langchain-ai/langchain repository allows for a Billion Laughs Attack, a type of XML External Entity (XXE) exploitation. By nesting multiple layers of entities within an XML document, an attacker can cause the XML parser to consume excessive CPU and memory resources, leading to a denial of service (DoS).
-
-Name: CVE-2024-0243
-Description: With the following crawler configuration: ```python from bs4 import BeautifulSoup as Soup url = "https://example.com" loader = RecursiveUrlLoader( url=url, max_depth=2, extractor=lambda x: Soup(x, "html.parser").text ) docs = loader.load() ``` An attacker in control of the contents of `https://example.com` could place a malicious HTML file in there with links like "https://example.completely.different/my_file.html" and the crawler would proceed to download that file as well even though `prevent_outside=True`. https://github.com/langchain-ai/langchain/blob/bf0b3cc0b5ade1fb95a5b1b6fa260e99064c2e22/libs/community/langchain_community/document_loaders/recursive_url_loader.py#L51-L51 Resolved in https://github.com/langchain-ai/langchain/pull/15559
-
-Name: CVE-2023-46229
-Description: LangChain before 0.0.317 allows SSRF via document_loaders/recursive_url_loader.py because crawling can proceed from an external server to an internal server.
-
-Name: CVE-2023-45853
-Description: MiniZip in zlib through 1.3 has an integer overflow and resultant heap-based buffer overflow in zipOpenNewFileInZip4_64 via a long filename, comment, or extra field. NOTE: MiniZip is not a supported part of the zlib product. NOTE: pyminizip through 0.2.6 is also vulnerable because it bundles an affected zlib version, and exposes the applicable MiniZip code through its compress API.
-
-Name: CVE-2023-44467
-Description: langchain_experimental (aka LangChain Experimental) in LangChain before 0.0.306 allows an attacker to bypass the CVE-2023-36258 fix and execute arbitrary code via __import__ in Python code, which is not prohibited by pal_chain/base.py.
-
-Name: CVE-2023-39659
-Description: An issue in langchain langchain-ai v.0.0.232 and before allows a remote attacker to execute arbitrary code via a crafted script to the PythonAstREPLTool._run component.
-
-Name: CVE-2023-39631
-Description: An issue in LanChain-ai Langchain v.0.0.245 allows a remote attacker to execute arbitrary code via the evaluate function in the numexpr library.
-
-Name: CVE-2023-38896
-Description: An issue in Harrison Chase langchain v.0.0.194 and before allows a remote attacker to execute arbitrary code via the from_math_prompt and from_colored_object_prompt functions.
-
-Name: CVE-2023-38860
-Description: An issue in LangChain v.0.0.231 allows a remote attacker to execute arbitrary code via the prompt parameter.
-
-Name: CVE-2023-36281
-Description: An issue in langchain v.0.0.171 allows a remote attacker to execute arbitrary code via a JSON file to load_prompt. This is related to __subclasses__ or a template.
-
-Name: CVE-2023-36258
-Description: An issue in LangChain before 0.0.236 allows an attacker to execute arbitrary code because Python code with os.system, exec, or eval can be used.
-
-Name: CVE-2023-36189
-Description: SQL injection vulnerability in langchain before v0.0.247 allows a remote attacker to obtain sensitive information via the SQLDatabaseChain component.
-
-Name: CVE-2023-36188
-Description: An issue in langchain v.0.0.64 allows a remote attacker to execute arbitrary code via the PALChain parameter in the Python exec method.
-
-Name: CVE-2023-36095
-Description: An issue in Harrison Chase langchain v.0.0.194 allows an attacker to execute arbitrary code via the python exec calls in the PALChain, affected functions include from_math_prompt and from_colored_object_prompt.
-
-Name: CVE-2023-34541
-Description: Langchain 0.0.171 is vulnerable to Arbitrary code execution in load_prompt.
-
-Name: CVE-2023-34540
-Description: Langchain before v0.0.225 was discovered to contain a remote code execution (RCE) vulnerability in the component JiraAPIWrapper (aka the JIRA API wrapper). This vulnerability allows attackers to execute arbitrary code via crafted input. As noted in the "releases/tag" reference, a fix is available.
-
-Name: CVE-2023-32786
-Description: In Langchain through 0.0.155, prompt injection allows an attacker to force the service to retrieve data from an arbitrary URL, essentially providing SSRF and potentially injecting content into downstream tasks.
-
-Name: CVE-2023-29374
-Description: In LangChain through 0.0.131, the LLMMathChain chain allows prompt injection attacks that can execute arbitrary code via the Python exec method.
-
-Name: CVE-2022-47183
-Description: Cross-Site Request Forgery (CSRF) vulnerability in StylistWP Extra Block Design, Style, CSS for ANY Gutenberg Blocks plugin <= 0.2.6 versions.
-
-Name: CVE-2021-23419
-Description: This affects the package open-graph before 0.2.6. The function parse could be tricked into adding or modifying properties of Object.prototype using a __proto__ or constructor payload.
-
-Name: CVE-2020-35928
-Description: An issue was discovered in the concread crate before 0.2.6 for Rust. Attackers can cause an ARCache<K,V> data race by sending types that do not implement Send/Sync.
-
-Name: CVE-2018-12112
-Description: md_build_attribute in md4c.c in md4c 0.2.6 allows remote attackers to cause a denial of service (Segmentation fault and application crash) or possibly have unspecified other impact via a crafted file.
-
-Name: CVE-2018-12102
-Description: md4c 0.2.6 has a NULL pointer dereference in the function md_process_line in md4c.c, related to ctx->current_block.
-
-Name: CVE-2017-8823
-Description: In Tor before 0.2.5.16, 0.2.6 through 0.2.8 before 0.2.8.17, 0.2.9 before 0.2.9.14, 0.3.0 before 0.3.0.13, and 0.3.1 before 0.3.1.9, there is a use-after-free in onion service v2 during intro-point expiration because the expiring list is mismanaged in certain error cases, aka TROVE-2017-013.
-
-Name: CVE-2017-8822
-Description: In Tor before 0.2.5.16, 0.2.6 through 0.2.8 before 0.2.8.17, 0.2.9 before 0.2.9.14, 0.3.0 before 0.3.0.13, and 0.3.1 before 0.3.1.9, relays (that have incompletely downloaded descriptors) can pick themselves in a circuit path, leading to a degradation of anonymity, aka TROVE-2017-012.
-
-Name: CVE-2017-8821
-Description: In Tor before 0.2.5.16, 0.2.6 through 0.2.8 before 0.2.8.17, 0.2.9 before 0.2.9.14, 0.3.0 before 0.3.0.13, and 0.3.1 before 0.3.1.9, an attacker can cause a denial of service (application hang) via crafted PEM input that signifies a public key requiring a password, which triggers an attempt by the OpenSSL library to ask the user for the password, aka TROVE-2017-011.
-
-Name: CVE-2017-8820
-Description: In Tor before 0.2.5.16, 0.2.6 through 0.2.8 before 0.2.8.17, 0.2.9 before 0.2.9.14, 0.3.0 before 0.3.0.13, and 0.3.1 before 0.3.1.9, remote attackers can cause a denial of service (NULL pointer dereference and application crash) against directory authorities via a malformed descriptor, aka TROVE-2017-010.
-
-Name: CVE-2017-8819
-Description: In Tor before 0.2.5.16, 0.2.6 through 0.2.8 before 0.2.8.17, 0.2.9 before 0.2.9.14, 0.3.0 before 0.3.0.13, and 0.3.1 before 0.3.1.9, the replay-cache protection mechanism is ineffective for v2 onion services, aka TROVE-2017-009. An attacker can send many INTRODUCE2 cells to trigger this issue.
-
-Name: CVE-2017-17662
-Description: Directory traversal in the HTTP server on Yawcam 0.2.6 through 0.6.0 devices allows attackers to read arbitrary files through a sequence of the form '.x./' or '....\x/' where x is a pattern composed of one or more (zero or more for the second pattern) of either \ or ..\ -- for example a '.\./', '....\/' or '...\./' sequence. For files with no extension, a single dot needs to be appended to ensure the HTTP server does not alter the request, e.g., a "GET /.\./.\./.\./.\./.\./.\./.\./windows/system32/drivers/etc/hosts." request.
-
-Name: CVE-2014-8327
-Description: The fal_sftp extension before 0.2.6 for TYPO3 uses weak permissions for sFTP driver files and folders, which allows remote authenticated users to obtain sensitive information via unspecified vectors.
-
-Name: CVE-2014-4540
-Description: Cross-site scripting (XSS) vulnerability in oleggo-twitter/twitter_login_form.php in the Oleggo LiveStream plugin 0.2.6 and earlier for WordPress allows remote attackers to inject arbitrary web script or HTML via the msg parameter.
-
-Name: CVE-2013-0175
-Description: multi_xml gem 0.5.2 for Ruby, as used in Grape before 0.2.6 and possibly other products, does not properly restrict casts of string values, which allows remote attackers to conduct object-injection attacks and execute arbitrary code, or cause a denial of service (memory and CPU consumption) involving nested XML entity references, by leveraging support for (1) YAML type conversion or (2) Symbol type conversion, a similar vulnerability to CVE-2013-0156.
-
-Name: CVE-2012-6453
-Description: Cross-site scripting (XSS) vulnerability in the RSS Reader extension before 0.2.6 for MediaWiki allows remote attackers to inject arbitrary web script or HTML via a crafted feed.
-
-Name: CVE-2009-0661
-Description: Wee Enhanced Environment for Chat (WeeChat) 0.2.6 allows remote attackers to cause a denial of service (crash) via an IRC PRIVMSG command containing crafted color codes that trigger an out-of-bounds read.
-
-Name: CVE-2008-5824
-Description: Heap-based buffer overflow in msadpcm.c in libaudiofile in audiofile 0.2.6 allows context-dependent attackers to cause a denial of service (application crash) or possibly execute arbitrary code via a crafted WAV file.
-
-Name: CVE-2008-3897
-Description: DiskCryptor 0.2.6 on Windows stores pre-boot authentication passwords in the BIOS Keyboard buffer and does not clear this buffer before and after use, which allows local users to obtain sensitive information by reading the physical memory locations associated with this buffer.
-
-Name: CVE-2008-2890
-Description: Multiple SQL injection vulnerabilities in Online Fantasy Football League (OFFL) 0.2.6 and earlier allow remote attackers to execute arbitrary SQL commands via the (1) fflteam_id parameter to teams.php, the (2) league_id parameter to leagues.php, and the (3) player_id parameter to players.php.
-
-Name: CVE-2007-5097
-Description: ** DISPUTED **
-
-PHP remote file inclusion vulnerability in lib/classes/offl_nflteam.php in Online Fantasy Football League (OFFL) 0.2.6 allows remote attackers to execute arbitrary PHP code via a URL in the DOC_ROOT parameter.  NOTE: this issue is disputed by CVE because a __FILE__ test protects offl_nflteam.php against direct requests.
-
-Name: CVE-2007-4809
-Description: Multiple PHP remote file inclusion vulnerabilities in Online Fantasy Football League (OFFL) 0.2.6 allow remote attackers to execute arbitrary PHP code via a URL in the DOC_ROOT parameter to (1) lib/functions.php or (2) lib/header.php.
-
-Name: CVE-2007-3770
-Description: The terminal_helper_execute function in terminal/terminal.c in Xfce Terminal 0.2.6 allows user-assisted remote attackers to execute arbitrary commands via shell metacharacters in a crafted link, as demonstrated using the "Open Link" functionality.
-
-Name: CVE-2007-1459
-Description: Multiple PHP remote file inclusion vulnerabilities in WebCreator 0.2.6-rc3 and earlier allow remote attackers to execute arbitrary PHP code via a URL in the moddir parameter to (1) content/load.inc.php, (2) config/load.inc.php, (3) http/load.inc.php, and unspecified other files.
-
-Name: CVE-2006-6557
-Description: Multiple unspecified vulnerabilities in Skulls! before 0.2.6 have unknown impact and attack vectors, as addressed by "Many security fixes."
-
-Name: CVE-2006-5235
-Description: PHP remote file inclusion vulnerability in includes/functions_kb.php in Dimension of phpBB 0.2.6 and earlier allows remote attackers to execute arbitrary PHP code via a URL in the phpbb_root_path parameter. NOTE: the provenance of this information is unknown; the details are obtained from third party information.
-
-Name: CVE-2006-5222
-Description: Multiple PHP remote file inclusion vulnerabilities in Dimension of phpBB 0.2.6 and earlier allow remote attackers to execute arbitrary PHP code via a URL in the phpbb_root_path parameter in (1) includes/themen_portal_mitte.php or (2) includes/logger_engine.php.
-
-Name: CVE-2006-3244
-Description: Multiple SQL injection vulnerabilities in Anthill 0.2.6 and earlier allow remote attackers to execute arbitrary SQL commands via the (1) order parameter in buglist.php and the (2) bug parameter in query.php.
 
 Scraping search results from: cve_pages\langchain_community_0.2.6.html
 Name: CVE-2024-2057
@@ -270,6 +95,7 @@ Description: Multiple PHP remote file inclusion vulnerabilities in Dimension of 
 Name: CVE-2006-3244
 Description: Multiple SQL injection vulnerabilities in Anthill 0.2.6 and earlier allow remote attackers to execute arbitrary SQL commands via the (1) order parameter in buglist.php and the (2) bug parameter in query.php.
 
+Scraping search results from: cve_pages\langchain_core_0.2.11.html
 Scraping search results from: cve_pages\langchain_google_genai_1.0.7.html
 Name: CVE-2024-5727
 Description: The Widget4Call WordPress plugin through 1.0.7 does not sanitise and escape a parameter before outputting it back in the page, leading to a Reflected Cross-Site Scripting which could be used against high privilege users such as admin
@@ -1001,54 +827,9 @@ Description: teTeX filter before 1.0.7 allows local users to gain privileges via
 Name: CVE-1999-1531
 Description: Buffer overflow in IBM HomePagePrint 1.0.7 for Windows98J allows a malicious Web site to execute arbitrary code on a viewer's system via a long IMG_SRC HTML tag.
 
-Scraping search results from: cve_pages\langchain_openai_0.1.15.html
-Name: CVE-2020-7634
-Description: heroku-addonpool through 0.1.15 is vulnerable to Command Injection.
-
-Name: CVE-2020-7603
-Description: closure-compiler-stream through 0.1.15 allows execution of arbitrary commands. The argument "options" of the exports function in "index.js" can be controlled by users without any sanitization.
-
-Name: CVE-2019-15550
-Description: An issue was discovered in the simd-json crate before 0.1.15 for Rust. There is an out-of-bounds read and an incorrect crossing of a page boundary.
-
-Name: CVE-2019-1010127
-Description: VCFTools vcftools prior to version 0.1.15 is affected by: Use-after-free. The impact is: Denial of Service or possibly other impact (eg. code execution or information disclosure). The component is: The header::add_FILTER_descriptor method in header.cpp. The attack vector is: The victim must open a specially crafted VCF file.
-
-Name: CVE-2018-11130
-Description: The header::add_FORMAT_descriptor function in header.cpp in VCFtools 0.1.15 allows remote attackers to cause a denial of service (use-after-free) or possibly have unspecified other impact via a crafted vcf file.
-
-Name: CVE-2018-11129
-Description: The header::add_INFO_descriptor function in header.cpp in VCFtools 0.1.15 allows remote attackers to cause a denial of service (use-after-free) or possibly have unspecified other impact via a crafted vcf file.
-
-Name: CVE-2018-11099
-Description: The header::add_INFO_descriptor function in header.cpp in VCFtools 0.1.15 allows remote attackers to cause information disclosure (heap-based buffer over-read) via a crafted vcf file.
-
-Name: CVE-2011-4349
-Description: Multiple SQL injection vulnerabilities in (1) cd-mapping-db.c and (2) cd-device-db.c in colord before 0.1.15 allow local users to execute arbitrary SQL commands via vectors related to color devices and (a) device id, (b) property, or (c) profile id.
-
-Name: CVE-2007-6746
-Description: telepathy-idle before 0.1.15 does not verify (1) that the issuer is a trusted CA, (2) that the server hostname matches a domain name in the subject's Common Name (CN), or (3) the expiration date of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate.
-
-Name: CVE-2007-6630
-Description: The Url_init function in utils/url.c in Netembryo 0.0.4, when used by LScube Feng, allows remote attackers to cause a denial of service (NULL dereference and daemon crash) via a malformed URI containing a "/:" sequence, as demonstrated by a "DESCRIBE /: RTSP/1.0" request.
-
-Name: CVE-2007-6629
-Description: Interpretation conflict in LScube Feng 0.1.15 and earlier allows remote attackers to cause a denial of service (NULL dereference and daemon crash) via a User-Agent header line that contains a carriage-return character, which is considered a line delimiter when the header is split into individual lines, but not when log_user_agent in RTSP_utils.c parses the content of the User-Agent line.
-
-Name: CVE-2007-6628
-Description: LScube Feng 0.1.15 and earlier allows remote attackers to cause a denial of service (NULL dereference and daemon crash) via (1) a malformed Transport header, which triggers misparsing in parse_transport_header in RTSP_setup.c, as demonstrated by a Transport header that contains only a "RTP/AVP;unicast;client_port" sequence; or (2) a malformed Range header, which triggers misparsing in parse_play_time_range in RTSP_Play, as demonstrated by an empty Range header.
-
-Name: CVE-2007-6627
-Description: Integer overflow in the RTSP_remove_msg function in RTSP_lowlevel.c in LScube Feng 0.1.15 and earlier allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code via an RTP packet with a size value of 0xffff.
-
-Name: CVE-2007-6626
-Description: Multiple buffer overflows in the RTSP_valid_response_msg function in RTSP_state_machine.c in LScube Feng 0.1.15 and earlier allow remote attackers to execute arbitrary code via (1) a long first line of a response, as demonstrated by a long VER line; or (2) a long second line of a response, as demonstrated by a message that follows a RETURN line.
-
-Name: CVE-2005-2203
-Description: login.php in phpWishlist before 0.1.15 allows remote attackers to bypass authentication via a direct request to admin.php.
-
-Name: CVE-2001-1173
-Description: Vulnerability in MasqMail before 0.1.15 allows local users to gain privileges via piped aliases.
+Scraping search results from: cve_pages\langchain_openai_0.1.16.html
+Name: CVE-2018-20995
+Description: An issue was discovered in the slice-deque crate before 0.1.16 for Rust. move_head_unchecked allows memory corruption because deque updates are mishandled.
 
 Scraping search results from: cve_pages\langchain_pinecone_0.1.1.html
 Name: CVE-2024-34050
@@ -1321,8 +1102,190 @@ Description: The checkAccess function in PHPSlice 0.1.4, and all other versions 
 Name: CVE-2001-0782
 Description: KDE ktvision 0.1.1-271 and earlier allows local attackers to gain root privileges via a symlink attack on a user configuration file.
 
-Scraping search results from: cve_pages\llama-index_0.10.54.post1.html
-Scraping search results from: cve_pages\llama-index_0.10.55.html
+Scraping search results from: cve_pages\langchain_text_splitters_0.2.2.html
+Name: CVE-2024-3941
+Description: The reCAPTCHA Jetpack WordPress plugin through 0.2.2 does not have CSRF check in some places, and is missing sanitisation as well as escaping, which could allow attackers to make logged-in admin add Stored XSS payloads via a CSRF attack.
+
+Name: CVE-2024-3940
+Description: The reCAPTCHA Jetpack WordPress plugin through 0.2.2 does not have CSRF check in place when updating its settings, which could allow attackers to make a logged in admin change them via a CSRF attack
+
+Name: CVE-2024-38525
+Description: dd-trace-cpp is the Datadog distributed tracing for C++. When the library fails to extract trace context due to malformed unicode, it logs the list of audited headers and their values using the `nlohmann` JSON library. However, due to the way the JSON library is invoked, it throws an uncaught exception, which results in a crash. This vulnerability has been patched in version 0.2.2.
+
+Name: CVE-2024-28181
+Description: turbo_boost-commands is a set of commands to help you build robust reactive applications with Rails & Hotwire. TurboBoost Commands has existing protections in place to guarantee that only public methods on Command classes can be invoked; however, the existing checks aren't as robust as they should be. It's possible for a sophisticated attacker to invoke more methods than should be permitted depending on the the strictness of authorization checks that individual applications enforce. Being able to call some of these methods can have security implications. Commands verify that the class must be a `Command` and that the method requested is defined as a public method; however, this isn't robust enough to guard against all unwanted code execution. The library should more strictly enforce which methods are considered safe before allowing them to be executed. This issue has been addressed in versions 0.1.3, and 0.2.2. Users are advised to upgrade. Users unable to upgrade should see the repository GHSA for workaround advice.
+
+Name: CVE-2023-28756
+Description: A ReDoS issue was discovered in the Time component through 0.2.1 in Ruby through 3.2.1. The Time parser mishandles invalid URLs that have specific characters. It causes an increase in execution time for parsing strings to Time objects. The fixed versions are 0.1.1 and 0.2.2.
+
+Name: CVE-2022-25604
+Description: Authenticated (contributor of higher user role) Stored Cross-Site Scripting (XSS) vulnerability discovered in WordPress Price Table plugin (versions <= 0.2.2).
+
+Name: CVE-2021-33621
+Description: The cgi gem before 0.1.0.2, 0.2.x before 0.2.2, and 0.3.x before 0.3.5 for Ruby allows HTTP response splitting. This is relevant to applications that use untrusted user input either to generate an HTTP response or to create a CGI::Cookie object.
+
+Name: CVE-2021-26276
+Description: ** DISPUTED ** scripts/cli.js in the GoDaddy node-config-shield (aka Config Shield) package before 0.2.2 for Node.js calls eval when processing a set command. NOTE: the vendor reportedly states that this is not a vulnerability. The set command was not intended for use with untrusted data.
+
+Name: CVE-2021-25951
+Description: XXE vulnerability in 'XML2Dict' version 0.2.2 allows an attacker to cause a denial of service.
+
+Name: CVE-2019-16200
+Description: GNU Serveez through 0.2.2 has an Information Leak. An attacker may send an HTTP POST request to the /cgi-bin/reader URI. The attacker must include a Content-length header with a large positive value that, when represented in 32 bit binary, evaluates to a negative number. The problem exists in the http_cgi_write function under http-cgi.c; however, exploitation might show svz_envblock_add in libserveez/passthrough.c as the location of the heap-based buffer over-read.
+
+Name: CVE-2019-15111
+Description: The wp-front-end-profile plugin before 0.2.2 for WordPress has a privilege escalation issue.
+
+Name: CVE-2019-15110
+Description: The wp-front-end-profile plugin before 0.2.2 for WordPress has XSS.
+
+Name: CVE-2018-25059
+Description: A vulnerability was found in pastebinit up to 0.2.2 and classified as problematic. Affected by this issue is the function pasteHandler of the file server.go. The manipulation of the argument r.URL.Path leads to path traversal. Upgrading to version 0.2.3 is able to address this issue. The name of the patch is 1af2facb6d95976c532b7f8f82747d454a092272. It is recommended to upgrade the affected component. The identifier of this vulnerability is VDB-217040.
+
+Name: CVE-2018-25022
+Description: The Onion module in toxcore before 0.2.2 doesn't restrict which packets can be onion-routed, which allows a remote attacker to discover a target user's IP address (when knowing only their Tox Id) by positioning themselves close to target's Tox Id in the DHT for the target to establish an onion connection with the attacker, guessing the target's DHT public key and creating a DHT node with public key close to it, and finally onion-routing a NAT Ping Request to the target, requesting it to ping the just created DHT node.
+
+Name: CVE-2018-16473
+Description: A path traversal in takeapeek module versions <=0.2.2 allows an attacker to list directory and files.
+
+Name: CVE-2017-16615
+Description: An exploitable vulnerability exists in the YAML parsing functionality in the parse_yaml_query method in parser.py in MLAlchemy before 0.2.2. When processing YAML-Based queries for data, a YAML parser can execute arbitrary Python commands resulting in command execution because load is used where safe_load should have been used. An attacker can insert Python into loaded YAML to trigger this vulnerability.
+
+Name: CVE-2013-6876
+Description: The (1) pty_init_terminal and (2) pipe_init_terminal functions in main.c in s3dvt 0.2.2 and earlier allows local users to gain privileges by leveraging setuid permissions and usage of bash 4.3 and earlier.  NOTE: this vulnerability was fixed with commit ad732f00b411b092c66a04c359da0f16ec3b387, but the version number was not changed.
+
+Name: CVE-2013-1062
+Description: ubuntu-system-service 0.2.4 before 0.2.4.1. 0.2.3 before 0.2.3.1, and 0.2.2 before 0.2.2.1 does not properly use D-Bus for communication with a polkit authority, which allows local users to bypass intended access restrictions by leveraging a PolkitUnixProcess PolkitSubject race condition via a (1) setuid process or (2) pkexec process, a related issue to CVE-2013-4288.
+
+Name: CVE-2012-1087
+Description: Cross-site scripting (XSS) vulnerability in the Post data records to facebook (bc_post2facebook) extension before 0.2.2 for TYPO3 allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
+
+Name: CVE-2012-1077
+Description: SQL injection vulnerability in the Post data records to facebook (bc_post2facebook) extension before 0.2.2 for TYPO3 allows remote attackers to execute arbitrary SQL commands via unspecified vectors.
+
+Name: CVE-2011-5264
+Description: Cross-site scripting (XSS) vulnerability in lazyest-backup.php in the Lazyest Backup plugin before 0.2.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the xml_or_all parameter.
+
+Name: CVE-2010-0325
+Description: Unspecified vulnerability in the SB Folderdownload (sb_folderdownload) extension 0.2.2 and earlier for TYPO3 allows remote attackers to obtain sensitive information via unknown attack vectors.
+
+Name: CVE-2009-4339
+Description: SQL injection vulnerability in the Subscription (mf_subscription) extension 0.2.2 for TYPO3 allows remote attackers to execute arbitrary SQL commands via unknown vectors.
+
+Name: CVE-2009-4338
+Description: SQL injection vulnerability in the Flash SlideShow (slideshow) extension 0.2.2 for TYPO3 allows remote attackers to execute arbitrary SQL commands via unknown vectors.
+
+Name: CVE-2009-4077
+Description: Cross-site request forgery (CSRF) vulnerability in Roundcube Webmail 0.2.2 and earlier allows remote attackers to hijack the authentication of unspecified users for requests that send arbitrary emails via unspecified vectors, a different vulnerability than CVE-2009-4076.
+
+Name: CVE-2009-4076
+Description: Cross-site request forgery (CSRF) vulnerability in Roundcube Webmail 0.2.2 and earlier allows remote attackers to hijack the authentication of unspecified users for requests that modify user information via unspecified vectors, a different vulnerability than CVE-2009-4077.
+
+Name: CVE-2009-3491
+Description: SQL injection vulnerability in the Kinfusion SportFusion (com_sportfusion) component 0.2.2 through 0.2.3 for Joomla! allows remote attackers to execute arbitrary SQL commands via the cid[0] parameter in a teamdetail action to index.php.
+
+Name: CVE-2008-6539
+Description: Static code injection vulnerability in user/settings/ in DeStar 0.2.2-5 allows remote authenticated users to add arbitrary administrators and inject arbitrary Python code into destar_cfg.py via a crafted pin parameter.
+
+Name: CVE-2008-6538
+Description: DeStar 0.2.2-5 allows remote attackers to add arbitrary users via a direct request to config/add/CfgOptUser.
+
+Name: CVE-2008-5752
+Description: Directory traversal vulnerability in getConfig.php in the Page Flip Image Gallery plugin 0.2.2 and earlier for WordPress, when magic_quotes_gpc is disabled, allows remote attackers to read arbitrary files via a .. (dot dot) in the book_id parameter.  NOTE: some of these details are obtained from third party information.
+
+Name: CVE-2008-2961
+Description: Multiple directory traversal vulnerabilities in view/index.php in CMS Mini 0.2.2 allow remote attackers to read arbitrary local files via a .. (dot dot) in the (1) path and (2) p parameter.
+
+Name: CVE-2007-5837
+Description: GUI.pm in yarssr 0.2.2, when Gnome default URL handling is disabled, allows remote attackers to execute arbitrary commands via shell metacharacters in a link element in a feed.
+
+Name: CVE-2007-2311
+Description: ** DISPUTED **
+
+PHP remote file inclusion vulnerability in install/index.php in BlooFoxCMS 0.2.2 allows remote attackers to execute arbitrary PHP code via a URL in the content_php parameter.  NOTE: this issue has been disputed by a reliable third party, stating that content_php is initialized before use.
+
+Name: CVE-2007-2310
+Description: Cross-site scripting (XSS) vulnerability in plugins/spaw/img_popup.php in BloofoxCMS 0.2.2 allows remote attackers to inject arbitrary web script or HTML via the img_url parameter.
+
+Name: CVE-2007-0135
+Description: PHP remote file inclusion vulnerability in inc/init.inc.php in Aratix 0.2.2 beta 11 and earlier, when register_globals is enabled, allows remote attackers to execute arbitrary PHP code via a URL in the current_path parameter.
+
+Name: CVE-2006-5767
+Description: PHP remote file inclusion vulnerability in includes/xhtml.php in Drake CMS 0.2.2 alpha rev.846 and earlier allows remote attackers to execute arbitrary PHP code via a URL in the d_root parameter.
+
+Name: CVE-2006-4733
+Description: PHP remote file inclusion vulnerability in sipssys/code/box.inc.php in Haakon Nilsen simple, integrated publishing system (SIPS) 0.3.1 and earlier allows remote attackers to execute arbitrary PHP code via a URL in the config[sipssys] parameter.  NOTE: the product's documentation recommends placing the affected file outside of the web root, so the scope of issue is limited to admins who do not, or cannot, follow this recommendation.
+
+Name: CVE-2006-4076
+Description: Multiple PHP remote file inclusion vulnerabilities in Wim Fleischhauer docpile: wim's edition (docpile:we) 0.2.2 allow remote attackers to execute arbitrary PHP code via a URL in the INIT_PATH parameter to (1) lib/access.inc.php, (2) lib/folders.inc.php, (3) lib/init.inc.php or (4) lib/templates.inc.php.  NOTE: the provenance of this information is unknown; the details are obtained from third party information.
+
+Name: CVE-2006-4075
+Description: Multiple PHP remote file inclusion vulnerabilities in Wim Fleischhauer docpile: wim's edition (docpile:we) 0.2.2 and earlier allow remote attackers to execute arbitrary PHP code via a URL in the INIT_PATH parameter to (1) lib/folder.class.php, (2) lib/email.inc.php, (3) lib/document.class.php or (4) lib/auth.inc.php.
+
+Name: CVE-2006-0144
+Description: The proxy server feature in go-pear.php in PHP PEAR 0.2.2, as used in Apache2Triad, allows remote attackers to execute arbitrary PHP code by redirecting go-pear.php to a malicious proxy server that provides a modified version of Tar.php with a malicious extractModify function.
+
+Name: CVE-2005-1110
+Description: Stack-based buffer overflow in the RespondeHTTPPendiente function in the HTTP server for SUMUS 0.2.2 allows remote attackers to execute arbitrary code via a large packet sent to TCP port 81.
+
+Name: CVE-2004-2618
+Description: Cross-site scripting (XSS) vulnerability in Pegasi Web Server (PWS) 0.2.2 allows remote attackers to inject arbitrary web script or HTML via the URI, directly after the initial '/' (slash).
+
+Name: CVE-2004-2617
+Description: Directory traversal vulnerability in Pegasi Web Server (PWS) 0.2.2 allows remote attackers to read files outside of the web root via a .. (dot dot) directly after the initial '/' (slash) in the URI.
+
+Name: CVE-2004-1283
+Description: Buffer overflow in the Mesh::type method in mesh.c for the mview program in Mesh Viewer 0.2.2 allows remote attackers to execute arbitrary code via crafted mesh files.
+
+Name: CVE-2003-1553
+Description: Haakon Nilsen Simple Internet Publishing System (SIPS) 0.2.2 stores sensitive information under the web root with insufficient access control, which allows remote attackers to obtain password and other user information via a direct request to a user-specific configuration directory.
+
+Name: CVE-2003-0076
+Description: Unknown vulnerability in the directory parser for Direct Connect 4 Linux (dcgui) before 0.2.2 allows remote attackers to read files outside the sharelist.
+
+Scraping search results from: cve_pages\openai_1.35.13.html
+Name: CVE-2024-5858
+Description: The AI Infographic Maker plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the qcld_openai_title_generate_desc AJAX action in all versions up to, and including, 4.7.4. This makes it possible for authenticated attackers, with Subscriber-level access and above, to update arbitrary post titles.
+
+Name: CVE-2024-4858
+Description: The Testimonial Carousel For Elementor plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the 'save_testimonials_option_callback' function in versions up to, and including, 10.2.0. This makes it possible for unauthenticated attackers to update the OpenAI API key, disabling the feature.
+
+Name: CVE-2024-40594
+Description: The OpenAI ChatGPT app before 2024-07-05 for macOS opts out of the sandbox, and stores conversations in cleartext in a location accessible to other apps.
+
+Name: CVE-2024-36420
+Description: Flowise is a drag & drop user interface to build a customized large language model flow. In version 1.4.3 of Flowise, the `/api/v1/openai-assistants-file` endpoint in `index.ts` is vulnerable to arbitrary file read due to lack of sanitization of the `fileName` body parameter. No known patches for this issue are available.
+
+Name: CVE-2024-34527
+Description: spaces_plugin/app.py in SolidUI 0.4.0 has an unnecessary print statement for an OpenAI key. The printed string might be logged.
+
+Name: CVE-2024-2217
+Description: gaizhenbiao/chuanhuchatgpt is vulnerable to improper access control, allowing unauthorized access to the `config.json` file. This vulnerability is present in both authenticated and unauthenticated versions of the application, enabling attackers to obtain sensitive information such as API keys (`openai_api_key`, `google_palm_api_key`, `xmchat_api_key`, etc.), configuration details, and user credentials. The issue stems from the application's handling of HTTP requests for the `config.json` file, which does not properly restrict access based on user authentication.
+
+Name: CVE-2024-0453
+Description: The AI ChatBot plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the openai_file_delete_callback function in all versions up to, and including, 5.3.4. This makes it possible for authenticated attackers, with subscriber-level access and above, to delete files from a linked OpenAI account.
+
+Name: CVE-2024-0452
+Description: The AI ChatBot plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the openai_file_upload_callback function in all versions up to, and including, 5.3.4. This makes it possible for authenticated attackers, with subscriber-level access and above, to upload files to a linked OpenAI account.
+
+Name: CVE-2024-0451
+Description: The AI ChatBot plugin for WordPress is vulnerable to unauthorized access of data due to a missing capability check on the openai_file_list_callback function in all versions up to, and including, 5.3.4. This makes it possible for authenticated attackers, with subscriber-level access and above, to list files existing in a linked OpenAI account.
+
+Name: CVE-2023-5241
+Description: The AI ChatBot for WordPress is vulnerable to Directory Traversal in versions up to, and including, 4.8.9 as well as 4.9.2 via the qcld_openai_upload_pagetraining_file function. This allows subscriber-level attackers to append "<?php" to any existing file on the server resulting in potential DoS when appended to critical files such as wp-config.php.
+
+Name: CVE-2023-5212
+Description: The AI ChatBot plugin for WordPress is vulnerable to Arbitrary File Deletion in versions up to, and including, 4.8.9 as well as version 4.9.2. This makes it possible for authenticated attackers with subscriber privileges to delete arbitrary files on the server, which makes it possible to take over affected sites as well as others sharing the same hosting account. Version 4.9.1 originally addressed the issue, but it was reintroduced in 4.9.2 and fixed again in 4.9.3.
+
+Name: CVE-2023-51401
+Description: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Brainstorm Force Ultimate Addons for Beaver Builder allows Relative Path Traversal.This issue affects Ultimate Addons for Beaver Builder: from n/a through 1.35.13.
+
+Name: CVE-2023-3686
+Description: A vulnerability was found in Bylancer QuickAI OpenAI 3.8.1. It has been declared as critical. This vulnerability affects unknown code of the file /blog of the component GET Parameter Handler. The manipulation of the argument s leads to sql injection. The attack can be initiated remotely. The identifier of this vulnerability is VDB-234232. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.
+
+Name: CVE-2023-1651
+Description: The AI ChatBot WordPress plugin before 4.4.9 does not have authorisation and CSRF in the AJAX action responsible to update the OpenAI settings, allowing any authenticated users, such as subscriber to update them. Furthermore, due to the lack of escaping of the settings, this could also lead to Stored XSS
+
 Scraping search results from: cve_pages\pinecone-client[grpc]_3.2.2.html
 Name: CVE-2024-5793
 Description: The Houzez Theme - Functionality plugin for WordPress is vulnerable to SQL Injection via the &#8216;currency_code&#8217; parameter in all versions up to, and including, 3.2.2 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with Custom-level (seller) access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
@@ -1340,7 +1303,7 @@ Name: CVE-2024-4062
 Description: A vulnerability was found in Hualai Xiaofang iSC5 3.2.2_112 and classified as problematic. Affected by this issue is some unknown functionality. The manipulation leads to improper certificate validation. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The identifier of this vulnerability is VDB-261788. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.
 
 Name: CVE-2024-39743
-Description: IBM MQ Operator 3.2.2 and IBM MQ Operator 2.0.24 could allow a user to cause a denial of service under certain configurations due to a partial string comparison vulnerability. IBM X-Force ID: 297172.
+Description: IBM MQ Operator 3.2.2 and IBM MQ Operator 2.0.24 IBM MQ Container Developer Edition is vulnerable to denial of service caused by incorrect memory de-allocation. A remote attacker could exploit this vulnerability to cause the server to consume memory resources. IBM X-Force ID: 297172.
 
 Name: CVE-2024-39742
 Description: IBM MQ Operator 3.2.2 and IBM MQ Operator 2.0.24 could allow a user to bypass authentication under certain configurations due to a partial string comparison vulnerability. IBM X-Force ID: 297169.
@@ -3872,7 +3835,7 @@ Description: Cross-site scripting (XSS) vulnerability in Drupal 4.0.0 allows rem
 Name: CVE-2001-1385
 Description: The Apache module for PHP 4.0.0 through PHP 4.0.4, when disabled with the 'engine = off' option for a virtual host, may disable PHP for other virtual hosts, which could cause Apache to serve the source code of PHP scripts.
 
-Scraping search results from: cve_pages\sentence-transformers_3.0.1.html
+Scraping search results from: cve_pages\sentence_transformers_3.0.1.html
 Name: CVE-2024-5993
 Description: The Cliengo &#8211; Chatbot plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the 'update_session' function in all versions up to, and including, 3.0.1. This makes it possible for authenticated attackers, with Subscriber-level access and above, to update the session token of the chatbot.
 

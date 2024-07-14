@@ -18,7 +18,7 @@ This is a Streamlit-based chatbot that provides information about CVEs (Common V
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/Arjun4522/Lazarus.ai.git)
+   git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
 
 Create a virtual environment (recommended):
@@ -51,7 +51,7 @@ Usage
 Type your questions or requests into the chat input field at the bottom of the interface.
 [Optional] Use the sidebar (if implemented) to upload .ipynb files for dependency scanning or to manage the database.
 
-## Contributing
+Contributing
 Fork the repository.
 Create a new branch for your feature (git checkout -b feature/your-feature-name).
 Make your changes and commit them (git commit -am 'Add some feature').
