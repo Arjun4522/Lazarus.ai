@@ -1,6 +1,6 @@
-# CVE Information Chatbot 
+# Lazarus.ai
 
-This is a Streamlit-based chatbot that provides information about CVEs (Common Vulnerabilities and Exposures).
+An advanced MLSecOps platform designed for seamless integration with any model deployment workflow. It meticulously scans for potential bugs and security vulnerabilities at every stage of the CI/CD pipeline. Equipped with an intuitive in-built chat UI, Lazarus.ai enhances the vulnerability management process, ensuring it is both comprehensive and reliable.
 
 ## Features
 
