@@ -223,7 +223,7 @@ NOTICE: <span class="ltredbold">Support for the legacy CVE download formats <a h
 <h2>Search Results</h2>
 
 <div class="smaller" style="background-color:#e0dbd2; padding:3px; border:1px solid #706c60; margin-bottom:10px">
-There are <b>258</b> CVE Records that match your search.
+There are <b>259</b> CVE Records that match your search.
 </div>
 
 <div id="TableWithRules">
@@ -297,6 +297,12 @@ There are <b>258</b> CVE Records that match your search.
 	<tr>
 		<td valign="top" nowrap="nowrap"><a href="/cgi-bin/cvename.cgi?name=CVE-2024-35223">CVE-2024-35223</a></td>
 		<td valign="top">Dapr is a portable, event-driven, runtime for building distributed applications across cloud and edge. Dapr sends the app token of the invoker app instead of the app token of the invoked app. This causes of a leak of the application token of the invoker app to the invoked app when using Dapr as a gRPC proxy for remote service invocation. This vulnerability impacts Dapr users who use Dapr as a gRPC proxy for remote service invocation as well as the Dapr App API token functionality. An attacker could exploit this vulnerability to gain access to the app token of the invoker app, potentially compromising security and authentication mechanisms. This vulnerability was patched in version 1.13.3.
+
+</td>
+	</tr>
+	<tr>
+		<td valign="top" nowrap="nowrap"><a href="/cgi-bin/cvename.cgi?name=CVE-2024-35199">CVE-2024-35199</a></td>
+		<td valign="top">TorchServe is a flexible and easy-to-use tool for serving and scaling PyTorch models in production. In affected versions the two gRPC ports 7070 and 7071, are not bound to [localhost](http://localhost/) by default, so when TorchServe is launched, these two interfaces are bound to all interfaces. Customers using PyTorch inference Deep Learning Containers (DLC) through Amazon SageMaker and EKS are not affected. This issue in TorchServe has been fixed in PR #3083. TorchServe release 0.11.0 includes the fix to address this vulnerability. Users are advised to upgrade. There are no known workarounds for this vulnerability.
 
 </td>
 	</tr>
