@@ -22,13 +22,17 @@ An advanced MLSecOps platform designed for seamless integration with any ML mode
    cd your-repo-name
 
 Create a virtual environment (recommended):
-
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   
+   `python -m venv .venv
+   source .venv/bin/activate`
+   
+ # On Windows:
+ 
+    `.venv\Scripts\activate`
 
 Install the required packages:
 
-pip install -r requirements.txt
+   `pip install -r requirements.txt`
 
 [Optional] Set Up Your Database (if used):
 
@@ -40,11 +44,13 @@ Add your API keys and other sensitive information as environment variables in th
 Running the Application
 Activate the virtual environment (if you created one):
 
-source .venv/bin/activate
+   `source .venv/bin/activate`
+
+## Run
 
 Run the Streamlit app:
 
-streamlit run app.py
+   `streamlit run app.py`
 
 This will start the Streamlit development server, and the chatbot interface will open in your web browser.
 Usage
@@ -52,6 +58,7 @@ Type your questions or requests into the chat input field at the bottom of the i
 [Optional] Use the sidebar (if implemented) to upload .ipynb files for dependency scanning or to manage the database.
 
 Contributing
+
 Fork the repository.
 Create a new branch for your feature (git checkout -b feature/your-feature-name).
 Make your changes and commit them (git commit -am 'Add some feature').
