@@ -17,16 +17,16 @@ An advanced MLSecOps platform designed for seamless integration with any ML mode
 ## Installation
 
 1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   
+   `git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name`
 
 Create a virtual environment (recommended):
    
    `python -m venv .venv
    source .venv/bin/activate`
    
- # On Windows:
+ ### On Windows:
  
     `.venv\Scripts\activate`
 
