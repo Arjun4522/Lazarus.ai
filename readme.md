@@ -36,7 +36,7 @@ Install the required packages:
 
    `pip install -r requirements.txt`
 
-[Optional] Set Up Your Database (if used):
+### Optional] Set Up Your Database (if used):
 
 Follow the instructions in the database setup documentation (if provided) to create and configure your database.
 [Optional] Set Up API Keys and Environment Variables (if used):
@@ -44,6 +44,7 @@ Follow the instructions in the database setup documentation (if provided) to cre
 Create a .env file in the root directory.
 Add your API keys and other sensitive information as environment variables in the .env file (see the .env.example file for a template).
 Running the Application
+
 Activate the virtual environment (if you created one):
 
    `source .venv/bin/activate`
