@@ -1,6 +1,6 @@
 # Lazarus.ai
 
-An advanced MLSecOps platform designed for seamless integration with any model deployment workflow. It meticulously scans for potential bugs and security vulnerabilities at every stage of the CI/CD pipeline. Equipped with an intuitive in-built chat UI, Lazarus.ai enhances the vulnerability management process, ensuring it is both comprehensive and reliable.
+An advanced MLSecOps platform designed for seamless integration with any ML model deployment workflow. It meticulously scans for potential bugs and security vulnerabilities at every stage of the CI/CD pipeline. Equipped with an intuitive in-built chat UI, Lazarus.ai enhances the vulnerability management process, ensuring it is both comprehensive and reliable.
 
 ## Features
 
