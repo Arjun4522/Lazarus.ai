@@ -6,8 +6,10 @@ An advanced MLSecOps platform designed for seamless integration with any ML mode
 
 - **Chat Interface:** Interact with the chatbot using a user-friendly chat interface.
 - **CVE Information Retrieval:** Ask questions about specific CVEs, and the chatbot will try to provide relevant information. 
-- **[Optional] Dependency Scanning (if implemented):** Upload Jupyter Notebook (.ipynb) files to extract dependencies and check for known vulnerabilities.
-- **[Optional] Database Integration (if implemented):** Stores CVE information and potentially scan results in a database for efficient retrieval.
+- **Dependency Scanning :** Upload Jupyter Notebook (.ipynb) files to extract dependencies and check for known vulnerabilities.
+- **Code Scanning (work in progress):** Static analysis to check for code vulnerabilities.
+- **Container Scanning (work in progress):** Scanning containers, docker images and K8 clusters to check for code vulnerabilities.
+- **Vector Database Integration :** Stores CVE information and potentially scan results in a database for efficient retrieval.
 
 ## Prerequisites
 
@@ -16,7 +18,7 @@ An advanced MLSecOps platform designed for seamless integration with any ML mode
 
 ## Installation
 
-1. **Clone the repository:**
+**Clone the repository:**
    
    `git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name`
