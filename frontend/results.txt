@@ -3440,6 +3440,55 @@ Description: A user with high privilege access to the Incapptic Connect web cons
 Name: CVE-2017-5645
 Description: In Apache Log4j 2.x before 2.8.2, when using the TCP socket server or UDP socket server to receive serialized log events from another application, a specially crafted binary payload can be sent that, when deserialized, can execute arbitrary code.
 
+Scraping search results from: cve_pages\openai_1.36.1.html
+Name: CVE-2024-5858
+Description: The AI Infographic Maker plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the qcld_openai_title_generate_desc AJAX action in all versions up to, and including, 4.7.4. This makes it possible for authenticated attackers, with Subscriber-level access and above, to update arbitrary post titles.
+
+Name: CVE-2024-4858
+Description: The Testimonial Carousel For Elementor plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the 'save_testimonials_option_callback' function in versions up to, and including, 10.2.0. This makes it possible for unauthenticated attackers to update the OpenAI API key, disabling the feature.
+
+Name: CVE-2024-40594
+Description: The OpenAI ChatGPT app before 2024-07-05 for macOS opts out of the sandbox, and stores conversations in cleartext in a location accessible to other apps.
+
+Name: CVE-2024-36420
+Description: Flowise is a drag & drop user interface to build a customized large language model flow. In version 1.4.3 of Flowise, the `/api/v1/openai-assistants-file` endpoint in `index.ts` is vulnerable to arbitrary file read due to lack of sanitization of the `fileName` body parameter. No known patches for this issue are available.
+
+Name: CVE-2024-34527
+Description: spaces_plugin/app.py in SolidUI 0.4.0 has an unnecessary print statement for an OpenAI key. The printed string might be logged.
+
+Name: CVE-2024-30253
+Description: @solana/web3.js is the Solana JavaScript SDK. Using particular inputs with `@solana/web3.js` will result in memory exhaustion (OOM). If you have a server, client, mobile, or desktop product that accepts untrusted input for use with `@solana/web3.js`, your application/service may crash, resulting in a loss of availability. This vulnerability is fixed in 1.0.1, 1.10.2, 1.11.1, 1.12.1, 1.1.2, 1.13.1, 1.14.1, 1.15.1, 1.16.2, 1.17.1, 1.18.1, 1.19.1, 1.20.3, 1.21.1, 1.22.1, 1.23.1, 1.24.3, 1.25.1, 1.26.1, 1.27.1, 1.28.1, 1.2.8, 1.29.4, 1.30.3, 1.31.1, 1.3.1, 1.32.3, 1.33.1, 1.34.1, 1.35.2, 1.36.1, 1.37.3, 1.38.1, 1.39.2, 1.40.2, 1.41.11, 1.4.1, 1.42.1, 1.43.7, 1.44.4, 1.45.1, 1.46.1, 1.47.5, 1.48.1, 1.49.1, 1.50.2, 1.51.1, 1.5.1, 1.52.1, 1.53.1, 1.54.2, 1.55.1, 1.56.3, 1.57.1, 1.58.1, 1.59.2, 1.60.1, 1.61.2, 1.6.1, 1.62.2, 1.63.2, 1.64.1, 1.65.1, 1.66.6, 1.67.3, 1.68.2, 1.69.1, 1.70.4, 1.71.1, 1.72.1, 1.7.2, 1.73.5, 1.74.1, 1.75.1, 1.76.1, 1.77.4, 1.78.8, 1.79.1, 1.80.1, 1.81.1, 1.8.1, 1.82.1, 1.83.1, 1.84.1, 1.85.1, 1.86.1, 1.87.7, 1.88.1, 1.89.2, 1.90.2, 1.9.2, and 1.91.3.
+
+Name: CVE-2024-2217
+Description: gaizhenbiao/chuanhuchatgpt is vulnerable to improper access control, allowing unauthorized access to the `config.json` file. This vulnerability is present in both authenticated and unauthenticated versions of the application, enabling attackers to obtain sensitive information such as API keys (`openai_api_key`, `google_palm_api_key`, `xmchat_api_key`, etc.), configuration details, and user credentials. The issue stems from the application's handling of HTTP requests for the `config.json` file, which does not properly restrict access based on user authentication.
+
+Name: CVE-2024-0453
+Description: The AI ChatBot plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the openai_file_delete_callback function in all versions up to, and including, 5.3.4. This makes it possible for authenticated attackers, with subscriber-level access and above, to delete files from a linked OpenAI account.
+
+Name: CVE-2024-0452
+Description: The AI ChatBot plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the openai_file_upload_callback function in all versions up to, and including, 5.3.4. This makes it possible for authenticated attackers, with subscriber-level access and above, to upload files to a linked OpenAI account.
+
+Name: CVE-2024-0451
+Description: The AI ChatBot plugin for WordPress is vulnerable to unauthorized access of data due to a missing capability check on the openai_file_list_callback function in all versions up to, and including, 5.3.4. This makes it possible for authenticated attackers, with subscriber-level access and above, to list files existing in a linked OpenAI account.
+
+Name: CVE-2023-5241
+Description: The AI ChatBot for WordPress is vulnerable to Directory Traversal in versions up to, and including, 4.8.9 as well as 4.9.2 via the qcld_openai_upload_pagetraining_file function. This allows subscriber-level attackers to append "<?php" to any existing file on the server resulting in potential DoS when appended to critical files such as wp-config.php.
+
+Name: CVE-2023-5212
+Description: The AI ChatBot plugin for WordPress is vulnerable to Arbitrary File Deletion in versions up to, and including, 4.8.9 as well as version 4.9.2. This makes it possible for authenticated attackers with subscriber privileges to delete arbitrary files on the server, which makes it possible to take over affected sites as well as others sharing the same hosting account. Version 4.9.1 originally addressed the issue, but it was reintroduced in 4.9.2 and fixed again in 4.9.3.
+
+Name: CVE-2023-3686
+Description: A vulnerability was found in Bylancer QuickAI OpenAI 3.8.1. It has been declared as critical. This vulnerability affects unknown code of the file /blog of the component GET Parameter Handler. The manipulation of the argument s leads to sql injection. The attack can be initiated remotely. The identifier of this vulnerability is VDB-234232. NOTE: The vendor was contacted early about this disclosure but did not respond in any way.
+
+Name: CVE-2023-1651
+Description: The AI ChatBot WordPress plugin before 4.4.9 does not have authorisation and CSRF in the AJAX action responsible to update the OpenAI settings, allowing any authenticated users, such as subscriber to update them. Furthermore, due to the lack of escaping of the settings, this could also lead to Stored XSS
+
+Name: CVE-2022-25929
+Description: The package smoothie from 1.31.0 and before 1.36.1 are vulnerable to Cross-site Scripting (XSS) due to improper user input sanitization in strokeStyle and tooltipLabel properties. Exploiting this vulnerability is possible when the user can control these properties.
+
+Name: CVE-2021-35197
+Description: In MediaWiki before 1.31.15, 1.32.x through 1.35.x before 1.35.3, and 1.36.x before 1.36.1, bots have certain unintended API access. When a bot account has a "sitewide block" applied, it is able to still "purge" pages through the MediaWiki Action API (which a "sitewide block" should have prevented).
+
 Scraping search results from: cve_pages\opencv-contrib-python_4.10.0.84.html
 Scraping search results from: cve_pages\pandas_2.2.2.html
 Name: CVE-2024-5480
@@ -4945,6 +4994,9 @@ Description: FreeRTOS-Plus-TCP is a lightweight TCP/IP stack for FreeRTOS. FreeR
 
 Name: CVE-2024-37886
 Description: user_oidc app is an OpenID Connect user backend for Nextcloud. An attacker could potentially trick the app into accepting a request that is not signed by the correct server. It is recommended that the Nextcloud user_oidc app is upgraded to 1.3.5, 2.0.0, 3.0.0, 4.0.0 or 5.0.0.
+
+Name: CVE-2024-37549
+Description: Improper Neutralization of Input During Web Page Generation (XSS or 'Cross-site Scripting') vulnerability in Pdfcrowd Save as PDF plugin by Pdfcrowd allows Stored XSS.This issue affects Save as PDF plugin by Pdfcrowd: from n/a through 4.0.0.
 
 Name: CVE-2024-37386
 Description: An issue was discovered in Stormshield Network Security (SNS) 4.0.0 through 4.3.25, 4.4.0 through 4.7.5, and 4.8.0. Certain manipulations allow restarting in single-user mode despite the activation of secure boot. The following versions fix this: 4.3.27, 4.7.6, and 4.8.1.

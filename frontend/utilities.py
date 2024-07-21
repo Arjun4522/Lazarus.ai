@@ -39,6 +39,7 @@ INDEX_NAME_2 = "cve-data"
 pinecone = Pinecone(api_key=PINECONE_API_KEY)
 
 
+
 def query_pinecone(index_name, query, embeddings):
     try:
         docsearch = PineconeVectorStore(index_name=index_name, embedding=embeddings)
@@ -161,7 +162,21 @@ def scan_notebook(uploaded_file):
         st.warning("Please upload a notebook file first.")
 
 def delete_database():
-    with st.spinner("Deleting"):
-        pc.delete_index(INDEX_NAME_1)
-        st.warning("Database deleted!") 
+    try:
+        with st.spinner("Deleting"):
+            pc.delete_index(INDEX_NAME_1)
+            st.warning("Database deleted!") 
+    except:
+        st.warning("database already deleted")
         
+
+def show_dependencies(dependencies):
+    if(dependencies):
+        with st.sidebar.expander("Dependencies"):
+            for dependency, version in dependencies.items():
+                st.write(f"{dependency}: {version}")
+    else:
+        st.warning("Please Scan The Notebook To View Dependencies")
+
+# def close_dependencies():
+#     st.sidebar.write("")
